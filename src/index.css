@@ -1,0 +1,30 @@
+article,
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+article#our-story section {
+	text-align: left;
+}
+
+article#our-story img {
+	margin: 0.25em;
+}
+
+section footer {
+	margin-top: auto;
+}
+
+#details>div {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+#details>div>section {
+	flex: 1 1;
+	flex-basis: 45%;
+}
