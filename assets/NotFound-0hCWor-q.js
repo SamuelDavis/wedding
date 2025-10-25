@@ -1,1 +1,0 @@
-import{t as n,i,c as l,A as o}from"./index-Bnj0icds.js";var a=n("<article><h1>Not Found</h1><p>Try going ");function u(){return(()=>{var t=a(),r=t.firstChild,e=r.nextSibling;return e.firstChild,i(e,l(o,{href:"/",children:"Home"}),null),t})()}export{u as default};
