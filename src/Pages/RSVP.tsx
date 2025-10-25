@@ -1,7 +1,7 @@
 export default function RSVP() {
   const getDimensions = () =>
     document.body.clientWidth >= 640
-      ? { width: 640, height: 1074 }
+      ? { width: 640, height: 1174 }
       : { width: 320, height: 1280 };
   return (
     <article style={{ overflow: "auto" }}>
