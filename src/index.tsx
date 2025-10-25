@@ -2,7 +2,7 @@
 import { render } from "solid-js/web";
 import "@picocss/pico/css/pico.min.css";
 import "./index.css";
-import { Route, Router } from "@solidjs/router";
+import { Route, HashRouter } from "@solidjs/router";
 import Layout from "./Pages/Layout.tsx";
 import { lazy } from "solid-js";
 
@@ -13,12 +13,12 @@ const NotFound = lazy(() => import("./Pages/NotFound.tsx"));
 
 render(
   () => (
-    <Router root={Layout}>
+    <HashRouter root={Layout}>
       <Route path="/" component={Home} />
       <Route path="/our-story" component={OurStory} />
       <Route path="/rsvp" component={RSVP} />
       <Route path="*404" component={NotFound} />
-    </Router>
+    </HashRouter>
   ),
   document.body,
 );
