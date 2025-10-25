@@ -6,6 +6,10 @@ section {
 	text-align: center;
 }
 
+section:not(:last-child) {
+	margin-bottom: calc(4 * var(--pico-block-spacing-vertical));
+}
+
 article#our-story section {
 	text-align: left;
 }

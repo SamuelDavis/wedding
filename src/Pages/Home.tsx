@@ -1,6 +1,6 @@
 import RSVP from "../Components/RSVP";
 import ceremonySrc from "../assets/ceremony.jpg";
-import receptionSrc from "../assets/ceremony.jpg";
+import receptionSrc from "../assets/reception.jpg";
 
 export default function Home() {
   return (
