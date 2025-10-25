@@ -30,8 +30,8 @@ export default function OurStory() {
           Curabitur sit amet tincidunt nibh. Aenean vitae neque nibh. Sed eu
           nulla lorem. Vivamus at lacinia lorem. Fusce rutrum id leo id aliquet.
         </p>
+        <img src="https://picsum.photos/800/450" alt="bar" />
       </section>
-      <img src="https://picsum.photos/800/450" alt="bar" />
       <section>
         <h2>Bar</h2>
         <p>
