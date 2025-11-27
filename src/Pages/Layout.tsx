@@ -3,10 +3,28 @@ import type { ParentProps } from "solid-js";
 
 export default function Layout(props: ParentProps) {
   return (
-    <main>
+    <main class="container">
       <article>
         <header>
           <nav>
+            <ul>
+              <li>
+                <details class="dropdown">
+                  <summary>&hellip;</summary>
+                  <ul>
+                    <li>
+                      <A href="/your-trip">Your Trip</A>
+                    </li>
+                    <li>
+                      <A href="/our-story">Our Story</A>
+                    </li>
+                    <li>
+                      <A href="/rsvp">RSVP</A>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
             <ul>
               <li>
                 <Logo />
@@ -26,14 +44,10 @@ export default function Layout(props: ParentProps) {
           </nav>
         </header>
         {props.children}
-        <section id="footer">
-          <header>
-            <h2>Please RSVP by February 22, 2026</h2>
-          </header>
-          <header>
-            <p>We're so excited to celebrate with you!</p>
-          </header>
-          <div>
+        <footer>
+          <h2>Please RSVP by February 22, 2026</h2>
+          <p>We're so excited to celebrate with you!</p>
+          <aside>
             <nav>
               <ul>
                 <li>
@@ -47,9 +61,7 @@ export default function Layout(props: ParentProps) {
                 </li>
               </ul>
             </nav>
-          </div>
-        </section>
-        <footer>
+          </aside>
           <Logo />
         </footer>
       </article>
