@@ -27,11 +27,6 @@ export default function Layout(props: ParentProps) {
             </ul>
             <ul>
               <li>
-                <Logo />
-              </li>
-            </ul>
-            <ul>
-              <li>
                 <A href="/your-trip">Your Trip</A>
               </li>
               <li>
