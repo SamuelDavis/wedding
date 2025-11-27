@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@picocss/pico": "^2.1.1",
+    "@samueldavis/solidlib": "github:SamuelDavis/solidlib",
     "@solidjs/router": "^0.15.4",
+    "date-fns": "^4.1.0",
     "solid-js": "^1.9.10"
   },
   "devDependencies": {

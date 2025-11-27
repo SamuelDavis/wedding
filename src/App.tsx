@@ -1,4 +1,4 @@
-import { Route, Router } from "@solidjs/router";
+import { Route, HashRouter as Router } from "@solidjs/router";
 import { lazy } from "solid-js";
 
 const Layout = lazy(() => import("./Pages/Layout"));
