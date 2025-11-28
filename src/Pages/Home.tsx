@@ -111,6 +111,7 @@ function Schedule() {
               <strong>Social Hour</strong>
             </h3>
             <Itinerary value={itinerary.slice(2, 3)} />
+            <img src="https://placehold.co/600x200" />
           </div>
         </li>
         <li
@@ -125,15 +126,13 @@ function Schedule() {
             </h3>
             <Itinerary value={itinerary.slice(3)} />
             <ul>
-              <li>
-                <img src="https://placehold.co/200x200" />
-              </li>
-              <li>
-                <img src="https://placehold.co/200x200" />
-              </li>
-              <li>
-                <img src="https://placehold.co/200x200" />
-              </li>
+              <For each={Array(3).fill("https://placehold.co/200x200")}>
+                {(src) => (
+                  <li>
+                    <img src={src} />
+                  </li>
+                )}
+              </For>
             </ul>
           </div>
         </li>
