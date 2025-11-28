@@ -231,7 +231,7 @@ function Details() {
       </header>
 
       <div>
-        <ul class="grid" style={{ width: "100%", overflow: "hidden" }}>
+        <ul role="marquee">
           <li>
             <div>
               <h3>

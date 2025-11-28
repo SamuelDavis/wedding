@@ -22,8 +22,28 @@ footer {
 	gap: var(--pico-block-spacing-horizontal);
 }
 
+[role="tabpanel"]>div {
+	flex: 1 1;
+	min-width: 33%;
+}
+
 [role="tabpanel"] ul {
 	overflow: auto;
 	display: flex;
+	flex-wrap: wrap;
 	gap: var(--pico-block-spacing-horizontal);
+}
+
+[role="marquee"] {
+	display: flex;
+	overflow-x: auto;
+	gap: var(--pico-block-spacing-horizontal);
+	padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
+}
+
+[role="marquee"] li {
+	margin: 0;
+	padding: 0;
+	min-width: 33%;
+	list-style-type: none;
 }
