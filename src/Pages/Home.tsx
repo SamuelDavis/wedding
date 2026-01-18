@@ -5,11 +5,11 @@ import Schedule from "../Content/Schedule";
 
 export default function Home() {
   return (
-    <>
+    <article>
       <Hero />
       <OurStory />
       <Schedule />
       <Details />
-    </>
+    </article>
   );
 }

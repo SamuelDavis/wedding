@@ -1,5 +1,5 @@
 import { A } from "@solidjs/router";
-import { weddingDate, addressHref } from "../data";
+import { weddingDate, venueMapHref } from "../data";
 import Time from "../Components/Time";
 
 export default function Hero() {
@@ -8,13 +8,11 @@ export default function Hero() {
       <header>
         <div>The Wedding Of</div>
         <h2>
-          <i>
-            Samuel <small>and</small> Jessica
-          </i>
+          Samuel<i> and </i>Jessica
         </h2>
         <div>
           <Time value={weddingDate} format="MMMM d, yyyy" />
-          <a target="_blank" href={addressHref}>
+          <a target="_blank" href={venueMapHref}>
             Francis Beatty Park
           </a>
         </div>

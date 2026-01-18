@@ -5,6 +5,7 @@ const Layout = lazy(() => import("./Pages/Layout"));
 const Home = lazy(() => import("./Pages/Home"));
 const OurStory = lazy(() => import("./Pages/OurStory"));
 const YourTrip = lazy(() => import("./Pages/YourTrip"));
+const Discover = lazy(() => import("./Pages/Discover"));
 const NotFound = lazy(() => import("./Pages/NotFound"));
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
     <Router root={Layout}>
       <Route path="/" component={Home} />
       <Route path="/our-story" component={OurStory} />
+      <Route path="/your-trip/:interest" component={Discover} />
       <Route path="/your-trip" component={YourTrip} />
       <Route path="*404" component={NotFound} />
     </Router>

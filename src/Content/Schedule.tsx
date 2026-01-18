@@ -1,53 +1,50 @@
-import { set } from "date-fns";
-import { weddingDate } from "../data";
+import { schedule, venueMapHref } from "../data";
 import Itinerary from "../Components/Itinerary";
-import { For } from "solid-js";
+import { A } from "@solidjs/router";
+import Marquee from "../Components/Marquee";
 
 export default function Schedule() {
   return (
     <section>
       <div>
-        <img src="https://placehold.co/300x600" />
-        <div>
-          <h3>
-            <strong>Arrival</strong> <i>and</i> <strong>Ceremony</strong>
-          </h3>
-          <Itinerary
-            value={[
-              {
-                date: set(weddingDate, { hours: 13, minutes: 30 }),
-                description: (
-                  <p>
-                    Arrive a little early and enjoy the park, find your seats,
-                    and settle in before the ceremony begins.
-                  </p>
-                ),
-              },
-              {
-                date: set(weddingDate, { hours: 14 }),
-                description: (
-                  <p>
-                    The moment we say <q>I DO!</q>
-                  </p>
-                ),
-              },
-            ]}
-          />
-          <a href="https://google.com">
-            <button role="link">View Location</button>
-          </a>
-        </div>
+        <img src="https://placehold.co/300x300" />
       </div>
       <div>
-        <img src="https://placehold.co/300x600" />
+        <h2>
+          Arrival<i> and </i>Ceremony
+        </h2>
+        <Itinerary
+          value={[
+            {
+              date: schedule.arrivalAndCeremony,
+              description: (
+                <p>
+                  Arrive a little early and enjoy the park, find your seats, and
+                  settle in before the ceremony begins.
+                </p>
+              ),
+            },
+            {
+              date: schedule.iDo,
+              description: (
+                <p>
+                  The moment we say <q>I DO!</q>
+                </p>
+              ),
+            },
+          ]}
+        />
+        <A href={venueMapHref}>View Location</A>
+      </div>
+      <div>
         <div>
-          <h3>
+          <h2>
             <strong>Social Hour</strong>
-          </h3>
+          </h2>
           <Itinerary
             value={[
               {
-                date: set(weddingDate, { hours: 14, minutes: 30 }),
+                date: schedule.socialHour,
                 description: (
                   <p>
                     A nice pause in the evening to catch up over light
@@ -57,38 +54,33 @@ export default function Schedule() {
               },
             ]}
           />
-          <img src="https://placehold.co/600x200" />
+          <Marquee srcs={Array(3).fill("https://placehold.co/100x100")} />
         </div>
-      </div>
-      <div>
-        <img src="https://placehold.co/300x600" />
         <div>
-          <h3>
+          <h2>
             <strong>Reception</strong>
-          </h3>
+          </h2>
           <Itinerary
             value={[
               {
-                date: [
-                  set(weddingDate, { hours: 15, minutes: 30 }),
-                  set(weddingDate, { hours: 19 }),
-                ],
+                date: schedule.reception,
                 description: (
                   <p>Join us for dinner, dancing, and good celebration!</p>
                 ),
               },
             ]}
           />
-          <ul>
-            <For each={Array(3).fill("https://placehold.co/200x200")}>
-              {(src) => (
-                <li>
-                  <img src={src} />
-                </li>
-              )}
-            </For>
-          </ul>
         </div>
+      </div>
+      <div>
+        <img src="https://placehold.co/300x400" />
+        <footer>
+          <i>
+            Life is Better
+            <br />
+            Together
+          </i>
+        </footer>
       </div>
     </section>
   );

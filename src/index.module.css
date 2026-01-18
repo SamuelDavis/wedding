@@ -1,0 +1,9 @@
+/*
+.blockText {
+	text-transform: uppercase;
+}
+
+.hyphenated>*:not(:last-child)::after {
+	content: '-';
+}
+*/

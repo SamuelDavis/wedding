@@ -3,7 +3,7 @@ import { For, type JSX, mergeProps, Show, splitProps } from "solid-js";
 import Time from "./Time";
 
 type ItineraryItem = {
-  date: Date | [Date, Date];
+  date: Date | readonly [Date, Date];
   description: JSX.Element;
 };
 

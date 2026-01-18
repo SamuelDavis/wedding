@@ -1,39 +1,27 @@
 export default function Details() {
   return (
     <section>
-      <header>
-        <h3>
-          <strong>Details</strong>
-          <i> about the </i>
-          <strong>Event</strong>
-        </h3>
-      </header>
+      <h2>
+        Details<i> about the </i>Event
+      </h2>
       <ul>
         <li>
-          <div>
-            <h3>Attire</h3>
-            <p>
-              Bright, nature-inspired colors are encouraged. The cremony is
-              taking place outdoors, so dress for the weather!
-            </p>
-          </div>
+          <h2>Attire</h2>
+          <p>
+            Bright, nature-inspired colors are encouraged. The cremony is taking
+            place outdoors, so dress for the weather!
+          </p>
         </li>
         <li>
-          <div>
-            <h3>Little Ones</h3>
-            <p>
-              We are only able to accomodate children listed on your invite.
-            </p>
-          </div>
+          <h2>Little Ones</h2>
+          <p>We are only able to accomodate children listed on your invite.</p>
         </li>
         <li>
-          <div>
-            <h3>Gifts</h3>
-            <p>
-              Your presence is the real gift! If you'd still like to give, a
-              card box will be available.
-            </p>
-          </div>
+          <h2>Gifts</h2>
+          <p>
+            Your presence is the real gift! If you'd still like to give, a card
+            box will be available.
+          </p>
         </li>
       </ul>
     </section>

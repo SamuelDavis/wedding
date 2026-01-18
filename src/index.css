@@ -1,3 +1,11 @@
+.material-icons {
+	width: 1em;
+	height: 1em;
+	display: grid;
+	place-content: center;
+}
+
+/*
 header,
 footer {
 	text-align: center;
@@ -47,3 +55,4 @@ footer {
 	min-width: 33%;
 	list-style-type: none;
 }
+*/
