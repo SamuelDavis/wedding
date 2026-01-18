@@ -33,6 +33,9 @@ export default function Schedule() {
               },
             ]}
           />
+          <a href="https://google.com">
+            <button role="link">View Location</button>
+          </a>
         </div>
       </div>
       <div>
