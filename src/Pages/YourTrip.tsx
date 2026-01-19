@@ -1,7 +1,6 @@
-import { A } from "@solidjs/router";
 import Marquee from "../Components/Marquee";
 import { hotelSiteHref } from "../data";
-import { HTMLIcon } from "@samueldavis/solidlib";
+import DiscoveriesNav from "../Content/DiscoveriesNav";
 
 export default function YourTrip() {
   return (
@@ -12,7 +11,7 @@ export default function YourTrip() {
       </section>
       <section>
         <div>
-          <img src="https://placehold.co/200x300" />
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwXxBIDF0qn0BsgjOuGdEJCmW2a2e0W7qmPEGO0YGUsRc9P7JqvUvJD_8QkmolncxkzPHz9ye9eDqFZeittU2_gg88OqlqdwtvOlDCkLoidYbi_T4id3DXkj50HuinAUSfhKnc=w408-h306-k-no" />
           <i>
             Pack Your
             <br />
@@ -35,28 +34,7 @@ export default function YourTrip() {
       <section>
         <h2>Discover Charlote</h2>
         <h3>What category interests you most?</h3>
-        <nav>
-          <ul>
-            <li>
-              <A href="/your-trip/nightlife">
-                <HTMLIcon type="moon_stars" />
-                <span>Nightlife</span>
-              </A>
-            </li>
-            <li>
-              <A href="/your-trip/small-town-charm">
-                <HTMLIcon type="family_home" />
-                <span>Small-Town Charm</span>
-              </A>
-            </li>
-            <li>
-              <A href="/your-trip/global-flavors">
-                <HTMLIcon type="ramen_dining" />
-                <span>Global Flavors</span>
-              </A>
-            </li>
-          </ul>
-        </nav>
+        <DiscoveriesNav />
       </section>
     </article>
   );
