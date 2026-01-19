@@ -1,5 +1,6 @@
 import { Route, HashRouter as Router } from "@solidjs/router";
 import { lazy } from "solid-js";
+import { InterestSlugs } from "./Pages/Discover";
 
 const Layout = lazy(() => import("./Pages/Layout"));
 const Home = lazy(() => import("./Pages/Home"));
@@ -13,7 +14,11 @@ export default function App() {
     <Router root={Layout}>
       <Route path="/" component={Home} />
       <Route path="/our-story" component={OurStory} />
-      <Route path="/your-trip/:interest" component={Discover} />
+      <Route
+        path="/your-trip/:interest"
+        component={Discover}
+        matchFilters={{ interest: InterestSlugs }}
+      />
       <Route path="/your-trip" component={YourTrip} />
       <Route path="*404" component={NotFound} />
     </Router>

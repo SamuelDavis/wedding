@@ -3,7 +3,7 @@ import { useParams } from "@solidjs/router";
 import { For, type JSX, type ValidComponent } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
-const InterestSlugs = [
+export const InterestSlugs = [
   "nightlife",
   "small-town-charm",
   "global-flavors",
