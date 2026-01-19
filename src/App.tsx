@@ -4,7 +4,6 @@ import { InterestSlugs } from "./Pages/Discover";
 
 const Layout = lazy(() => import("./Pages/Layout"));
 const Home = lazy(() => import("./Pages/Home"));
-const OurStory = lazy(() => import("./Pages/OurStory"));
 const YourTrip = lazy(() => import("./Pages/YourTrip"));
 const Discover = lazy(() => import("./Pages/Discover"));
 const RSVP = lazy(() => import("./Pages/RSVP"));
@@ -15,7 +14,6 @@ export default function App() {
   return (
     <Router root={Layout}>
       <Route path="/" component={Home} />
-      <Route path="/our-story" component={OurStory} />
       <Route
         path="/your-trip/:interest"
         component={Discover}

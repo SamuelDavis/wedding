@@ -60,9 +60,11 @@ function Attraction(
     "siteHref",
     "mapHref",
     "children",
+    "class",
   ]);
+  const getClass = () => `columns ${local.class}`.trim();
   return (
-    <section {...parent}>
+    <section class={getClass()} {...parent}>
       <div>
         <img src={local.imageSrc} />
       </div>
@@ -166,8 +168,8 @@ const data: Record<InterestSlug, PageContent> = {
   },
   "small-town-charm": {
     icon: "family_home",
-    title: "",
-    subtitle: "",
+    title: "Small-Town Charm",
+    subtitle: "Wanting to take it easy? Sounds like a plan!",
     attractions: [
       () => (
         <Attraction

@@ -1,23 +1,22 @@
 import { A } from "@solidjs/router";
 import { weddingDate, venueMapHref } from "../data";
 import Time from "../Components/Time";
+import styles from "../index.module.css";
 
 export default function Hero() {
   return (
-    <section>
-      <header>
-        <div>The Wedding Of</div>
-        <h2>
-          Samuel<i> and </i>Jessica
-        </h2>
-        <div>
-          <Time value={weddingDate} />
-          <a target="_blank" href={venueMapHref}>
-            Francis Beatty Park
-          </a>
-        </div>
-        <A href="rsvp">RSVP</A>
-      </header>
+    <section class={styles.hero}>
+      <div>The Wedding Of</div>
+      <h1>
+        Samuel<i> and </i>Jessica
+      </h1>
+      <div>
+        <Time value={weddingDate} />
+        <a target="_blank" href={venueMapHref}>
+          Francis Beatty Park
+        </a>
+      </div>
+      <A href="rsvp">RSVP</A>
     </section>
   );
 }

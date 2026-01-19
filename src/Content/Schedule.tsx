@@ -5,7 +5,7 @@ import Marquee from "../Components/Marquee";
 
 export default function Schedule() {
   return (
-    <section>
+    <section class="columns">
       <div>
         <img src="https://placehold.co/300x300" />
       </div>

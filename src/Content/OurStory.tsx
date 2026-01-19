@@ -3,10 +3,12 @@ import Marquee from "../Components/Marquee";
 export default function OurStory() {
   return (
     <section>
-      <div>
-        <div>
-          <img src="https://placehold.co/200x300" />
-          <q>Every moment spent with you&hellip;</q>
+      <div class="columns">
+        <div class="center">
+          <img class="oval" src="https://placehold.co/200x300" />
+          <div>
+            <q>Every moment spent with you&hellip;</q>
+          </div>
         </div>
         <div>
           <h2>Let's Make This Official</h2>
@@ -31,17 +33,21 @@ export default function OurStory() {
       </div>
       <div>
         <header>
-          <span>A look back on our </span>
-          <span>
-            <span>l</span>
-            <span>o</span>
-            <span>v</span>
-            <span>e</span>
-          </span>
+          <h3>
+            <span>A look back on our </span>
+            <span class="hyphenated">
+              <span>l</span>
+              <span>o</span>
+              <span>v</span>
+              <span>e</span>
+            </span>
+          </h3>
         </header>
         <Marquee srcs={Array(5).fill("https://placehold.co/200x200")} />
         <footer>
-          <q>&hellip;is a moment I treasure.</q>
+          <div>
+            <q>&hellip;is a moment I treasure.</q>
+          </div>
         </footer>
       </div>
     </section>

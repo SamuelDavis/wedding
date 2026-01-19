@@ -2,10 +2,11 @@ import { A } from "@solidjs/router";
 import Time from "../Components/Time";
 import { rsvpDate } from "../data";
 import Logo from "./Logo";
+import styles from "../index.module.css";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer class={styles.footer}>
       <h2>
         <span>Please RSVP</span>
         <i> by </i>
@@ -21,6 +22,7 @@ export default function Footer() {
           </ul>
         </nav>
       </aside>
+      <hr />
       <Logo stacked />
     </footer>
   );

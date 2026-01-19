@@ -1,3 +1,71 @@
+h1,
+h2,
+h3 {
+	text-transform: uppercase;
+}
+
+h1 i,
+h2 i,
+h3 i {
+	text-transform: lowercase;
+}
+
+header h1,
+header h2,
+header h3 {
+	text-align: center;
+}
+
+.columns {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: var(--pico-block-spacing-horizontal);
+}
+
+.columns>* {
+	flex-basis: calc(50% - var(--pico-block-spacing-horizontal));
+}
+
+.hyphenated>*:not(:last-child)::after {
+	content: '-';
+}
+
+.oval {
+	border-radius: 50%;
+}
+
+.center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+[role="marquee"] {
+	margin: 0;
+	padding: var(--pico-block-spacing-horizontal);
+	display: flex;
+	flex-direction: row;
+	gap: var(--pico-block-spacing-horizontal);
+	overflow-x: scroll;
+}
+
+[role="marquee"] li {
+	list-style-type: none;
+	margin: 0;
+	flex-shrink: 0;
+}
+
+dt {
+	font-size: larger;
+	font-weight: bold;
+}
+
+dd {
+	margin: 0;
+}
+
 /*
 header,
 footer {

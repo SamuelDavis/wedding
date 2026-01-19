@@ -10,7 +10,7 @@ export default function OnTheList() {
       </header>
       <section>
         <h2>Explore All Charlotte Has to Offer</h2>
-        <Marquee srcs={Array(5).fill("https://placehold.co/100x100")} />
+        <Marquee srcs={Array(10).fill("https://placehold.co/100x100")} />
         <A href="/your-trip">Your Trip</A>
       </section>
     </article>
