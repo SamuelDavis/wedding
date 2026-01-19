@@ -7,6 +7,8 @@ const Home = lazy(() => import("./Pages/Home"));
 const OurStory = lazy(() => import("./Pages/OurStory"));
 const YourTrip = lazy(() => import("./Pages/YourTrip"));
 const Discover = lazy(() => import("./Pages/Discover"));
+const RSVP = lazy(() => import("./Pages/RSVP"));
+const OnTheList = lazy(() => import("./Pages/OnTheList"));
 const NotFound = lazy(() => import("./Pages/NotFound"));
 
 export default function App() {
@@ -20,6 +22,8 @@ export default function App() {
         matchFilters={{ interest: InterestSlugs }}
       />
       <Route path="/your-trip" component={YourTrip} />
+      <Route path="/rsvp" component={RSVP} />
+      <Route path="/rsvp/success" component={OnTheList} />
       <Route path="*404" component={NotFound} />
     </Router>
   );

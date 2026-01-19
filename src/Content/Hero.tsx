@@ -11,7 +11,7 @@ export default function Hero() {
           Samuel<i> and </i>Jessica
         </h2>
         <div>
-          <Time value={weddingDate} format="MMMM d, yyyy" />
+          <Time value={weddingDate} />
           <a target="_blank" href={venueMapHref}>
             Francis Beatty Park
           </a>

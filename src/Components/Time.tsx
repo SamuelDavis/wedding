@@ -1,14 +1,15 @@
 import { HTMLDate, type ExtendProps } from "@samueldavis/solidlib";
 import { format } from "date-fns";
-import { mergeProps, Show, splitProps } from "solid-js";
+import { mergeProps, splitProps } from "solid-js";
 
 export default function Time(
   props: ExtendProps<typeof HTMLDate, { format?: string }>,
 ) {
-  const [local, parent] = splitProps(props, ["value", "format"]);
+  const merged = mergeProps({ format: "MMMM d, yyyy" }, props);
+  const [local, parent] = splitProps(merged, ["value", "format"]);
   return (
     <HTMLDate value={local.value} {...parent}>
-      <Show when={local.format}>{(get) => format(local.value, get())}</Show>
+      {format(local.value, local.format)}
     </HTMLDate>
   );
 }

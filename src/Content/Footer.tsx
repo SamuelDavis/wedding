@@ -9,7 +9,7 @@ export default function Footer() {
       <h2>
         <span>Please RSVP</span>
         <i> by </i>
-        <Time value={rsvpDate} format="MMMM d, yyyy" />
+        <Time value={rsvpDate} />
       </h2>
       <A href="/rsvp">RSVP</A>
       <aside>
