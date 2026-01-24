@@ -1,9 +1,62 @@
-import { createEffect, on, type ParentProps } from "solid-js";
-import Footer from "../Content/Footer";
-import Header from "../Content/Header";
-import { useLocation } from "@solidjs/router";
+import { createEffect, on, Show, splitProps, type ParentProps } from "solid-js";
+import { A, useLocation } from "@solidjs/router";
+import styles from "../index.module.css";
+import type { ExtendProps } from "@samueldavis/solidlib";
+import Time from "../Components/Time";
+import { rsvpDate } from "../data";
 
 export default function Layout(props: ParentProps) {
+  useScrollTo();
+
+  return (
+    <main>
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <A href="/#details">Details</A>
+            </li>
+            <li>
+              <A href="/your-trip">Your Trip</A>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Logo />
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <A href="/rsvp">RSVP</A>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      {props.children}
+      <footer class={styles.footer}>
+        <h2>
+          <span>Please RSVP</span>
+          <i> by </i>
+          <Time value={rsvpDate} />
+        </h2>
+        <A href="/rsvp">RSVP</A>
+        <aside>
+          <nav>
+            <ul>
+              <li>
+                <A href="/your-trip">Your Trip</A>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <hr />
+        <Logo stacked />
+      </footer>
+    </main>
+  );
+}
+
+function useScrollTo(): void {
   const location = useLocation();
 
   createEffect(
@@ -22,11 +75,21 @@ export default function Layout(props: ParentProps) {
       },
     ),
   );
+}
+
+function Logo(props: ExtendProps<"h1", { stacked?: boolean }>) {
+  const [local, parent] = splitProps(props, ["stacked"]);
   return (
-    <main>
-      <Header />
-      {props.children}
-      <Footer />
-    </main>
+    <h1 {...parent}>
+      <A href="/">
+        <i>
+          <span>S</span>
+          <Show when={local.stacked}>
+            <br />
+          </Show>
+          <span>J</span>
+        </i>
+      </A>
+    </h1>
   );
 }
