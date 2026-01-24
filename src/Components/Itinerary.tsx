@@ -1,50 +1,37 @@
 import { isArray, type ExtendProps } from "@samueldavis/solidlib";
-import { For, type JSX, mergeProps, Show, splitProps } from "solid-js";
+import { mergeProps, Show, splitProps } from "solid-js";
 import Time from "./Time";
 
-type ItineraryItem = {
-  date: Date | readonly [Date, Date];
-  description: JSX.Element;
-};
+export default function Itinerary(props: ExtendProps<"dl">) {
+  return <dl {...props} />;
+}
 
-export default function Itinerary(
+export function ItineraryItem(
   props: ExtendProps<
-    "dl",
-    {
-      value: ItineraryItem[];
-      format?: string;
-    },
-    "children"
+    "dd",
+    { time: Date | readonly [Date, Date]; format?: string }
   >,
 ) {
-  props = mergeProps({ format: "h:mm a" }, props);
-  const [local, parent] = splitProps(props, ["value", "format"]);
-  return (
-    <dl {...parent}>
-      <For each={local.value}>
-        {({ date, description }) => {
-          const [from, to] = (isArray(date) ? date : [date]).map((date) => (
-            <Time value={date} format={local.format} />
-          ));
+  const merged = mergeProps({ format: "h:mm a" }, props);
+  const [local, parent] = splitProps(merged, ["time", "format"]);
+  const [from, to] = (isArray(local.time) ? local.time : [local.time]).map(
+    (time) => <Time value={time} format={local.format} />,
+  );
 
-          return (
+  return (
+    <>
+      <dt>
+        <Show when={to} fallback={from}>
+          {(get) => (
             <>
-              <dt>
-                <Show when={to} fallback={from}>
-                  {(get) => (
-                    <>
-                      {from}
-                      <span> &mdash; </span>
-                      {get()}
-                    </>
-                  )}
-                </Show>
-              </dt>
-              <dd>{description}</dd>
+              {from}
+              <span> &mdash; </span>
+              {get()}
             </>
-          );
-        }}
-      </For>
-    </dl>
+          )}
+        </Show>
+      </dt>
+      <dd {...parent} />
+    </>
   );
 }

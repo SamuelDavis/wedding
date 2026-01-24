@@ -1,9 +1,8 @@
 import { createEffect, on, Show, splitProps, type ParentProps } from "solid-js";
 import { A, useLocation } from "@solidjs/router";
-import styles from "../index.module.css";
-import type { ExtendProps } from "@samueldavis/solidlib";
 import Time from "../Components/Time";
 import { rsvpDate } from "../data";
+import type { ExtendProps } from "@samueldavis/solidlib";
 
 export default function Layout(props: ParentProps) {
   useScrollTo();
@@ -33,13 +32,15 @@ export default function Layout(props: ParentProps) {
         </nav>
       </header>
       {props.children}
-      <footer class={styles.footer}>
+      <footer>
         <h2>
-          <span>Please RSVP</span>
+          Please RSVP
           <i> by </i>
           <Time value={rsvpDate} />
         </h2>
         <A href="/rsvp">RSVP</A>
+      </footer>
+      <footer>
         <aside>
           <nav>
             <ul>
@@ -49,7 +50,9 @@ export default function Layout(props: ParentProps) {
             </ul>
           </nav>
         </aside>
-        <hr />
+      </footer>
+      <hr />
+      <footer>
         <Logo stacked />
       </footer>
     </main>

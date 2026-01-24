@@ -1,6 +1,12 @@
 import { HTMLIcon, type ExtendProps } from "@samueldavis/solidlib";
 import { useParams } from "@solidjs/router";
-import { createMemo, For, splitProps, type ValidComponent } from "solid-js";
+import {
+  createMemo,
+  For,
+  mergeProps,
+  splitProps,
+  type ValidComponent,
+} from "solid-js";
 import { Dynamic } from "solid-js/web";
 import DiscoveriesNav from "../Content/DiscoveriesNav";
 
@@ -60,11 +66,9 @@ function Attraction(
     "siteHref",
     "mapHref",
     "children",
-    "class",
   ]);
-  const getClass = () => `columns ${local.class}`.trim();
   return (
-    <section class={getClass()} {...parent}>
+    <section {...parent}>
       <div>
         <img src={local.imageSrc} />
       </div>

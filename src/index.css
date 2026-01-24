@@ -28,7 +28,7 @@ header h3 {
 }
 
 .hyphenated>*:not(:last-child)::after {
-	content: '-';
+	content: "\2014";
 }
 
 .oval {

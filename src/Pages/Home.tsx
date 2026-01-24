@@ -1,16 +1,16 @@
 import { A } from "@solidjs/router";
 import { weddingDate, venueMapHref, schedule } from "../data";
-import styles from "../index.module.css";
 import Time from "../Components/Time";
-import Itinerary from "../Components/Itinerary";
+import Itinerary, { ItineraryItem } from "../Components/Itinerary";
 import Marquee from "../Components/Marquee";
+import Hyphenated from "../Components/Hyphenated";
 
 export default function Home() {
   return (
     <article>
-      <section class={styles.hero}>
-        <div>The Wedding Of</div>
+      <header>
         <h1>
+          <div>The Wedding Of</div>
           Samuel<i> and </i>Jessica
         </h1>
         <div>
@@ -19,9 +19,7 @@ export default function Home() {
             Francis Beatty Park
           </a>
         </div>
-        <A href="rsvp">RSVP</A>
-      </section>
-
+      </header>
       <OurStory />
       <Schedule />
       <Details />
@@ -32,12 +30,12 @@ export default function Home() {
 function OurStory() {
   return (
     <section>
-      <div class="columns">
-        <div class="center">
-          <img class="oval" src="https://placehold.co/200x300" />
-          <div>
+      <div>
+        <div>
+          <img src="https://placehold.co/200x300" />
+          <footer>
             <q>Every moment spent with you&hellip;</q>
-          </div>
+          </footer>
         </div>
         <div>
           <h2>Let's Make This Official</h2>
@@ -63,20 +61,12 @@ function OurStory() {
       <div>
         <header>
           <h3>
-            <span>A look back on our </span>
-            <span class="hyphenated">
-              <span>l</span>
-              <span>o</span>
-              <span>v</span>
-              <span>e</span>
-            </span>
+            A look back on our <Hyphenated text="love" />
           </h3>
         </header>
         <Marquee srcs={Array(5).fill("https://placehold.co/200x200")} />
         <footer>
-          <div>
-            <q>&hellip;is a moment I treasure.</q>
-          </div>
+          <q>&hellip;is a moment I treasure.</q>
         </footer>
       </div>
     </section>
@@ -85,7 +75,7 @@ function OurStory() {
 
 function Schedule() {
   return (
-    <section class="columns">
+    <section>
       <div>
         <img src="https://placehold.co/300x300" />
       </div>
@@ -93,63 +83,41 @@ function Schedule() {
         <h2>
           Arrival<i> and </i>Ceremony
         </h2>
-        <Itinerary
-          value={[
-            {
-              date: schedule.arrivalAndCeremony,
-              description: (
-                <p>
-                  Arrive a little early and enjoy the park, find your seats, and
-                  settle in before the ceremony begins.
-                </p>
-              ),
-            },
-            {
-              date: schedule.iDo,
-              description: (
-                <p>
-                  The moment we say <q>I DO!</q>
-                </p>
-              ),
-            },
-          ]}
-        />
+        <Itinerary>
+          <ItineraryItem time={schedule.arrivalAndCeremony}>
+            <p>
+              Arrive a little early and enjoy the park, find your seats, and
+              settle in before the ceremony begins.
+            </p>
+          </ItineraryItem>
+          <ItineraryItem time={schedule.iDo}>
+            <p>
+              The moment we say <q>I DO!</q>
+            </p>
+          </ItineraryItem>
+        </Itinerary>
         <A href={venueMapHref}>View Location</A>
       </div>
       <div>
         <div>
-          <h2>
-            <strong>Social Hour</strong>
-          </h2>
-          <Itinerary
-            value={[
-              {
-                date: schedule.socialHour,
-                description: (
-                  <p>
-                    A nice pause in the evening to catch up over light
-                    appetizers. Be sure to enjoy the garden and lake views!
-                  </p>
-                ),
-              },
-            ]}
-          />
+          <h2>Social Hour</h2>
+          <Itinerary>
+            <ItineraryItem time={schedule.socialHour}>
+              <p>
+                A nice pause in the evening to catch up over light appetizers.
+                Be sure to enjoy the garden and lake views!
+              </p>
+            </ItineraryItem>
+          </Itinerary>
           <Marquee srcs={Array(3).fill("https://placehold.co/100x100")} />
         </div>
         <div>
-          <h2>
-            <strong>Reception</strong>
-          </h2>
-          <Itinerary
-            value={[
-              {
-                date: schedule.reception,
-                description: (
-                  <p>Join us for dinner, dancing, and good celebration!</p>
-                ),
-              },
-            ]}
-          />
+          <h2>Reception</h2>
+          <Itinerary>
+            <ItineraryItem time={schedule.reception}>
+              <p>Join us for dinner, dancing, and good celebration!</p>
+            </ItineraryItem>
+          </Itinerary>
         </div>
       </div>
       <div>
@@ -174,19 +142,19 @@ function Details() {
           Details<i> about the </i>Event
         </h2>
       </header>
-      <ul class={styles["event-details"]}>
-        <li class={styles["event-detail"]}>
+      <ul>
+        <li>
           <h2>Attire</h2>
           <p>
             Bright, nature-inspired colors are encouraged. The cremony is taking
             place outdoors, so dress for the weather!
           </p>
         </li>
-        <li class={styles["event-detail"]}>
+        <li>
           <h2>Little Ones</h2>
           <p>We are only able to accomodate children listed on your invite.</p>
         </li>
-        <li class={styles["event-detail"]}>
+        <li>
           <h2>Gifts</h2>
           <p>
             Your presence is the real gift! If you'd still like to give, a card
