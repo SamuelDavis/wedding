@@ -14,8 +14,19 @@ export const schedule = {
   }),
   iDo: set(weddingDate, { hours: 14 }),
   socialHour: set(weddingDate, { hours: 14, minutes: 30 }),
-  reception: [
+  reception: set(weddingDate, { hours: 15, minutes: 30 }),
+  dinner: set(weddingDate, { hours: 16 }),
+  dancing: set(weddingDate, { hours: 18, minutes: 30 }),
+  _reception: [
     set(weddingDate, { hours: 15, minutes: 30 }),
     set(weddingDate, { hours: 19 }),
   ],
 } as const;
+
+export const timeline: { year: number; src: string }[] = [
+  2025, 2024, 2023, 2022, 2021,
+].map((year) => ({ year, src: placeholder() }));
+
+export function placeholder(width: number = 200, height: number = 200): string {
+  return `https://placehold.co/${width}x${height}`;
+}

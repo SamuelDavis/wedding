@@ -1,12 +1,6 @@
 import { HTMLIcon, type ExtendProps } from "@samueldavis/solidlib";
 import { useParams } from "@solidjs/router";
-import {
-  createMemo,
-  For,
-  mergeProps,
-  splitProps,
-  type ValidComponent,
-} from "solid-js";
+import { createMemo, For, splitProps, type ValidComponent } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import DiscoveriesNav from "../Content/DiscoveriesNav";
 
@@ -91,7 +85,7 @@ const data: Record<InterestSlug, PageContent> = {
   nightlife: {
     icon: "moon_stars",
     title: "Nightlife",
-    subtitle: "Nice choice. Enjoy all the city has to offer!",
+    subtitle: "A night out in Charlotte",
     attractions: [
       () => (
         <Attraction

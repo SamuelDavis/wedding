@@ -1,6 +1,6 @@
 import type { Targeted } from "@samueldavis/solidlib";
 import Time from "../Components/Time";
-import { rsvpDate } from "../data";
+import { placeholder, rsvpDate, weddingDate } from "../data";
 import RadioGroup from "../Components/RadioGroup";
 import { useNavigate } from "@solidjs/router";
 
@@ -18,6 +18,9 @@ export default function RSVP() {
   return (
     <article>
       <header>
+        <h2>
+          <Time value={weddingDate} format="short" />
+        </h2>
         <h1>Be Our Guest</h1>
         <p>We can't wait to celebrate with you!</p>
         <p>
@@ -25,13 +28,11 @@ export default function RSVP() {
         </p>
       </header>
       <section>
+        <figure>
+          <img src={placeholder()} />
+          <q>Bear with one another in love</q>
+        </figure>
         <div>
-          <img src="https://placehold.co/300x300" />
-        </div>
-        <div>
-          <header>
-            <h2>RSVP</h2>
-          </header>
           <form onSubmit={onSubmit}>
             <fieldset>
               <label for="names">Name(s)</label>
