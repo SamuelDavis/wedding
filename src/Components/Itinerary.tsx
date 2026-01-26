@@ -12,7 +12,7 @@ export function ItineraryItem(
     { time: Date | readonly [Date, Date]; format?: string }
   >,
 ) {
-  const merged = mergeProps({ format: "h:mm a" }, props);
+  const merged = mergeProps({ format: "time" }, props);
   const [local, parent] = splitProps(merged, ["time", "format"]);
   const [from, to] = (isArray(local.time) ? local.time : [local.time]).map(
     (time) => <Time value={time} format={local.format} />,

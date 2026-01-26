@@ -5,6 +5,7 @@ import { splitProps } from "solid-js";
 const TimeFormats = {
   short: "MM.dd.yy",
   long: "MMMM d, yyyy",
+  time: "h:mm a",
 } as const;
 
 export default function Time(
