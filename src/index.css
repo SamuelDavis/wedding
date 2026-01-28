@@ -1,0 +1,14 @@
+:root {
+	font-family: "Libre Baskerville", serif;
+}
+
+q {
+	font-family: "Pinyon Script", cursive;
+}
+
+nav,
+h1,
+h2,
+h3 {
+	text-transform: uppercase;
+}

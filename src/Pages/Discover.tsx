@@ -3,6 +3,15 @@ import { useParams } from "@solidjs/router";
 import { createMemo, For, splitProps, type ValidComponent } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import DiscoveriesNav from "../Content/DiscoveriesNav";
+import mintMuseumUptownSrc from "../assets/SamandJess_mintmuseum.jpg";
+import rosiesWineGardenSrc from "../assets/SamandJess_Rosieswinegarden.jpg";
+import midwoodSteakhouseSrc from "../assets/SamandJess_midwoodsteakhouse.jpg";
+import mcAlpineCreekParkSrc from "../assets/SamandJess_park.jpg";
+import paulineTeaBarApothecarySrc from "../assets/SamandJess_teabar.jpg";
+import thePackingHouseSrc from "../assets/SamandJess_thepackinghouse.jpg";
+import matchaCafeMaikoSrc from "../assets/SamandJess_matchamaiko.jpg";
+import riRaIrishPubSrc from "../assets/SamandJess_fishandchips.jpg";
+import theOneTapasAndBarSrc from "../assets/SamandJess_foodanddrink.jpg";
 
 type InterestSlug = (typeof InterestSlugs)[number];
 type PageContent = {
@@ -89,7 +98,7 @@ const data: Record<InterestSlug, PageContent> = {
     attractions: [
       () => (
         <Attraction
-          imageSrc="https://lh3.googleusercontent.com/p/AF1QipMT-3_3gOdJDmgbH_J2W2NbheNmzG-uNiYA4LaJ=w408-h311-k-no"
+          imageSrc={mintMuseumUptownSrc}
           title="Mint Museum Uptown"
           siteHref="https://www.mintmuseum.org/"
           mapHref="https://maps.app.goo.gl/Tbj7WZ5Uc3yY5KMdA"
@@ -119,7 +128,7 @@ const data: Record<InterestSlug, PageContent> = {
       ),
       () => (
         <Attraction
-          imageSrc="https://lh3.googleusercontent.com/p/AF1QipMiaoR8cngrZNKanS5ywdFp71IPMEv8riCRpWlu=w408-h408-k-no"
+          imageSrc={rosiesWineGardenSrc}
           title="Rosie's Wine Garden"
           siteHref="https://rosieswinegarden.com/"
           mapHref="https://maps.app.goo.gl/4SVskgQVXVS8xgTU7"
@@ -142,7 +151,7 @@ const data: Record<InterestSlug, PageContent> = {
       ),
       () => (
         <Attraction
-          imageSrc="https://lh3.googleusercontent.com/p/AF1QipPvxzX7GACFcLHy40qiT_o8vL6Vmm9r3dlvBaia=w408-h408-k-no"
+          imageSrc={midwoodSteakhouseSrc}
           title="Midwood Steakhouse"
           siteHref="https://midwoodsmokehouse.com/"
           mapHref="https://maps.app.goo.gl/GtVFjDmNZgXcFnAH7"
@@ -171,7 +180,7 @@ const data: Record<InterestSlug, PageContent> = {
     attractions: [
       () => (
         <Attraction
-          imageSrc="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxEfjKMOzGeASPQVTIdxpZTwuP5HJP06C1GIhGzv_tUmr3xavvk9_FMIQ5WXnhUgLQ_C_-pWDFntNxBkOAnezSsLUcO-BX59dJTHmh4kQpapChAJmJw6zVcG0xqyOPq3gflyPC0Ug=w408-h306-k-no"
+          imageSrc={mcAlpineCreekParkSrc}
           title="McAlpine Creek Park"
           siteHref="https://www.charlottesgotalot.com/things-to-do/outdoors-adventure/mcalpine-creek-park"
           mapHref="https://maps.app.goo.gl/3BLoYYfXYgBLZB9D6"
@@ -192,7 +201,7 @@ const data: Record<InterestSlug, PageContent> = {
       ),
       () => (
         <Attraction
-          imageSrc="https://lh3.googleusercontent.com/p/AF1QipOtngTDCLYa07UdGXxU0fBpQqbYyMPsAf0Doudp=w408-h306-k-no"
+          imageSrc={paulineTeaBarApothecarySrc}
           title="The Pauline Tea-Bar Apothecary"
           siteHref="https://www.thepaulineteabar.com/"
           mapHref="https://maps.app.goo.gl/yipq5GQ1B4Loja8GA"
@@ -210,7 +219,7 @@ const data: Record<InterestSlug, PageContent> = {
       ),
       () => (
         <Attraction
-          imageSrc="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxG377GaaL4e8TMLSXhxVW5FV5BYGdTR5ZZM-x4tTw-jCghpiSf-fVpp6_KNo1mf6HhAKZLm0WgOTfMNK1B0nRNcxG5VJOtYefibQZVDD0OyEixZLCH8ZgNclUy32qS5DDBIDYh=w408-h306-k-no"
+          imageSrc={thePackingHouseSrc}
           title="The Packing House"
           siteHref="http://www.thepackinghousenc.com/"
           mapHref="https://maps.app.goo.gl/9X3NCRHU9vhUpQBe6"
@@ -238,7 +247,7 @@ const data: Record<InterestSlug, PageContent> = {
     attractions: [
       () => (
         <Attraction
-          imageSrc="https://lh3.googleusercontent.com/p/AF1QipMjS1OCglnsjWZyl33oa8weCVhXaaL7Bv2f6Hmz=w408-h510-k-no"
+          imageSrc={matchaCafeMaikoSrc}
           title="Matcha Cafe Maiko"
           siteHref="https://www.matchacafe-maiko.com/eng/"
           mapHref="https://maps.app.goo.gl/6Y6tbC285KxU8S8D9"
@@ -259,7 +268,7 @@ const data: Record<InterestSlug, PageContent> = {
       ),
       () => (
         <Attraction
-          imageSrc="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzKleyl20jxOgzbGonaBTJdAchpsun7BgUZR6JdcoMlFl3kpKM9dNOwKvTtmPoNe6IVgbY0qH5v6g42Hpus1WTAh7K9IqlO_12uWPyQFuDRob8Q46VNRlXOwcWPBTRbub-y0B_HHKsBzqU=w408-h544-k-no"
+          imageSrc={riRaIrishPubSrc}
           title="Ri Ra Irish Pub"
           siteHref="https://rira.com/charlotte/"
           mapHref="https://maps.app.goo.gl/GmunMteojXm1U8mk6"
@@ -277,7 +286,7 @@ const data: Record<InterestSlug, PageContent> = {
       ),
       () => (
         <Attraction
-          imageSrc="https://lh3.googleusercontent.com/p/AF1QipOIPbWMuyCla93K3O3sgcIu7HpcnMBaNEPRTPPM=w408-h542-k-no"
+          imageSrc={theOneTapasAndBarSrc}
           title="The One Tapas & Bar"
           siteHref="http://theonetapas.com/"
           mapHref="https://maps.app.goo.gl/NEt2wPeyG29CiMPU8"

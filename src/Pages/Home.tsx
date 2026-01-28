@@ -1,15 +1,16 @@
 import { A } from "@solidjs/router";
-import {
-  weddingDate,
-  venueMapHref,
-  schedule,
-  timeline,
-  placeholder,
-} from "../data";
+import { weddingDate, venueMapHref, schedule, timeline } from "../data";
 import Time from "../Components/Time";
 import Itinerary, { ItineraryItem } from "../Components/Itinerary";
 import Marquee from "../Components/Marquee";
 import { For } from "solid-js";
+import nariColorScr from "../assets/SamandJess_nari-color.jpg";
+import athensColorSrc from "../assets/SamandJess_athens-color.jpg";
+import flowersColorSrc from "../assets/SamandJess_flowers-color.jpg";
+import arrivalAndCeremonySrc from "../assets/SamandJess_Hydrangeas.jpg";
+import socialHourSrc from "../assets/SamandJess_FrancisBeattyPark.jpg";
+import receptionAndDinnerSrc from "../assets/SamandJess_dancing_BW.jpg";
+import additionalDetailsSrc from "../assets/SamandJess_lace.jpg";
 
 export default function Home() {
   return (
@@ -19,10 +20,13 @@ export default function Home() {
           <div>The Wedding Of</div>
           Samuel<i> and </i>Jessica
         </h1>
+        <img src={nariColorScr} />
+        <img src={athensColorSrc} />
+        <img src={flowersColorSrc} />
         <div>
           <Time value={weddingDate} />
           <a target="_blank" href={venueMapHref}>
-            Francis Beatty Park
+            Francis J. Beatty Park
           </a>
         </div>
         <A href="/rsvp">RSVP</A>
@@ -44,7 +48,7 @@ export default function Home() {
           We are excited to invite you &mdash; our family and closest friends to
           celebrate with us on our wedding day. We can't wait!
         </p>
-        <h3>Jess & Sam</h3>
+        <h3>Sam & Jess</h3>
       </article>
       <article>
         <q>
@@ -92,9 +96,9 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <img src={placeholder()} />
+          <img src={arrivalAndCeremonySrc} />
           <hr />
-          <img src={placeholder()} />
+          <img src={socialHourSrc} />
           <div>
             <h2>Social Hour</h2>
             <Itinerary>
@@ -125,7 +129,7 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <img src={placeholder()} />
+          <img src={receptionAndDinnerSrc} />
         </section>
       </article>
       <article id="details">
@@ -133,7 +137,7 @@ export default function Home() {
           <h1>
             <A href="#details">Additional Details</A>
           </h1>
-          <img src={placeholder()} />
+          <img src={additionalDetailsSrc} />
         </section>
         <section>
           <ul>

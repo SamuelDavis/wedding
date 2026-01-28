@@ -1,7 +1,9 @@
-import { HTMLIcon, type ExtendProps } from "@samueldavis/solidlib";
+import { type ExtendProps } from "@samueldavis/solidlib";
 import { A } from "@solidjs/router";
 import { splitProps, For, Show } from "solid-js";
-import { placeholder } from "../data";
+import nightlifeSrc from "../assets/SamandJess_charlotte.jpg";
+import smallTownCharmSrc from "../assets/SamandJess_matthews.jpg";
+import globalFlavorsSrc from "../assets/SamandJess_foodanddrink.jpg";
 
 const links: {
   href: string;
@@ -13,19 +15,19 @@ const links: {
     href: "/your-trip/nightlife",
     icon: "moon_stars",
     text: "Nightlife",
-    src: placeholder(),
+    src: nightlifeSrc,
   },
   {
     href: "/your-trip/small-town-charm",
     icon: "family_home",
     text: "Small-Town Charm",
-    src: placeholder(),
+    src: smallTownCharmSrc,
   },
   {
     href: "/your-trip/global-flavors",
     icon: "ramen_dining",
     text: "Global Flavors",
-    src: placeholder(),
+    src: globalFlavorsSrc,
   },
 ];
 

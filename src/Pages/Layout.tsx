@@ -13,10 +13,10 @@ export default function Layout(props: ParentProps) {
         <nav>
           <ul>
             <li>
-              <A href="/#details">Details</A>
+              <A href="/#our-story">Our Story</A>
             </li>
             <li>
-              <A href="/your-trip">Your Trip</A>
+              <A href="/#details">Details</A>
             </li>
           </ul>
           <ul>
@@ -25,6 +25,9 @@ export default function Layout(props: ParentProps) {
             </li>
           </ul>
           <ul>
+            <li>
+              <A href="/your-trip">Your Trip</A>
+            </li>
             <li>
               <A href="/rsvp">RSVP</A>
             </li>

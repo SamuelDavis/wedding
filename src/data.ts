@@ -1,4 +1,9 @@
 import { set } from "date-fns";
+import timeline2025Src from "./assets/SamandJess_beach.jpg";
+import timeline2024Src from "./assets/SamandJess_capitalgrille.jpg";
+import timeline2023Src from "./assets/SamandJess_athens-color.jpg";
+import timeline2022Src from "./assets/SamandJess_outside.jpg";
+import timeline2021Src from "./assets/SamandJess_car.jpg";
 
 export const weddingDate = new Date("2026-05-31 00:00:00 GMT-0400");
 export const rsvpDate = new Date("2026-04-01 00:00:00 GMT-0400");
@@ -24,8 +29,12 @@ export const schedule = {
 } as const;
 
 export const timeline: { year: number; src: string }[] = [
-  2025, 2024, 2023, 2022, 2021,
-].map((year) => ({ year, src: placeholder() }));
+  { year: 2025, src: timeline2025Src },
+  { year: 2024, src: timeline2024Src },
+  { year: 2023, src: timeline2023Src },
+  { year: 2022, src: timeline2022Src },
+  { year: 2021, src: timeline2021Src },
+];
 
 export function placeholder(width: number = 200, height: number = 200): string {
   return `https://placehold.co/${width}x${height}`;
