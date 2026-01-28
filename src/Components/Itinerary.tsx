@@ -7,15 +7,12 @@ export default function Itinerary(props: ExtendProps<"dl">) {
 }
 
 export function ItineraryItem(
-  props: ExtendProps<
-    "dd",
-    { time: Date | readonly [Date, Date]; format?: string }
-  >,
+  props: ExtendProps<"dd", { time: Date | readonly [Date, Date] }>,
 ) {
-  const merged = mergeProps({ format: "time" }, props);
+  const merged = mergeProps({ format: "time" as const }, props);
   const [local, parent] = splitProps(merged, ["time", "format"]);
   const [from, to] = (isArray(local.time) ? local.time : [local.time]).map(
-    (time) => <Time value={time} format={local.format} />,
+    (time) => <Time value={time} format="time" />,
   );
 
   return (

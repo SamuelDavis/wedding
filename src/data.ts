@@ -36,6 +36,8 @@ export const timeline: { year: number; src: string }[] = [
   { year: 2021, src: timeline2021Src },
 ];
 
-export function placeholder(width: number = 200, height: number = 200): string {
-  return `https://placehold.co/${width}x${height}`;
-}
+export const InterestSlugs = [
+  "nightlife",
+  "small-town-charm",
+  "global-flavors",
+] as const;

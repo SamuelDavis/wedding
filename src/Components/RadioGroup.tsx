@@ -1,5 +1,5 @@
 import { type ExtendProps, isString } from "@samueldavis/solidlib";
-import { type JSX, splitProps, For, createEffect } from "solid-js";
+import { type JSX, splitProps, For } from "solid-js";
 
 type RenderOptionFn = (value: string) => JSX.Element;
 

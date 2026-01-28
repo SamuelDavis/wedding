@@ -1,6 +1,6 @@
 import { Route, HashRouter as Router } from "@solidjs/router";
 import { lazy } from "solid-js";
-import { InterestSlugs } from "./Pages/Discover";
+import { InterestSlugs } from "./data";
 
 const Layout = lazy(() => import("./Pages/Layout"));
 const Home = lazy(() => import("./Pages/Home"));
