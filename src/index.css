@@ -1,18 +1,127 @@
+@import 'tailwindcss';
+
 :root {
-	font-family: "Libre Baskerville", serif;
+	--font-family-default: "Libre Baskerville", serif;
+	--font-family-secondary: "Pinyon Script", cursive;
+
+	--Primary-Mauve-800: #7F2549;
+	--Background-Soft-100: #FFF8F7;
+	--Titles-Body-Regular-Size: 1.125rem;
+	--Titles-Display-Decorative-Size: 3.125rem;
+	--Titles-Display-Size: 6rem;
+	--Titles-Body-Regular-Line-height: 1.875rem;
+	--Titles-Body-Regular-Letter-spacing: 0;
+
+	background-color: var(--Background-Soft-100);
+	color: var(--Primary-Mauve-800);
+	font-family: var(--font-family-default);
+	letter-spacing: var(--Titles-Body-Regular-Letter-spacing);
+	font-style: normal;
+	font-weight: 400;
+
+	@apply m-10;
+	@apply border-b-[var(--Primary-Mauve-800)];
 }
 
-q {
-	font-family: "Pinyon Script", cursive;
+main,
+article {
+	@apply flex flex-col;
 }
 
-nav,
-h1,
+article>hr {
+	@apply my-10;
+}
+
+section {
+	@apply flex flex-wrap gap-20;
+}
+
+section>* {
+	@apply basis-[100%] md:basis-[25%] flex-1;
+}
+
+header,
+footer {
+	@apply flex flex-row justify-center items-center gap-10;
+}
+
+img {
+	@apply w-full h-full object-cover min-w-0;
+}
+
+[role="marquee"] {
+	@apply flex flex-nowrap overflow-x-auto gap-4 h-[33vh] pb-4;
+	scrollbar-color: var(--Primary-Mauve-800);
+}
+
+[role="marquee"]::-webkit-scrollbar {
+	@apply h-1 rounded-lg;
+}
+
+[role="marquee"]::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+[role="marquee"]::-webkit-scrollbar-thumb {
+	background-color: var(--Primary-Mauve-800);
+}
+
+[role="marquee"] li {
+	@apply shrink-0 h-full;
+}
+
+[role="marquee"] figure {
+	@apply h-full relative;
+}
+
+[role="marquee"] figure figcaption {
+	@apply absolute top-0 m-3 px-[1em] rounded-lg;
+	background-color: var(--Background-Soft-100);
+}
+
+[role="marquee"] img {
+	@apply block h-full w-auto max-w-none object-contain;
+}
+
 h2,
-h3 {
-	text-transform: uppercase;
+h3,
+nav {
+	@apply uppercase;
+}
+
+h1 {
+	font-family: var(--font-family-secondary);
+}
+
+h2 {
+	@apply font-bold;
 }
 
 i {
-	text-transform: lowercase;
+	@apply lowercase font-normal;
+}
+
+nav {
+	@apply flex w-full justify-between my-5;
+}
+
+nav ul {
+	@apply flex gap-10;
+}
+
+
+.img-hover-chromatic img {
+	@apply duration-200 md:grayscale-100 hover:grayscale-0 group-hover:grayscale-0;
+}
+
+.img-frames img {
+	@apply border-1 p-3;
+}
+
+hr {
+	@apply border-b-0 my-5;
+}
+
+hr.vertical {
+	@apply h-[2em];
 }

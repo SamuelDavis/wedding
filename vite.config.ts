@@ -1,7 +1,8 @@
 import { defineConfig } from "vite";
 import solid from "vite-plugin-solid";
-import webfontDownload from "vite-plugin-webfont-dl";
+import webfont from "vite-plugin-webfont-dl";
+import tailwind from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [webfontDownload(), solid()],
+  plugins: [tailwind(), webfont(), solid()],
 });

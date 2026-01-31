@@ -15,25 +15,32 @@ import additionalDetailsSrc from "../assets/SamandJess_lace.jpg";
 export default function Home() {
   return (
     <article>
+      <header class="img-hover-chromatic items-start">
+        <section class="justify-center md:justify-between align-middle items-center">
+          <img class="max-w-[20%]" src={nariColorScr} />
+          <div class="relative group">
+            <img src={athensColorSrc} />
+            <div class="absolute top-0 text-center w-full mt-[10%]">
+              The Wedding Of
+              <h1>
+                Samuel<i> and </i>Jessica
+              </h1>
+            </div>
+          </div>
+          <img class="max-w-[20%]" src={flowersColorSrc} />
+        </section>
+      </header>
       <header>
-        <div>
-          <img src={nariColorScr} />
-          <img src={athensColorSrc} />
-          <img src={flowersColorSrc} />
-          <h1>
-            <div>The Wedding Of</div>
-            Samuel<i> and </i>Jessica
-          </h1>
-        </div>
-        <div>
-          <Time value={weddingDate} />
-          <a target="_blank" href={venueMapHref}>
-            Francis J. Beatty Park
-          </a>
-        </div>
+        <Time value={weddingDate} />
+        <hr class="vertical" />
+        <a target="_blank" href={venueMapHref}>
+          Francis J. Beatty Park
+        </a>
+      </header>
+      <header>
         <A href="/rsvp">RSVP</A>
       </header>
-      <article id="our-story">
+      <article id="our-story" class="text-center">
         <h2>
           <A href="#our-story">Let's Make This Official</A>
         </h2>
@@ -53,11 +60,13 @@ export default function Home() {
         <h3>Sam & Jess</h3>
       </article>
       <article>
-        <q>
-          <span>Every moment spent with you, </span>
-          <br />
-          <span>is a moment I treasure.</span>
-        </q>
+        <header class="text-right">
+          <q>
+            <span>Every moment spent with you, </span>
+            <br />
+            <span>is a moment I treasure.</span>
+          </q>
+        </header>
         <Marquee>
           <For each={timeline}>
             {({ year, src }) => (
@@ -69,11 +78,13 @@ export default function Home() {
           </For>
         </Marquee>
       </article>
-      <article id="on-the-day">
+      <article id="on-the-day" class="img-frames">
         <header>
           <h2>
             <Time value={weddingDate} format="short" />
           </h2>
+        </header>
+        <header>
           <h1>
             <A href="#on-the-day">On the Day</A>
           </h1>
@@ -100,6 +111,7 @@ export default function Home() {
           </div>
           <img src={arrivalAndCeremonySrc} />
         </section>
+        <hr />
         <section>
           <img src={socialHourSrc} />
           <div>
@@ -114,6 +126,7 @@ export default function Home() {
             </Itinerary>
           </div>
         </section>
+        <hr />
         <section>
           <div>
             <h2>
@@ -136,44 +149,52 @@ export default function Home() {
           <img src={receptionAndDinnerSrc} />
         </section>
       </article>
-      <article id="details">
-        <section>
-          <h1>
-            <A href="#details">Additional Details</A>
-          </h1>
-          <img src={additionalDetailsSrc} />
-        </section>
-        <section>
-          <ul>
-            <li>
-              <h2>Attire</h2>
-              <p>
-                Bright, nature-inspired colors are encouraged. The cremony is
-                taking place outdoors, so dress for the weather!
-              </p>
-              <p>
-                View attire examples{" "}
-                <a target="_blank" href="#">
-                  here
-                </a>
-                .
-              </p>
-            </li>
-            <li>
-              <h2>Little Ones</h2>
-              <p>
-                We are only able to accomodate children listed on your invite.
-                Enjoy your night off!
-              </p>
-            </li>
-            <li>
-              <h2>Gifts</h2>
-              <p>
-                Your presence is the real gift! If you'd still like to give, a
-                card box will be available.
-              </p>
-            </li>
-          </ul>
+      <article id="details" class="p-10 my-10 border">
+        <section class="gap-0">
+          <div class="relative">
+            <h1 class="absolute top-0">
+              <A href="#details">
+                Additional
+                <br />
+                Details
+              </A>
+            </h1>
+            <img src={additionalDetailsSrc} />
+          </div>
+          <div>
+            <ul>
+              <li>
+                <h2>Attire</h2>
+                <p>
+                  Bright, nature-inspired colors are encouraged. The cremony is
+                  taking place outdoors, so dress for the weather!
+                </p>
+                <p>
+                  View attire examples{" "}
+                  <a target="_blank" href="#">
+                    here
+                  </a>
+                  .
+                </p>
+                <hr />
+              </li>
+              <li>
+                <h2>Little Ones</h2>
+                <p>
+                  We are only able to accomodate children listed on your invite.
+                  Enjoy your night off!
+                </p>
+                <hr />
+              </li>
+              <li>
+                <h2>Gifts</h2>
+                <p>
+                  Your presence is the real gift! If you'd still like to give, a
+                  card box will be available.
+                </p>
+              </li>
+            </ul>
+          </div>
         </section>
       </article>
     </article>

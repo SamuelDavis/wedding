@@ -45,15 +45,13 @@ export default function Layout(props: ParentProps) {
         <A href="/rsvp">RSVP</A>
       </footer>
       <footer>
-        <aside>
-          <nav>
-            <ul>
-              <li>
-                <A href="/your-trip">Your Trip</A>
-              </li>
-            </ul>
-          </nav>
-        </aside>
+        <nav>
+          <ul class="w-full justify-center">
+            <li>
+              <A href="/your-trip">Your Trip</A>
+            </li>
+          </ul>
+        </nav>
       </footer>
       <hr />
       <footer>
