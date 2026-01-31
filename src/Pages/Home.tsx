@@ -16,13 +16,15 @@ export default function Home() {
   return (
     <article>
       <header>
-        <h1>
-          <div>The Wedding Of</div>
-          Samuel<i> and </i>Jessica
-        </h1>
-        <img src={nariColorScr} />
-        <img src={athensColorSrc} />
-        <img src={flowersColorSrc} />
+        <div>
+          <img src={nariColorScr} />
+          <img src={athensColorSrc} />
+          <img src={flowersColorSrc} />
+          <h1>
+            <div>The Wedding Of</div>
+            Samuel<i> and </i>Jessica
+          </h1>
+        </div>
         <div>
           <Time value={weddingDate} />
           <a target="_blank" href={venueMapHref}>
@@ -97,7 +99,8 @@ export default function Home() {
             </Itinerary>
           </div>
           <img src={arrivalAndCeremonySrc} />
-          <hr />
+        </section>
+        <section>
           <img src={socialHourSrc} />
           <div>
             <h2>Social Hour</h2>
@@ -110,7 +113,8 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <hr />
+        </section>
+        <section>
           <div>
             <h2>
               Reception<i> and </i>Dinner

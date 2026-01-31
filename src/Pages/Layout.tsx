@@ -34,6 +34,7 @@ export default function Layout(props: ParentProps) {
           </ul>
         </nav>
       </header>
+      <hr />
       {props.children}
       <footer>
         <h2>
