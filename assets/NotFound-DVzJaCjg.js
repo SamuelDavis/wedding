@@ -1,0 +1,1 @@
+import{t as l,i as a,c as o}from"./index-CAYFvblr.js";import{A as d}from"./components-BurAmacb.js";var h=l("<article><header><h1>Page Not Found</h1></header><p>Try returning <!>.");function p(){return(()=>{var e=h(),i=e.firstChild,r=i.nextSibling,n=r.firstChild,t=n.nextSibling;return t.nextSibling,a(r,o(d,{href:"/",children:"Home"}),t),e})()}export{p as default};
