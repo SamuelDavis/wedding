@@ -2,6 +2,7 @@ import { hotelSiteHref } from "../data";
 import DiscoveriesNav from "../Content/DiscoveriesNav";
 import { A } from "@solidjs/router";
 import wingateSrc from "../assets/SamandJess_hotel.jpg";
+import ImgAsset from "../Components/ImgAsset";
 
 export default function YourTrip() {
   return (
@@ -11,7 +12,7 @@ export default function YourTrip() {
         <h2>Stay a while</h2>
       </header>
       <section>
-        <img src={wingateSrc} />
+        <ImgAsset src={wingateSrc} />
         <div>
           <h2>
             Where<i> to </i>Stay

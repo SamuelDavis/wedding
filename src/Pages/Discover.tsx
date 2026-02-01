@@ -13,6 +13,7 @@ import matchaCafeMaikoSrc from "../assets/SamandJess_matchamaiko.jpg";
 import riRaIrishPubSrc from "../assets/SamandJess_fishandchips.jpg";
 import theOneTapasAndBarSrc from "../assets/SamandJess_foodanddrink.jpg";
 import { InterestSlugs } from "../data";
+import ImgAsset from "../Components/ImgAsset";
 
 type InterestSlug = (typeof InterestSlugs)[number];
 type PageContent = {
@@ -68,7 +69,7 @@ function Attraction(
   return (
     <section {...parent}>
       <div>
-        <img src={local.imageSrc} />
+        <ImgAsset src={local.imageSrc} />
       </div>
       <div>
         <h3>

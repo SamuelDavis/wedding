@@ -4,6 +4,7 @@ import { splitProps, For, Show } from "solid-js";
 import nightlifeSrc from "../assets/SamandJess_charlotte.jpg";
 import smallTownCharmSrc from "../assets/SamandJess_matthews.jpg";
 import globalFlavorsSrc from "../assets/SamandJess_foodanddrink.jpg";
+import ImgAsset from "../Components/ImgAsset";
 
 const links: {
   href: string;
@@ -43,7 +44,7 @@ export default function DiscoveriesNav(
             <li>
               <A href={link.href}>
                 <Show when={local.images}>
-                  <img src={link.src} />
+                  <ImgAsset src={link.src} />
                 </Show>
                 <span>{link.text}</span>
               </A>

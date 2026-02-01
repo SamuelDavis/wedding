@@ -3,12 +3,13 @@ import Time from "../../Components/Time";
 import { rsvpDate, weddingDate } from "../../data";
 import beOurGuestSrc from "../../assets/SamandJess_birdsflying.jpg";
 import coupleSrc from "../../assets/SamandJess_capitalgrille_BW.jpg";
+import ImgAsset from "../../Components/ImgAsset";
 
 export default function RsvpLayout(props: ParentProps) {
   return (
     <article>
       <header>
-        <img src={beOurGuestSrc} />
+        <ImgAsset src={beOurGuestSrc} />
         <h2>
           <Time value={weddingDate} format="short" />
         </h2>
@@ -20,7 +21,7 @@ export default function RsvpLayout(props: ParentProps) {
       </header>
       <section>
         <figure>
-          <img src={coupleSrc} />
+          <ImgAsset src={coupleSrc} />
           <q>Bear with one another in love</q>
         </figure>
         {props.children}

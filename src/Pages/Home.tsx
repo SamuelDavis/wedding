@@ -11,15 +11,16 @@ import arrivalAndCeremonySrc from "../assets/SamandJess_Hydrangeas.jpg";
 import socialHourSrc from "../assets/SamandJess_FrancisBeattyPark.jpg";
 import receptionAndDinnerSrc from "../assets/SamandJess_dancing_BW.jpg";
 import additionalDetailsSrc from "../assets/SamandJess_lace.jpg";
+import ImgAsset from "../Components/ImgAsset";
 
 export default function Home() {
   return (
     <article>
       <header class="img-hover-chromatic items-start">
         <section class="justify-center md:justify-between align-middle items-center">
-          <img class="max-w-[20%]" src={nariColorScr} />
+          <ImgAsset class="max-w-[20%]" src={nariColorScr} />
           <div class="relative group">
-            <img src={athensColorSrc} />
+            <ImgAsset src={athensColorSrc} />
             <div class="absolute top-0 text-center w-full mt-[10%]">
               The Wedding Of
               <h1>
@@ -27,7 +28,7 @@ export default function Home() {
               </h1>
             </div>
           </div>
-          <img class="max-w-[20%]" src={flowersColorSrc} />
+          <ImgAsset class="max-w-[20%]" src={flowersColorSrc} />
         </section>
       </header>
       <header>
@@ -72,7 +73,7 @@ export default function Home() {
             {({ year, src }) => (
               <figure>
                 <figcaption>{year}</figcaption>
-                <img src={src} alt={`${year}`} />
+                <ImgAsset src={src} alt={`${year}`} />
               </figure>
             )}
           </For>
@@ -109,11 +110,11 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <img src={arrivalAndCeremonySrc} />
+          <ImgAsset src={arrivalAndCeremonySrc} />
         </section>
         <hr />
         <section>
-          <img src={socialHourSrc} />
+          <ImgAsset src={socialHourSrc} />
           <div>
             <h2>Social Hour</h2>
             <Itinerary>
@@ -146,7 +147,7 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <img src={receptionAndDinnerSrc} />
+          <ImgAsset src={receptionAndDinnerSrc} />
         </section>
       </article>
       <article id="details" class="p-10 my-10 border">
@@ -159,7 +160,7 @@ export default function Home() {
                 Details
               </A>
             </h1>
-            <img src={additionalDetailsSrc} />
+            <ImgAsset src={additionalDetailsSrc} />
           </div>
           <div>
             <ul>
