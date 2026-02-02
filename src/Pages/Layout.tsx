@@ -42,11 +42,14 @@ export default function Layout(props: ParentProps) {
           <i> by </i>
           <Time value={rsvpDate} />
         </h2>
-        <A href="/rsvp">RSVP</A>
       </footer>
       <footer>
+        <A href="/rsvp">RSVP</A>
+      </footer>
+      <hr />
+      <footer>
         <nav>
-          <ul class="w-full justify-center">
+          <ul>
             <li>
               <A href="/your-trip">Your Trip</A>
             </li>
@@ -82,10 +85,10 @@ function useScrollTo(): void {
   );
 }
 
-function Logo(props: ExtendProps<"h1", { stacked?: boolean }>) {
+function Logo(props: ExtendProps<"div", { stacked?: boolean }>) {
   const [local, parent] = splitProps(props, ["stacked"]);
   return (
-    <h1 {...parent}>
+    <div {...parent}>
       <A href="/">
         <i>
           <span>S</span>
@@ -95,6 +98,6 @@ function Logo(props: ExtendProps<"h1", { stacked?: boolean }>) {
           <span>J</span>
         </i>
       </A>
-    </h1>
+    </div>
   );
 }
