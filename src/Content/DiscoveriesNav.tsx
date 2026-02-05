@@ -1,5 +1,5 @@
 import { type ExtendProps } from "@samueldavis/solidlib";
-import { A } from "@solidjs/router";
+import { A, useMatch } from "@solidjs/router";
 import { splitProps, For, Show } from "solid-js";
 import nightlifeSrc from "../assets/SamandJess_charlotte.jpg";
 import smallTownCharmSrc from "../assets/SamandJess_matthews.jpg";
@@ -38,18 +38,21 @@ export default function DiscoveriesNav(
   const [local, parent] = splitProps(props, ["images"]);
   return (
     <nav {...parent}>
-      <ul>
+      <ul class="gap-16">
         <For each={links}>
-          {(link) => (
-            <li>
-              <A href={link.href}>
-                <Show when={local.images}>
-                  <ImgAsset src={link.src} />
-                </Show>
-                <span>{link.text}</span>
-              </A>
-            </li>
-          )}
+          {(link) => {
+            const getIsActive = useMatch(() => link.href);
+            return getIsActive() ? null : (
+              <li>
+                <A href={link.href}>
+                  <Show when={local.images}>
+                    <ImgAsset class="framed" src={link.src} />
+                  </Show>
+                  <button>{link.text}</button>
+                </A>
+              </li>
+            );
+          }}
         </For>
       </ul>
     </nav>

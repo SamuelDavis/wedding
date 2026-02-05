@@ -9,10 +9,11 @@ export default function YourTrip() {
     <article>
       <header>
         <h1>Plan your trip</h1>
+      </header>
+      <header>
         <h2>Stay a while</h2>
       </header>
-      <section>
-        <ImgAsset src={wingateSrc} />
+      <section class="cols-2 img-frames">
         <div>
           <h2>
             Where<i> to </i>Stay
@@ -27,11 +28,12 @@ export default function YourTrip() {
             book room
           </A>
         </div>
+        <ImgAsset class="framed" src={wingateSrc} />
       </section>
       <hr />
       <section>
         <h2>What category interests you most?</h2>
-        <DiscoveriesNav images />
+        <DiscoveriesNav class="gap-16" images />
       </section>
     </article>
   );

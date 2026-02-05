@@ -18,8 +18,8 @@ export default function Home() {
     <article>
       <article>
         <section class="img-hover-chromatic justify-between items-center">
-          <ImgAsset class="basis-[20%] h-[50%]" src={nariColorScr} />
-          <div class="basis-[50%] relative group">
+          <ImgAsset class="md:basis-[20%] h-[50%]" src={nariColorScr} />
+          <div class="md:basis-[50%] relative group">
             <ImgAsset src={athensColorSrc} />
             <div class="absolute w-full text-center top-0 mt-[10%]">
               <h2>The Wedding Of</h2>
@@ -30,7 +30,7 @@ export default function Home() {
               </h1>
             </div>
           </div>
-          <ImgAsset class="basis-[20%]" src={flowersColorSrc} />
+          <ImgAsset class="md:basis-[20%]" src={flowersColorSrc} />
         </section>
         <section class="justify-center">
           <h2>
@@ -51,7 +51,7 @@ export default function Home() {
           </nav>
         </section>
       </article>
-      <article id="our-story" class="text-center">
+      <article id="our-story">
         <h1>
           <A href="#our-story">Let's Make This Official</A>
         </h1>
@@ -91,7 +91,7 @@ export default function Home() {
           </For>
         </Marquee>
       </article>
-      <article id="on-the-day" class="col-2 img-frames">
+      <article id="on-the-day" class="col-2">
         <header>
           <h1>
             <Time value={weddingDate} format="short" />
@@ -104,7 +104,7 @@ export default function Home() {
             </em>
           </h1>
         </header>
-        <section>
+        <section class="cols-2">
           <div>
             <h1>
               Arrival<i> and </i>Ceremony
@@ -124,11 +124,11 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <ImgAsset src={arrivalAndCeremonySrc} />
+          <ImgAsset class="framed" src={arrivalAndCeremonySrc} />
         </section>
         <hr />
-        <section>
-          <ImgAsset src={socialHourSrc} />
+        <section class="cols-2">
+          <ImgAsset class="framed" src={socialHourSrc} />
           <div>
             <h1>Social Hour</h1>
             <Itinerary>
@@ -142,7 +142,7 @@ export default function Home() {
           </div>
         </section>
         <hr />
-        <section>
+        <section class="cols-2">
           <div>
             <h1>
               Reception<i> and </i>Dinner
@@ -161,11 +161,11 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <ImgAsset src={receptionAndDinnerSrc} />
+          <ImgAsset class="framed" src={receptionAndDinnerSrc} />
         </section>
       </article>
       <article id="details" class="col-2 p-10 my-10 border">
-        <section>
+        <section class="cols-2">
           <div class="relative">
             <h1 class="absolute top-0">
               <A href="#details">

@@ -1,177 +1,187 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
-	--titles-display-size: 6rem;
-	--font-desktop-line-height-display-desktop-90: 5.625rem;
-	--font-desktop-letter-spacing-display-desktop-0: 0;
-	--titles-display-decorative-size: 3.125rem;
-	--titles-display-decorative-line-height: 1.75rem;
-	--titles-display-decorative-letter-spacing: 0.0025rem;
-	--titles-h1-bold-caps-family: "Libre Baskerville";
-	--titles-h1-bold-caps-size: 2.25rem;
-	--titles-h1-bold-caps-line-height: 2.75rem;
-	--titles-h1-bold-caps-letter-spacing: 0.125rem;
-	--titles-h1-bold-caps-family: "Libre Baskerville";
-	--titles-h1-regular-caps-size: 2.25rem;
-	--font-desktop-letter-spacing-h-1-regular-caps-desktop-2: 400;
-	--titles-h1-regular-caps-line-height: 2.75rem;
-	--titles-h1-regular-caps-letter-spacing: 0.125rem;
-	--titles-h1-regular-sentence-family: "Libre Baskerville";
-	--titles-h1-regular-sentence-size: 2.25rem;
-	--titles-h1-regular-sentence-line-height: 2.75rem;
-	--titles-h1-regular-sentence-letter-spacing: 0.125rem;
-	--family: "Libre Baskerville";
-	--titles-h1-decorative-size: 1.875rem;
-	--font-desktop-line-height-h-1-decorative-desktop-36: 2.25rem;
-	--font-desktop-letter-spacing-h-1-decorative-desktop-2: 0.125rem;
-	--titles-h2-family: "Libre Baskerville";
-	--titles-h2-size: 1.375rem;
-	--titles-h2-line-height: 2.1875rem;
-	--titles-h2-letter-spacing: 0.375rem;
-	--titles-span-decorative-family: "Libre Baskerville";
-	--titles-span-decorative-size: 1rem;
-	--titles-span-decorative-line-height: 1.875rem;
-	--titles-span-decorative-letter-spacing: 0.125rem;
-	--titles-body-regular-family: "Libre Baskerville";
-	--titles-body-regular-size: 1.125rem;
-	--titles-body-regular-line-height: 1.875rem;
-	--titles-body-regular-letter-spacing: 0;
-	--family: "Libre Baskerville";
-	--titles-body-bold-size: 1.125rem;
-	--titles-body-bold-line-height: 1.875rem;
-	--titles-body-bold-letter-spacing: 0;
-	--titles-body-link-family: "Libre Baskerville";
-	--titles-body-link-size: 1.125rem;
-	--titles-body-link-line-height: 1.875rem;
-	--titles-body-link-letter-spacing: 0;
-	--titles-navigation-button-link-family: "Libre Baskerville";
-	--titles-navigation-button-link-size: 1rem;
-	--titles-navigation-button-link-line-height: 1.875rem;
-	--titles-navigation-button-link-letter-spacing: 0.125rem;
+  --titles-display-size: 6rem;
+  --font-desktop-line-height-display-desktop-90: 5.625rem;
+  --font-desktop-letter-spacing-display-desktop-0: 0;
+  --titles-display-decorative-size: 3.125rem;
+  --titles-display-decorative-line-height: 1.75rem;
+  --titles-display-decorative-letter-spacing: 0.0025rem;
+  --titles-h1-bold-caps-family: "Libre Baskerville";
+  --titles-h1-bold-caps-size: 2.25rem;
+  --titles-h1-bold-caps-line-height: 2.75rem;
+  --titles-h1-bold-caps-letter-spacing: 0.125rem;
+  --titles-h1-bold-caps-family: "Libre Baskerville";
+  --titles-h1-regular-caps-size: 2.25rem;
+  --font-desktop-letter-spacing-h-1-regular-caps-desktop-2: 400;
+  --titles-h1-regular-caps-line-height: 2.75rem;
+  --titles-h1-regular-caps-letter-spacing: 0.125rem;
+  --titles-h1-regular-sentence-family: "Libre Baskerville";
+  --titles-h1-regular-sentence-size: 2.25rem;
+  --titles-h1-regular-sentence-line-height: 2.75rem;
+  --titles-h1-regular-sentence-letter-spacing: 0.125rem;
+  --family: "Libre Baskerville";
+  --titles-h1-decorative-size: 1.875rem;
+  --font-desktop-line-height-h-1-decorative-desktop-36: 2.25rem;
+  --font-desktop-letter-spacing-h-1-decorative-desktop-2: 0.125rem;
+  --titles-h2-family: "Libre Baskerville";
+  --titles-h2-size: 1.375rem;
+  --titles-h2-line-height: 2.1875rem;
+  --titles-h2-letter-spacing: 0.375rem;
+  --titles-span-decorative-family: "Libre Baskerville";
+  --titles-span-decorative-size: 1rem;
+  --titles-span-decorative-line-height: 1.875rem;
+  --titles-span-decorative-letter-spacing: 0.125rem;
+  --titles-body-regular-family: "Libre Baskerville";
+  --titles-body-regular-size: 1.125rem;
+  --titles-body-regular-line-height: 1.875rem;
+  --titles-body-regular-letter-spacing: 0;
+  --family: "Libre Baskerville";
+  --titles-body-bold-size: 1.125rem;
+  --titles-body-bold-line-height: 1.875rem;
+  --titles-body-bold-letter-spacing: 0;
+  --titles-body-link-family: "Libre Baskerville";
+  --titles-body-link-size: 1.125rem;
+  --titles-body-link-line-height: 1.875rem;
+  --titles-body-link-letter-spacing: 0;
+  --titles-navigation-button-link-family: "Libre Baskerville";
+  --titles-navigation-button-link-size: 1rem;
+  --titles-navigation-button-link-line-height: 1.875rem;
+  --titles-navigation-button-link-letter-spacing: 0.125rem;
 }
 
 :root {
-	--color-primary: #7F2549;
-	--color-secondary: #FFF8F7;
+  --color-primary: #7f2549;
+  --color-secondary: #fff8f7;
 
-	--font-family-default: "Libre Baskerville", serif;
-	--font-family-secondary: "Pinyon Script", cursive;
+  --font-family-default: "Libre Baskerville", serif;
+  --font-family-secondary: "Pinyon Script", cursive;
 
-	color: var(--color-primary);
-	background-color: var(--color-secondary);
-	font-family: var(--font-family-default);
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+  font-family: var(--font-family-default);
 
-	border-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .img-hover-chromatic img {
-	@apply duration-200 md:grayscale-100 hover:grayscale-0 group-hover:grayscale-0;
+  @apply duration-200 md:grayscale-100 hover:grayscale-0 group-hover:grayscale-0;
 }
 
-.img-frames img {
-	@apply border p-3;
+img.framed {
+  @apply border p-4;
 }
 
 body {
-	@apply flex justify-center;
+  @apply flex justify-center;
 }
 
 main {
-	@apply max-w-7xl;
+  @apply max-w-360 mx-24 my-24;
 }
 
 h1 {
-	text-transform: uppercase;
-	font-size: 2.25rem;
+  @apply uppercase text-4xl;
 }
 
 h2 {
-	text-transform: uppercase;
-	font-size: 1.375rem;
+  @apply uppercase text-xl;
 }
 
 i {
-	text-transform: lowercase;
-	font-size: 1rem;
+  @apply lowercase text-base;
 }
 
 em {
-	font-family: var(--font-family-secondary);
-	text-transform: none;
+  font-family: var(--font-family-secondary);
+  text-transform: none;
 }
 
 hr {
-	@apply border border-b-0 border-l-0 my-[1rem];
+  @apply border border-b-0 border-l-0 my-16;
 }
 
 hr.vertical {
-	@apply inline h-[2em] mx-[1rem];
-}
-
-main {
-	@apply m-20;
+  @apply my-0 inline h-4 mx-4;
 }
 
 article {
-	@apply flex flex-col;
+  @apply flex flex-col;
+
+  & > section {
+    @apply flex flex-row flex-wrap gap-8 justify-between;
+
+    &.cols-2 > * {
+      @apply basis-full md:basis-[calc(50%-2rem)];
+    }
+  }
 }
 
-article>section {
-	@apply flex flex-row flex-wrap;
-}
-
-.col-2 section {
-	@apply gap-[2rem];
-}
-
-.col-2 section>* {
-	@apply basis-[100%] md:basis-[calc(50%-2rem)];
+p {
+  @apply mb-4;
 }
 
 img {
-	@apply min-w-0 object-cover;
+  @apply min-w-0 object-cover;
 }
 
 header,
 footer,
 nav,
 nav ul {
-	@apply w-full flex justify-around;
+  @apply w-full flex justify-around;
 }
 
 ul[role="marquee"] {
-	@apply flex overflow-x-auto;
+  @apply flex overflow-x-auto;
+
+  &::-webkit-scrollbar {
+    @apply h-1 rounded-lg;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+  }
+
+  & > li {
+    @apply flex-none;
+  }
+
+  & figure {
+    @apply h-full;
+  }
+
+  & img {
+    @apply max-h-[33vh] h-full object-contain;
+  }
+
+  & figure {
+    @apply relative;
+
+    & figcaption {
+      @apply absolute top-0 left-0 m-2 px-4 rounded-lg;
+      background-color: var(--color-secondary);
+    }
+  }
 }
 
-ul[role="marquee"]>li {
-	@apply flex-none;
+fieldset {
+  @apply flex flex-col gap-4 mb-16;
+
+  & legend {
+    @apply mb-4 font-bold;
+  }
+
+  & label {
+    @apply flex gap-4 flex-wrap align-text-top;
+  }
 }
 
-ul[role="marquee"] figure {
-	@apply h-full;
-}
-
-ul[role="marquee"] img {
-	@apply max-h-[33vh] h-full object-contain;
-}
-
-[role="marquee"]::-webkit-scrollbar {
-	@apply h-1 rounded-lg;
-}
-
-[role="marquee"]::-webkit-scrollbar-track {
-	background: transparent;
-}
-
-[role="marquee"]::-webkit-scrollbar-thumb {
-	background-color: var(--color-primary);
-}
-
-[role="marquee"] figure {
-	@apply relative;
-}
-
-[role="marquee"] figure figcaption {
-	@apply absolute top-0 left-0 m-2 px-[1em] rounded-lg;
-	background-color: var(--color-secondary);
+input[type="text"],
+textarea {
+  @apply p-1 border rounded-lg;
 }

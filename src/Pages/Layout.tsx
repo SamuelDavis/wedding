@@ -36,7 +36,7 @@ export default function Layout(props: ParentProps) {
       </header>
       <hr />
       {props.children}
-      <footer>
+      <footer class="mt-40">
         <h2>
           Please RSVP
           <i> by </i>

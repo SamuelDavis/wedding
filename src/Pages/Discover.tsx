@@ -1,4 +1,4 @@
-import { HTMLIcon, type ExtendProps } from "@samueldavis/solidlib";
+import { type ExtendProps } from "@samueldavis/solidlib";
 import { useParams } from "@solidjs/router";
 import { createMemo, For, splitProps, type ValidComponent } from "solid-js";
 import { Dynamic } from "solid-js/web";
@@ -28,15 +28,20 @@ export default function Discover() {
   return (
     <article>
       <header>
-        <HTMLIcon type={getPageContent().icon} />
         <h1>{getPageContent().title}</h1>
+      </header>
+      <header>
         <h2>{getPageContent().subtitle}</h2>
       </header>
-      <For each={getPageContent().attractions}>
-        {(Content) => <Dynamic component={Content} />}
-      </For>
+      <article class="gap-24">
+        <For each={getPageContent().attractions}>
+          {(Content) => <Dynamic component={Content} />}
+        </For>
+      </article>
       <footer>
         <h2>Discover More</h2>
+      </footer>
+      <footer>
         <DiscoveriesNav />
       </footer>
     </article>
@@ -67,16 +72,14 @@ function Attraction(
     "children",
   ]);
   return (
-    <section {...parent}>
+    <section class="cols-2" {...parent}>
+      <ImgAsset class="framed" src={local.imageSrc} />
       <div>
-        <ImgAsset src={local.imageSrc} />
-      </div>
-      <div>
-        <h3>
+        <h2 class="font-bold mb-8">
           <a href={local.siteHref} target="_blank">
             {local.title}
           </a>
-        </h3>
+        </h2>
         {local.children}
         <a href={local.mapHref} target="_blank">
           View Route
