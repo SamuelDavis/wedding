@@ -20,18 +20,20 @@ export default function RsvpLayout(props: ParentProps) {
           </p>
         </div>
       </header>
-      <section>
+      <section class="cols-2">
         <figure>
           <ImgAsset src={coupleSrc} />
-          <q>
-            <em>
-              Bear with
-              <br />
-              one another
-              <br />
-              in love
-            </em>
-          </q>
+          <figcaption>
+            <q>
+              <em>
+                Bear with
+                <br />
+                one another
+                <br />
+                in love
+              </em>
+            </q>
+          </figcaption>
         </figure>
         {props.children}
       </section>

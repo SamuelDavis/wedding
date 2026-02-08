@@ -1,11 +1,12 @@
 import { createEffect, on, Show, splitProps, type ParentProps } from "solid-js";
-import { A, useLocation } from "@solidjs/router";
+import { A, useLocation, useMatch } from "@solidjs/router";
 import Time from "../Components/Time";
 import { rsvpDate } from "../data";
 import type { ExtendProps } from "@samueldavis/solidlib";
 
 export default function Layout(props: ParentProps) {
   useScrollTo();
+  const getIsRSVP = useMatch(() => "/rsvp/:success?");
 
   return (
     <main>
@@ -19,14 +20,16 @@ export default function Layout(props: ParentProps) {
               <A href="/#details">Details</A>
             </li>
           </ul>
-          <ul>
+          <ul class="justify-center">
             <li>
               <Logo />
             </li>
           </ul>
           <ul>
             <li>
-              <A href="/your-trip">Your Trip</A>
+              <A href="/your-trip" class="border">
+                Your Trip
+              </A>
             </li>
             <li>
               <A href="/rsvp">RSVP</A>
@@ -43,12 +46,22 @@ export default function Layout(props: ParentProps) {
           <Time value={rsvpDate} />
         </h2>
       </footer>
-      <footer>
-        <A href="/rsvp">RSVP</A>
-      </footer>
-      <footer>
+      <Show when={!getIsRSVP()}>
+        <footer>
+          <nav>
+            <ul class="justify-center">
+              <li>
+                <A href="/rsvp" class="border">
+                  RSVP
+                </A>
+              </li>
+            </ul>
+          </nav>
+        </footer>
+      </Show>
+      <footer class="border-y">
         <nav>
-          <ul>
+          <ul class="justify-around">
             <li>
               <A href="/your-trip">Your Trip</A>
             </li>

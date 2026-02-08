@@ -70,9 +70,10 @@ function Attraction(
     "siteHref",
     "mapHref",
     "children",
+    "class",
   ]);
   return (
-    <section {...parent}>
+    <section class={`cols-2 ${local.class}`} {...parent}>
       <ImgAsset src={local.imageSrc} />
       <div>
         <h2>

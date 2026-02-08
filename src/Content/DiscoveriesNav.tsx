@@ -46,11 +46,11 @@ export default function DiscoveriesNav(
             return getIsActive() ? null : (
               <li>
                 <Show when={local.images}>
-                  <A href={link.href}>
+                  <A href={link.href} class="block aspect-square">
                     <ImgAsset src={link.src} />
                   </A>
                 </Show>
-                <A href={link.href}>
+                <A href={link.href} class="border w-full">
                   <span>{link.text}</span>
                   <Arrow />
                 </A>

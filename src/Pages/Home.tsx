@@ -17,11 +17,11 @@ import Arrow from "../Components/Arrow";
 export default function Home() {
   return (
     <article>
-      <section>
-        <ImgAsset src={nariColorScr} />
-        <div>
+      <section class="flex flex-col gap-12 items-center md:flex-row md:gap-36">
+        <ImgAsset src={nariColorScr} class="w-[25%]" />
+        <div class="relative w-[50%]">
           <ImgAsset src={athensColorSrc} />
-          <div>
+          <div class="absolute top-[10%] w-full text-center">
             <h2>The Wedding Of</h2>
             <h1>
               <em>
@@ -30,27 +30,25 @@ export default function Home() {
             </h1>
           </div>
         </div>
-        <ImgAsset src={flowersColorSrc} />
+        <ImgAsset src={flowersColorSrc} class="w-[25%]" />
       </section>
-      <section>
+      <section class="text-center">
         <h2>
           <Time value={weddingDate} />
-          <hr />
+          <hr class="vertical" />
           <a target="_blank" href={venueMapHref}>
             Francis J. Beatty Park
           </a>
         </h2>
-      </section>
-      <section>
         <nav>
-          <ul>
+          <ul class="justify-center">
             <li>
               <A href="/rsvp">RSVP</A>
             </li>
           </ul>
         </nav>
       </section>
-      <section>
+      <section class="text-center">
         <h1 id="our-story">
           <A href="#our-story">Let's Make This Official</A>
         </h1>
@@ -68,13 +66,11 @@ export default function Home() {
           celebrate with us on our wedding day. We can't wait!
         </p>
         <h2>Sam & Jess</h2>
-      </section>
-      <section>
         <q>
           <em>
             <span>Every moment spent with you, </span>
             <br />
-            <span>is a moment I treasure.</span>
+            <span class="ml-20">is a moment I treasure.</span>
           </em>
         </q>
         <Marquee>
@@ -99,7 +95,7 @@ export default function Home() {
             </em>
           </h1>
         </header>
-        <section>
+        <section class="cols-2">
           <div>
             <h1>
               Arrival<small> and </small>Ceremony
@@ -110,7 +106,7 @@ export default function Home() {
                   Arrive a little early and enjoy the park, find your seats, and
                   settle in before the ceremony begins.
                 </p>
-                <A href={venueMapHref}>
+                <A href={venueMapHref} class="border">
                   <span>View Location</span>
                   <Arrow />
                 </A>
@@ -125,7 +121,7 @@ export default function Home() {
           <ImgAsset src={arrivalAndCeremonySrc} />
         </section>
         <hr />
-        <section>
+        <section class="cols-2">
           <ImgAsset src={socialHourSrc} />
           <div>
             <h1>Social Hour</h1>
@@ -140,7 +136,7 @@ export default function Home() {
           </div>
         </section>
         <hr />
-        <section>
+        <section class="cols-2">
           <div>
             <h1>
               Reception<small> and </small>Dinner
@@ -162,9 +158,9 @@ export default function Home() {
           <ImgAsset src={receptionAndDinnerSrc} />
         </section>
       </section>
-      <section>
-        <figure>
-          <figcaption>
+      <section class="cols-2">
+        <figure class="relative">
+          <figcaption class="absolute">
             <h1 id="details">
               Additional
               <br />

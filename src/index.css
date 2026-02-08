@@ -1,1 +1,83 @@
 @import "tailwindcss";
+
+@theme {
+}
+
+@layer base {
+  main {
+    @apply max-w-360 p-12 m-12 md:p-24 md:mx-auto;
+  }
+
+  header,
+  footer {
+    @apply w-full text-center;
+  }
+
+  nav,
+  nav ul {
+    @apply flex justify-between w-full gap-12 flex-col items-center md:flex-row;
+
+    & li {
+      @apply flex flex-col gap-12;
+    }
+  }
+
+  img {
+    @apply min-w-0 w-full object-cover;
+  }
+
+  a,
+  q {
+    @apply inline-block;
+  }
+
+  hr {
+    @apply my-12;
+
+    &.vertical {
+      @apply inline border-0 border-l h-4 mx-2;
+    }
+  }
+
+  form {
+    & input,
+    & textarea {
+      @apply border w-full;
+    }
+
+    & input[type="radio"] {
+      @apply w-fit;
+    }
+
+    & label {
+      @apply flex items-start gap-2;
+      & [type="radio"] {
+        @apply mt-1.5;
+      }
+    }
+  }
+
+  textarea {
+    @apply border;
+  }
+
+  ul[role="marquee"] {
+    @apply flex flex-nowrap w-full min-w-0 overflow-x-auto h-[33vh];
+
+    & figure {
+      @apply relative h-full aspect-square;
+
+      & > figcaption {
+        @apply absolute top-0 left-0;
+      }
+
+      & > img {
+        @apply h-full w-full object-cover object-center;
+      }
+    }
+  }
+
+  .cols-2 {
+    @apply grid md:grid-cols-2;
+  }
+}

@@ -2,6 +2,7 @@ import type { Targeted } from "@samueldavis/solidlib";
 import RadioGroup from "../../Components/RadioGroup";
 import { useNavigate } from "@solidjs/router";
 import RsvpLayout from "./RsvpLayout";
+import Arrow from "../../Components/Arrow";
 
 export default function RsvpForm() {
   const navigator = useNavigate();
@@ -56,11 +57,12 @@ export default function RsvpForm() {
         <fieldset>
           <legend>Anything else?</legend>
           <p>Include any allergy or dietary restrictions below.</p>
-          <textarea id="other" name="other" rows="5"></textarea>
+          <textarea id="other" name="other" rows="5" class="w-full" />
         </fieldset>
-        <div>
-          <input type="submit" />
-        </div>
+        <button type="submit" class="border uppercase float-right">
+          <span>Submit Form</span>
+          <Arrow />
+        </button>
       </form>
     </RsvpLayout>
   );

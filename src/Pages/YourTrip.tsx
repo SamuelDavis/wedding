@@ -16,7 +16,7 @@ export default function YourTrip() {
       <header>
         <h2>Stay a while</h2>
       </header>
-      <section>
+      <section class="cols-2">
         <div>
           <h2>
             Where<small> to </small>Stay
@@ -27,7 +27,7 @@ export default function YourTrip() {
             Check the hotel website for additional details for address, parking,
             etc.
           </p>
-          <A target="_blank" href={hotelSiteHref}>
+          <A target="_blank" href={hotelSiteHref} class="border">
             <span>book room</span>
             <Arrow />
           </A>
@@ -36,7 +36,9 @@ export default function YourTrip() {
       </section>
       <hr />
       <section>
-        <h1>What category interests you most?</h1>
+        <header>
+          <h1>What category interests you most?</h1>
+        </header>
         <DiscoveriesNav images />
       </section>
     </article>
