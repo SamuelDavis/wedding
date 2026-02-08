@@ -103,6 +103,18 @@
   ul[role="marquee"] {
     @apply flex flex-nowrap w-full min-w-0 overflow-x-auto h-[33vh];
 
+    &::-webkit-scrollbar {
+      @apply h-1 rounded-lg;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-text);
+    }
+
     & figure {
       @apply relative h-full aspect-square;
 
