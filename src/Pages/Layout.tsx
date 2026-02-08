@@ -1,4 +1,4 @@
-import { createEffect, on, Show, splitProps, type ParentProps } from "solid-js";
+import { createEffect, on, Show, type ParentProps } from "solid-js";
 import { A, useLocation, useMatch } from "@solidjs/router";
 import Time from "../Components/Time";
 import { rsvpDate } from "../data";
