@@ -18,11 +18,11 @@ export default function Home() {
   return (
     <article>
       <section class="flex flex-col gap-12 items-center lg:flex-row lg:gap-36 hover-chromatic">
-        <ImgAsset src={nariColorScr} class="w-[25%]" />
-        <div class="relative w-[50%] group">
+        <ImgAsset src={nariColorScr} class="w-[25%] hidden md:block" />
+        <div class="relative md:w-[50%] group">
           <ImgAsset src={athensColorSrc} />
           <div class="absolute top-[10%] w-full text-center">
-            <h2>The Wedding Of</h2>
+            <h2 class="mb-8">The Wedding Of</h2>
             <h1>
               <em class="flex justify-center items-center">
                 Samuel<small class="text-[0.5em] mx-8"> and </small>Jessica
@@ -30,10 +30,13 @@ export default function Home() {
             </h1>
           </div>
         </div>
-        <ImgAsset src={flowersColorSrc} class="w-[25%] group:hover-chromatic" />
+        <ImgAsset
+          src={flowersColorSrc}
+          class="w-[25%] group:hover-chromatic hidden md:block"
+        />
       </section>
-      <section class="text-center">
-        <h2>
+      <section class="text-center pb-(--gap-default)">
+        <h2 class="my-(--gap-default)">
           <Time value={weddingDate} />
           <hr class="vertical" />
           <a target="_blank" href={venueMapHref}>
@@ -43,14 +46,19 @@ export default function Home() {
         <nav>
           <ul class="justify-center">
             <li>
-              <A href="/rsvp">RSVP</A>
+              <A href="/rsvp" class="border">
+                <span>RSVP</span>
+                <Arrow />
+              </A>
             </li>
           </ul>
         </nav>
       </section>
-      <section class="text-center">
+      <section class="text-center py-(--gap-default)">
         <h1 id="our-story" class="font-bold">
-          <A href="#our-story">Let's Make This Official</A>
+          <A href="#our-story" class="mb-(--gap-default) font-bold">
+            Let's Make This Official
+          </A>
         </h1>
         <p>
           Our story began in 2019, chatting during work breaks about animation,
@@ -65,15 +73,17 @@ export default function Home() {
           We are excited to invite you &mdash; our family and closest friends to
           celebrate with us on our wedding day. We can't wait!
         </p>
-        <h2 class="font-bold">Sam & Jess</h2>
-        <em>
-          <q class="whitespace-nowrap text-right -mr-[1ch]">
-            <span class="mr-[1ch]">Every moment spent with you, </span>
-            <br />
-            <span>is a moment I treasure.</span>
-          </q>
-        </em>
-        <Marquee>
+        <h2 class="font-bold py-(--gap-default)">Sam & Jess</h2>
+        <div class="my-(--gap-default)">
+          <em>
+            <q class="whitespace-nowrap text-right -mr-[1ch]">
+              <span class="mr-[1ch]">Every moment spent with you, </span>
+              <br />
+              <span>is a moment I treasure.</span>
+            </q>
+          </em>
+        </div>
+        <Marquee class="gap-(--gap-default)">
           <For each={timeline}>
             {({ year, src }) => (
               <figure>
@@ -84,8 +94,8 @@ export default function Home() {
           </For>
         </Marquee>
       </section>
-      <section class="framed">
-        <header>
+      <section id="itinerary" class="framed">
+        <header class="my-(--gap-default)">
           <h1 id="on-the-day">
             <Time value={weddingDate} format="short" />
           </h1>
@@ -158,11 +168,14 @@ export default function Home() {
           <ImgAsset src={receptionAndDinnerSrc} />
         </section>
       </section>
-      <section class="cols-2">
+      <section
+        id="details"
+        class="cols-2 border my-(--gap-default) p-(--gap-default)"
+      >
         <figure class="relative">
-          <figcaption class="absolute">
-            <h1 id="details">
-              <em class="-ml-[1ch]">
+          <figcaption class="absolute mt-4 -ml-[2ch]">
+            <h1>
+              <em>
                 Additional
                 <br />
                 Details

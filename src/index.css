@@ -35,6 +35,13 @@
     @apply bg-bg min-w-72 max-w-360 p-(--gap-default) md:p-24 md:mx-auto;
   }
 
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+
   h1,
   h2,
   h3 {
@@ -42,7 +49,7 @@
   }
 
   em {
-    @apply font-display normal-case text-4xl md:text-8xl;
+    @apply font-display normal-case text-4xl md:text-7xl;
 
     & q {
       @apply text-quote;
@@ -73,6 +80,10 @@
   a,
   q {
     @apply inline-block;
+  }
+
+  p {
+    @apply mb-4;
   }
 
   hr {
@@ -111,7 +122,7 @@
     @apply flex flex-nowrap w-full min-w-0 overflow-x-auto h-[33vh];
 
     &::-webkit-scrollbar {
-      @apply h-1 rounded-lg;
+      @apply h-2 rounded-lg;
     }
 
     &::-webkit-scrollbar-track {
@@ -123,10 +134,10 @@
     }
 
     & figure {
-      @apply relative h-full aspect-square;
+      @apply relative h-full aspect-square pb-(--gap-default);
 
       & > figcaption {
-        @apply absolute top-0 left-0;
+        @apply absolute top-0 left-0 m-4 px-4 bg-bg rounded-sm text-2xl;
       }
 
       & > img {
@@ -188,4 +199,26 @@
   background-repeat: no-repeat;
   background-position: left 75%;
   background-size: 30% auto;
+}
+
+#itinerary {
+  & section {
+    & h1 {
+      @apply font-bold mb-8;
+    }
+
+    & a {
+      @apply my-4;
+    }
+
+    & dt {
+      @apply font-bold mt-8 mb-4;
+    }
+  }
+}
+
+#details {
+  h2 {
+    @apply font-bold mb-4;
+  }
 }

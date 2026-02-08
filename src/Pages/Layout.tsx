@@ -45,7 +45,7 @@ export default function Layout(props: ParentProps) {
       <hr />
       {props.children}
       <footer>
-        <h2>
+        <h2 class="font-bold">
           Please RSVP
           <small> by </small>
           <Time value={rsvpDate} />
@@ -56,7 +56,7 @@ export default function Layout(props: ParentProps) {
           <nav>
             <ul class="justify-center">
               <li>
-                <A href="/rsvp" class="border">
+                <A href="/rsvp" class="border my-(--gap-default)">
                   <span>RSVP</span>
                   <Arrow />
                 </A>
@@ -65,7 +65,7 @@ export default function Layout(props: ParentProps) {
           </nav>
         </footer>
       </Show>
-      <footer class="border-y">
+      <footer class="border-y py-4 my-8">
         <nav>
           <ul class="justify-around">
             <li>
