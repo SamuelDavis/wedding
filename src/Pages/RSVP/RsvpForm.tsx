@@ -18,9 +18,7 @@ export default function RsvpForm() {
     <RsvpLayout>
       <form onSubmit={onSubmit}>
         <fieldset>
-          <label class="font-bold" for="names">
-            Name(s)
-          </label>
+          <label>Name(s)</label>
           <input
             id="names"
             name="names"
@@ -60,7 +58,7 @@ export default function RsvpForm() {
           <p>Include any allergy or dietary restrictions below.</p>
           <textarea id="other" name="other" rows="5"></textarea>
         </fieldset>
-        <div class="flex justify-end">
+        <div>
           <input type="submit" />
         </div>
       </form>

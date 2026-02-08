@@ -1,9 +1,8 @@
 import { createEffect, on, Show, splitProps, type ParentProps } from "solid-js";
-import { useLocation } from "@solidjs/router";
+import { A, useLocation } from "@solidjs/router";
 import Time from "../Components/Time";
 import { rsvpDate } from "../data";
 import type { ExtendProps } from "@samueldavis/solidlib";
-import Link from "../Components/Link";
 
 export default function Layout(props: ParentProps) {
   useScrollTo();
@@ -11,13 +10,13 @@ export default function Layout(props: ParentProps) {
   return (
     <main>
       <header>
-        <nav class="w-full">
+        <nav>
           <ul>
             <li>
-              <Link href="/#our-story">Our Story</Link>
+              <A href="/#our-story">Our Story</A>
             </li>
             <li>
-              <Link href="/#details">Details</Link>
+              <A href="/#details">Details</A>
             </li>
           </ul>
           <ul>
@@ -27,21 +26,17 @@ export default function Layout(props: ParentProps) {
           </ul>
           <ul>
             <li>
-              <Link href="/your-trip" class="border">
-                Your Trip
-              </Link>
+              <A href="/your-trip">Your Trip</A>
             </li>
             <li>
-              <Link href="/rsvp" class="bg-primary text-secondary">
-                RSVP
-              </Link>
+              <A href="/rsvp">RSVP</A>
             </li>
           </ul>
         </nav>
       </header>
-      <hr class="mb-30" />
+      <hr />
       {props.children}
-      <footer class="mt-40">
+      <footer>
         <h2>
           Please RSVP
           <small> by </small>
@@ -49,19 +44,17 @@ export default function Layout(props: ParentProps) {
         </h2>
       </footer>
       <footer>
-        <Link href="/rsvp">RSVP</Link>
+        <A href="/rsvp">RSVP</A>
       </footer>
-      <hr />
       <footer>
         <nav>
           <ul>
             <li>
-              <Link href="/your-trip">Your Trip</Link>
+              <A href="/your-trip">Your Trip</A>
             </li>
           </ul>
         </nav>
       </footer>
-      <hr />
       <footer>
         <Logo stacked />
       </footer>
@@ -94,7 +87,7 @@ function Logo(props: ExtendProps<"div", { stacked?: boolean }>) {
   const [local, parent] = splitProps(props, ["stacked"]);
   return (
     <div {...parent}>
-      <Link href="/">
+      <A href="/">
         <em>
           <span>S</span>
           <Show when={local.stacked}>
@@ -102,7 +95,7 @@ function Logo(props: ExtendProps<"div", { stacked?: boolean }>) {
           </Show>
           <span>J</span>
         </em>
-      </Link>
+      </A>
     </div>
   );
 }

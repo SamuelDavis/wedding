@@ -11,57 +11,48 @@ import socialHourSrc from "../assets/SamandJess_FrancisBeattyPark.jpg";
 import receptionAndDinnerSrc from "../assets/SamandJess_dancing_BW.jpg";
 import additionalDetailsSrc from "../assets/SamandJess_lace.jpg";
 import ImgAsset from "../Components/ImgAsset";
-import Link from "../Components/Link";
+import { A } from "@solidjs/router";
+import Arrow from "../Components/Arrow";
 
 export default function Home() {
   return (
-    <article class="items-center">
-      <article>
-        <section class="img-hover-chromatic justify-between items-center">
-          <ImgAsset
-            class="md:basis-[20%] h-[50%] hover-chromatic"
-            src={nariColorScr}
-          />
-          <div class="md:basis-[50%] relative group flex justify-center">
-            <ImgAsset src={athensColorSrc} class="max-w-120 hover-chromatic" />
-            <div class="absolute w-full text-center top-0 mt-[10%]">
-              <h2>The Wedding Of</h2>
-              <h1>
-                <em>
-                  Samuel<small> and </small>Jessica
-                </em>
-              </h1>
-            </div>
+    <article>
+      <section>
+        <ImgAsset src={nariColorScr} />
+        <div>
+          <ImgAsset src={athensColorSrc} />
+          <div>
+            <h2>The Wedding Of</h2>
+            <h1>
+              <em>
+                Samuel<small> and </small>Jessica
+              </em>
+            </h1>
           </div>
-          <ImgAsset
-            class="md:basis-[20%] hover-chromatic"
-            src={flowersColorSrc}
-          />
-        </section>
-        <section class="justify-center my-16">
-          <h2>
-            <Time value={weddingDate} />
-            <hr class="vertical mx-6" />
-            <a target="_blank" href={venueMapHref} class="p-0">
-              Francis J. Beatty Park
-            </a>
-          </h2>
-        </section>
-        <section class="mb-40">
-          <nav class="w-full justify-around">
-            <ul>
-              <li>
-                <Link class="border" arrow href="/rsvp">
-                  RSVP
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </section>
-      </article>
-      <article id="our-story" class="text-center max-w-240">
-        <h1 class="bold mb-12">
-          <Link href="#our-story">Let's Make This Official</Link>
+        </div>
+        <ImgAsset src={flowersColorSrc} />
+      </section>
+      <section>
+        <h2>
+          <Time value={weddingDate} />
+          <hr />
+          <a target="_blank" href={venueMapHref}>
+            Francis J. Beatty Park
+          </a>
+        </h2>
+      </section>
+      <section>
+        <nav>
+          <ul>
+            <li>
+              <A href="/rsvp">RSVP</A>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section>
+        <h1 id="our-story">
+          <A href="#our-story">Let's Make This Official</A>
         </h1>
         <p>
           Our story began in 2019, chatting during work breaks about animation,
@@ -76,18 +67,16 @@ export default function Home() {
           We are excited to invite you &mdash; our family and closest friends to
           celebrate with us on our wedding day. We can't wait!
         </p>
-        <h2 class="bold">Sam & Jess</h2>
-      </article>
-      <article>
-        <header>
-          <q class="text-right text-tertiary">
-            <em>
-              <span>Every moment spent with you, </span>
-              <br />
-              <span>is a moment I treasure.</span>
-            </em>
-          </q>
-        </header>
+        <h2>Sam & Jess</h2>
+      </section>
+      <section>
+        <q>
+          <em>
+            <span>Every moment spent with you, </span>
+            <br />
+            <span>is a moment I treasure.</span>
+          </em>
+        </q>
         <Marquee>
           <For each={timeline}>
             {({ year, src }) => (
@@ -98,21 +87,19 @@ export default function Home() {
             )}
           </For>
         </Marquee>
-      </article>
-      <article id="on-the-day">
-        <header class="flex-col items-center">
-          <h1 class="bold">
+      </section>
+      <section>
+        <header>
+          <h1 id="on-the-day">
             <Time value={weddingDate} format="short" />
           </h1>
           <h1>
             <em>
-              <Link href="#on-the-day" class="normal-case">
-                On the Day
-              </Link>
+              <A href="#on-the-day">On the Day</A>
             </em>
           </h1>
         </header>
-        <section class="cols-2">
+        <section>
           <div>
             <h1>
               Arrival<small> and </small>Ceremony
@@ -123,9 +110,10 @@ export default function Home() {
                   Arrive a little early and enjoy the park, find your seats, and
                   settle in before the ceremony begins.
                 </p>
-                <Link class="border" arrow href={venueMapHref}>
-                  View Location
-                </Link>
+                <A href={venueMapHref}>
+                  <span>View Location</span>
+                  <Arrow />
+                </A>
               </ItineraryItem>
               <ItineraryItem time={schedule.iDo}>
                 <p>
@@ -134,11 +122,11 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <ImgAsset class="framed" src={arrivalAndCeremonySrc} />
+          <ImgAsset src={arrivalAndCeremonySrc} />
         </section>
         <hr />
-        <section class="cols-2">
-          <ImgAsset class="framed" src={socialHourSrc} />
+        <section>
+          <ImgAsset src={socialHourSrc} />
           <div>
             <h1>Social Hour</h1>
             <Itinerary>
@@ -152,7 +140,7 @@ export default function Home() {
           </div>
         </section>
         <hr />
-        <section class="cols-2">
+        <section>
           <div>
             <h1>
               Reception<small> and </small>Dinner
@@ -171,55 +159,53 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <ImgAsset class="framed" src={receptionAndDinnerSrc} />
+          <ImgAsset src={receptionAndDinnerSrc} />
         </section>
-      </article>
-      <article id="details" class="p-10 my-10 border">
-        <section class="cols-2">
-          <div class="relative">
-            <h1 class="absolute top-0">
-              <Link href="#details">
-                Additional
-                <br />
-                Details
-              </Link>
+      </section>
+      <section>
+        <figure>
+          <figcaption>
+            <h1 id="details">
+              Additional
+              <br />
+              Details
             </h1>
-            <ImgAsset src={additionalDetailsSrc} />
-          </div>
-          <ul>
-            <li>
-              <h2>Attire</h2>
-              <p>
-                Bright, nature-inspired colors are encouraged. The cremony is
-                taking place outdoors, so dress for the weather!
-              </p>
-              <p>
-                View attire examples{" "}
-                <a target="_blank" href="#">
-                  here
-                </a>
-                .
-              </p>
-              <hr class="my-4" />
-            </li>
-            <li>
-              <h2>Little Ones</h2>
-              <p>
-                We are only able to accomodate children listed on your invite.
-                Enjoy your night off!
-              </p>
-              <hr class="my-4" />
-            </li>
-            <li>
-              <h2>Gifts</h2>
-              <p>
-                Your presence is the real gift! If you'd still like to give, a
-                card box will be available.
-              </p>
-            </li>
-          </ul>
-        </section>
-      </article>
+          </figcaption>
+          <ImgAsset src={additionalDetailsSrc} />
+        </figure>
+        <ul>
+          <li>
+            <h2>Attire</h2>
+            <p>
+              Bright, nature-inspired colors are encouraged. The cremony is
+              taking place outdoors, so dress for the weather!
+            </p>
+            <p>
+              View attire examples{" "}
+              <a target="_blank" href="#">
+                here
+              </a>
+              .
+            </p>
+            <hr />
+          </li>
+          <li>
+            <h2>Little Ones</h2>
+            <p>
+              We are only able to accomodate children listed on your invite.
+              Enjoy your night off!
+            </p>
+            <hr />
+          </li>
+          <li>
+            <h2>Gifts</h2>
+            <p>
+              Your presence is the real gift! If you'd still like to give, a
+              card box will be available.
+            </p>
+          </li>
+        </ul>
+      </section>
     </article>
   );
 }

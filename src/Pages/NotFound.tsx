@@ -1,4 +1,4 @@
-import Link from "../Components/Link";
+import { A } from "@solidjs/router";
 
 export default function NotFound() {
   return (
@@ -7,7 +7,7 @@ export default function NotFound() {
         <h1>Page Not Found</h1>
       </header>
       <p>
-        Try returning <Link href="/">Home</Link>.
+        Try returning <A href="/">Home</A>.
       </p>
     </article>
   );

@@ -33,7 +33,7 @@ export default function Discover() {
       <header>
         <h2>{getPageContent().subtitle}</h2>
       </header>
-      <article class="gap-24">
+      <article>
         <For each={getPageContent().attractions}>
           {(Content) => <Dynamic component={Content} />}
         </For>
@@ -72,10 +72,10 @@ function Attraction(
     "children",
   ]);
   return (
-    <section class="cols-2" {...parent}>
-      <ImgAsset class="framed" src={local.imageSrc} />
+    <section {...parent}>
+      <ImgAsset src={local.imageSrc} />
       <div>
-        <h2 class="font-bold mb-8">
+        <h2>
           <a href={local.siteHref} target="_blank">
             {local.title}
           </a>

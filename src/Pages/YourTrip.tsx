@@ -2,7 +2,8 @@ import { hotelSiteHref } from "../data";
 import DiscoveriesNav from "../Content/DiscoveriesNav";
 import wingateSrc from "../assets/SamandJess_hotel.jpg";
 import ImgAsset from "../Components/ImgAsset";
-import Link from "../Components/Link";
+import Arrow from "../Components/Arrow";
+import { A } from "@solidjs/router";
 
 export default function YourTrip() {
   return (
@@ -15,7 +16,7 @@ export default function YourTrip() {
       <header>
         <h2>Stay a while</h2>
       </header>
-      <section class="cols-2 img-frames">
+      <section>
         <div>
           <h2>
             Where<small> to </small>Stay
@@ -26,16 +27,17 @@ export default function YourTrip() {
             Check the hotel website for additional details for address, parking,
             etc.
           </p>
-          <Link target="_blank" href={hotelSiteHref} class="border" arrow>
-            book room
-          </Link>
+          <A target="_blank" href={hotelSiteHref}>
+            <span>book room</span>
+            <Arrow />
+          </A>
         </div>
-        <ImgAsset class="framed" src={wingateSrc} />
+        <ImgAsset src={wingateSrc} />
       </section>
       <hr />
-      <section class="flex-col items-center">
+      <section>
         <h1>What category interests you most?</h1>
-        <DiscoveriesNav class="gap-16" images />
+        <DiscoveriesNav images />
       </section>
     </article>
   );

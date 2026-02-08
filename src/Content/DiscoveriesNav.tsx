@@ -1,11 +1,11 @@
 import { type ExtendProps } from "@samueldavis/solidlib";
-import { useMatch } from "@solidjs/router";
+import { A, useMatch } from "@solidjs/router";
 import { splitProps, For, Show } from "solid-js";
 import nightlifeSrc from "../assets/SamandJess_charlotte.jpg";
 import smallTownCharmSrc from "../assets/SamandJess_matthews.jpg";
 import globalFlavorsSrc from "../assets/SamandJess_foodanddrink.jpg";
 import ImgAsset from "../Components/ImgAsset";
-import Link from "../Components/Link";
+import Arrow from "../Components/Arrow";
 
 const links: {
   href: string;
@@ -46,17 +46,14 @@ export default function DiscoveriesNav(
             return getIsActive() ? null : (
               <li>
                 <Show when={local.images}>
-                  <Link href={link.href}>
-                    <ImgAsset class="framed" src={link.src} />
-                  </Link>
+                  <A href={link.href}>
+                    <ImgAsset src={link.src} />
+                  </A>
                 </Show>
-                <Link
-                  class="border w-full whitespace-nowrap"
-                  arrow
-                  href={link.href}
-                >
-                  <button>{link.text}</button>
-                </Link>
+                <A href={link.href}>
+                  <span>{link.text}</span>
+                  <Arrow />
+                </A>
               </li>
             );
           }}
