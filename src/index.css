@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+:root {
+  form > fieldset:nth-child(2) {
+    position: absolute;
+    left: -1000000px;
+  }
+}
+
 @theme {
   --font-display: "Pinyon Script";
   --font-normal: "Libre Baskerville";

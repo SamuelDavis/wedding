@@ -1,5 +1,6 @@
 import { A } from "@solidjs/router";
 import RsvpLayout from "./RsvpLayout";
+import Arrow from "../../Components/Arrow";
 
 export default function RsvpSuccess() {
   return (
@@ -7,7 +8,10 @@ export default function RsvpSuccess() {
       <section>
         <h2>Success!</h2>
         <h3>Check out your personal trip guide below</h3>
-        <A href="/your-trip">Plan Your Trip</A>
+        <A href="/your-trip" class="border">
+          <span>Plan Your Trip</span>
+          <Arrow />
+        </A>
       </section>
     </RsvpLayout>
   );

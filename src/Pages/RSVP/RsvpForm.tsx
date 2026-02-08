@@ -3,16 +3,26 @@ import RadioGroup from "../../Components/RadioGroup";
 import { useNavigate } from "@solidjs/router";
 import RsvpLayout from "./RsvpLayout";
 import Arrow from "../../Components/Arrow";
+import { entry, postEndpoint } from "../../data";
 
 export default function RsvpForm() {
   const navigator = useNavigate();
 
-  function onSubmit(event: Targeted<HTMLFormElement>): void {
+  async function onSubmit(event: Targeted<HTMLFormElement>): Promise<void> {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    if (data.get("email")?.toString()) return navigator("/rsvp/success");
+
     const entries = Array.from(data.entries());
-    console.debug(entries);
-    navigator("/rsvp/success");
+    const body = new URLSearchParams();
+    for (const [key, value] of entries) body.set(entry[key], value.toString());
+    fetch(postEndpoint, {
+      method: "POST",
+      mode: "no-cors",
+      body,
+    });
+
+    return navigator("/rsvp/success");
   }
 
   return (
@@ -25,8 +35,13 @@ export default function RsvpForm() {
             name="names"
             type="text"
             placeholder="First and last names..."
+            autocomplete="name"
             required
           />
+        </fieldset>
+        <fieldset>
+          <label>Email</label>
+          <input type="email" name="email" />
         </fieldset>
         <RadioGroup
           legend="Will you be able to attend?"

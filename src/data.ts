@@ -41,3 +41,12 @@ export const InterestSlugs = [
   "small-town-charm",
   "global-flavors",
 ] as const;
+
+export const postEndpoint =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdC-wwlYT7GZpEXSy_bGNJeRP31jHD-7YzTtFIfSTbSFP3STg/formResponse";
+export const entry: Record<string, string> = {
+  names: "entry.257872457",
+  attending: "entry.877086558",
+  entree: "entry.1498135098",
+  other: "entry.1424661284",
+};
