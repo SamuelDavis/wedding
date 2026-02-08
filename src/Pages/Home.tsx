@@ -17,20 +17,20 @@ import Arrow from "../Components/Arrow";
 export default function Home() {
   return (
     <article>
-      <section class="flex flex-col gap-12 items-center md:flex-row md:gap-36">
+      <section class="flex flex-col gap-12 items-center lg:flex-row lg:gap-36 hover-chromatic">
         <ImgAsset src={nariColorScr} class="w-[25%]" />
-        <div class="relative w-[50%]">
+        <div class="relative w-[50%] group">
           <ImgAsset src={athensColorSrc} />
           <div class="absolute top-[10%] w-full text-center">
             <h2>The Wedding Of</h2>
             <h1>
-              <em>
-                Samuel<small> and </small>Jessica
+              <em class="flex justify-center items-center">
+                Samuel<small class="text-[0.5em] mx-8"> and </small>Jessica
               </em>
             </h1>
           </div>
         </div>
-        <ImgAsset src={flowersColorSrc} class="w-[25%]" />
+        <ImgAsset src={flowersColorSrc} class="w-[25%] group:hover-chromatic" />
       </section>
       <section class="text-center">
         <h2>
@@ -49,7 +49,7 @@ export default function Home() {
         </nav>
       </section>
       <section class="text-center">
-        <h1 id="our-story">
+        <h1 id="our-story" class="font-bold">
           <A href="#our-story">Let's Make This Official</A>
         </h1>
         <p>
@@ -65,14 +65,14 @@ export default function Home() {
           We are excited to invite you &mdash; our family and closest friends to
           celebrate with us on our wedding day. We can't wait!
         </p>
-        <h2>Sam & Jess</h2>
-        <q>
-          <em>
-            <span>Every moment spent with you, </span>
+        <h2 class="font-bold">Sam & Jess</h2>
+        <em>
+          <q class="whitespace-nowrap text-right -mr-[1ch]">
+            <span class="mr-[1ch]">Every moment spent with you, </span>
             <br />
-            <span class="ml-20">is a moment I treasure.</span>
-          </em>
-        </q>
+            <span>is a moment I treasure.</span>
+          </q>
+        </em>
         <Marquee>
           <For each={timeline}>
             {({ year, src }) => (
@@ -84,15 +84,15 @@ export default function Home() {
           </For>
         </Marquee>
       </section>
-      <section>
+      <section class="framed">
         <header>
           <h1 id="on-the-day">
             <Time value={weddingDate} format="short" />
           </h1>
           <h1>
-            <em>
-              <A href="#on-the-day">On the Day</A>
-            </em>
+            <A href="#on-the-day">
+              <em>On the Day</em>
+            </A>
           </h1>
         </header>
         <section class="cols-2">
@@ -162,9 +162,11 @@ export default function Home() {
         <figure class="relative">
           <figcaption class="absolute">
             <h1 id="details">
-              Additional
-              <br />
-              Details
+              <em class="-ml-[1ch]">
+                Additional
+                <br />
+                Details
+              </em>
             </h1>
           </figcaption>
           <ImgAsset src={additionalDetailsSrc} />

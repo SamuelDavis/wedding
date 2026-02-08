@@ -14,6 +14,7 @@ import riRaIrishPubSrc from "../assets/SamandJess_fishandchips.jpg";
 import theOneTapasAndBarSrc from "../assets/SamandJess_foodanddrink.jpg";
 import { InterestSlugs } from "../data";
 import ImgAsset from "../Components/ImgAsset";
+import Arrow from "../Components/Arrow";
 
 type InterestSlug = (typeof InterestSlugs)[number];
 type PageContent = {
@@ -29,19 +30,15 @@ export default function Discover() {
     <article>
       <header>
         <h1>{getPageContent().title}</h1>
-      </header>
-      <header>
         <h2>{getPageContent().subtitle}</h2>
       </header>
-      <article>
+      <div class="flex flex-col gap-(--gap-default) framed">
         <For each={getPageContent().attractions}>
           {(Content) => <Dynamic component={Content} />}
         </For>
-      </article>
+      </div>
       <footer>
         <h2>Discover More</h2>
-      </footer>
-      <footer>
         <DiscoveriesNav />
       </footer>
     </article>
@@ -82,8 +79,9 @@ function Attraction(
           </a>
         </h2>
         {local.children}
-        <a href={local.mapHref} target="_blank">
-          View Route
+        <a href={local.mapHref} target="_blank" class="border">
+          <span>View Route</span>
+          <Arrow />
         </a>
       </div>
     </section>

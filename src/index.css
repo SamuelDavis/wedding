@@ -1,11 +1,49 @@
 @import "tailwindcss";
 
 @theme {
+  --font-display: "Pinyon Script";
+  --font-normal: "Libre Baskerville";
+  --color-quote: #caa5af;
+  --color-bg: #fff8f7;
+  --color-text: #7f2549;
+
+  --gap-sm: 2rem;
+  --gap-md: 4rem;
 }
 
 @layer base {
+  :root {
+    --gap-default: var(--gap-sm);
+
+    @apply bg-bg font-normal text-text border-text;
+  }
+
+  @media (min-width: 48rem) {
+    :root {
+      --gap-default: var(--gap-md);
+    }
+  }
+
   main {
-    @apply max-w-360 p-12 m-12 md:p-24 md:mx-auto;
+    @apply min-w-72 max-w-360 p-(--gap-default) md:mx-auto;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply uppercase;
+  }
+
+  em {
+    @apply font-display normal-case text-4xl md:text-8xl;
+
+    & q {
+      @apply text-quote;
+    }
+  }
+
+  a {
+    @apply uppercase;
   }
 
   header,
@@ -13,13 +51,12 @@
     @apply w-full text-center;
   }
 
-  nav,
-  nav ul {
-    @apply flex justify-between w-full gap-12 flex-col items-center md:flex-row;
+  a {
+    @apply rounded-sm p-2;
+  }
 
-    & li {
-      @apply flex flex-col gap-12;
-    }
+  small {
+    @apply lowercase text-[0.75em] mx-1;
   }
 
   img {
@@ -32,7 +69,7 @@
   }
 
   hr {
-    @apply my-12;
+    @apply my-(--gap-default);
 
     &.vertical {
       @apply inline border-0 border-l h-4 mx-2;
@@ -50,7 +87,7 @@
     }
 
     & label {
-      @apply flex items-start gap-2;
+      @apply flex items-start gap-(--gap-default);
       & [type="radio"] {
         @apply mt-1.5;
       }
@@ -60,7 +97,9 @@
   textarea {
     @apply border;
   }
+}
 
+@layer components {
   ul[role="marquee"] {
     @apply flex flex-nowrap w-full min-w-0 overflow-x-auto h-[33vh];
 
@@ -78,6 +117,28 @@
   }
 
   .cols-2 {
-    @apply grid md:grid-cols-2;
+    @apply grid md:grid-cols-2 gap-(--gap-default);
+  }
+
+  img.framed,
+  .framed img {
+    @apply border p-4;
+  }
+
+  img.hover-chromatic,
+  .hover-chromatic img {
+    @apply duration-200 md:grayscale-100 hover:grayscale-0 group-hover:grayscale-0;
+  }
+
+  nav.header-nav {
+    @apply flex flex-col justify-between md:flex-row;
+
+    & ul {
+      @apply flex flex-col basis-full justify-between items-center md:flex-row;
+    }
+
+    & a {
+      @apply whitespace-nowrap;
+    }
   }
 }

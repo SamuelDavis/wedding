@@ -3,6 +3,7 @@ import { A, useLocation, useMatch } from "@solidjs/router";
 import Time from "../Components/Time";
 import { rsvpDate } from "../data";
 import type { ExtendProps } from "@samueldavis/solidlib";
+import Arrow from "../Components/Arrow";
 
 export default function Layout(props: ParentProps) {
   useScrollTo();
@@ -11,7 +12,7 @@ export default function Layout(props: ParentProps) {
   return (
     <main>
       <header>
-        <nav>
+        <nav class="header-nav">
           <ul>
             <li>
               <A href="/#our-story">Our Story</A>
@@ -20,8 +21,8 @@ export default function Layout(props: ParentProps) {
               <A href="/#details">Details</A>
             </li>
           </ul>
-          <ul class="justify-center">
-            <li>
+          <ul>
+            <li class="basis-full">
               <Logo />
             </li>
           </ul>
@@ -32,7 +33,9 @@ export default function Layout(props: ParentProps) {
               </A>
             </li>
             <li>
-              <A href="/rsvp">RSVP</A>
+              <A href="/rsvp" class="bg-text text-bg">
+                RSVP
+              </A>
             </li>
           </ul>
         </nav>
@@ -52,7 +55,8 @@ export default function Layout(props: ParentProps) {
             <ul class="justify-center">
               <li>
                 <A href="/rsvp" class="border">
-                  RSVP
+                  <span>RSVP</span>
+                  <Arrow />
                 </A>
               </li>
             </ul>
