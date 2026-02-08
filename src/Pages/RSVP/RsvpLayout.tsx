@@ -21,7 +21,7 @@ export default function RsvpLayout(props: ParentProps) {
         </div>
       </header>
       <section class="cols-2">
-        <figure>
+        <figure class="framed">
           <ImgAsset src={coupleSrc} />
           <figcaption>
             <q>

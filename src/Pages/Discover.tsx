@@ -41,6 +41,14 @@ export default function Discover() {
         <h2>Discover More</h2>
         <DiscoveriesNav />
       </footer>
+      <footer>
+        <figure class="flex flex-col items-center">
+          <img src="/Your Trip footer.png" class="w-[30%]" />
+          <figcaption>
+            <em class="text-quote">A kiss to build a dream on</em>
+          </figcaption>
+        </figure>
+      </footer>
     </article>
   );
 }

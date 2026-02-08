@@ -25,7 +25,7 @@
   }
 
   main {
-    @apply min-w-72 max-w-360 p-(--gap-default) md:mx-auto;
+    @apply bg-bg min-w-72 max-w-360 p-(--gap-default) md:p-24 md:mx-auto;
   }
 
   h1,
@@ -134,11 +134,39 @@
     @apply flex flex-col justify-between md:flex-row;
 
     & ul {
-      @apply flex flex-col basis-full justify-between items-center md:flex-row;
+      @apply flex flex-col basis-full justify-between items-center md:flex-row gap-(--gap-default);
     }
 
     & a {
       @apply whitespace-nowrap;
     }
   }
+}
+
+[data-path="/"] {
+  background-image:
+    url("/Homepage 2.png"), url("/Homepage 4.png"), url("/Homepage 3.png"),
+    url("/Homepage 1.png"), url("/Homepage 5.png");
+  background-repeat: no-repeat;
+  background-position:
+    left 15%,
+    left 45%,
+    right 15%,
+    right 55%,
+    right 95%;
+  background-size: 30% auto;
+}
+
+[data-path^="/rsvp"] {
+  background-image: url("/RSVP Main.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 30% auto;
+}
+
+[data-path="/your-trip"] {
+  background-image: url("/Your Trip Main.png");
+  background-repeat: no-repeat;
+  background-position: left 75%;
+  background-size: 30% auto;
 }

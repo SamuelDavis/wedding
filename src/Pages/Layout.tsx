@@ -4,13 +4,15 @@ import Time from "../Components/Time";
 import { rsvpDate } from "../data";
 import type { ExtendProps } from "@samueldavis/solidlib";
 import Arrow from "../Components/Arrow";
+import logoSrc from "../assets/Logo.png";
 
 export default function Layout(props: ParentProps) {
   useScrollTo();
+  const location = useLocation();
   const getIsRSVP = useMatch(() => "/rsvp/:success?");
 
   return (
-    <main>
+    <main data-path={location.pathname}>
       <header>
         <nav class="header-nav">
           <ul>
@@ -22,8 +24,8 @@ export default function Layout(props: ParentProps) {
             </li>
           </ul>
           <ul>
-            <li class="basis-full">
-              <Logo />
+            <li class="flex justify-center basis-full">
+              <Logo class="w-40" />
             </li>
           </ul>
           <ul>
@@ -72,8 +74,8 @@ export default function Layout(props: ParentProps) {
           </ul>
         </nav>
       </footer>
-      <footer>
-        <Logo stacked />
+      <footer class="flex justify-center">
+        <Logo class="w-68" />
       </footer>
     </main>
   );
@@ -101,17 +103,10 @@ function useScrollTo(): void {
 }
 
 function Logo(props: ExtendProps<"div", { stacked?: boolean }>) {
-  const [local, parent] = splitProps(props, ["stacked"]);
   return (
-    <div {...parent}>
+    <div {...props}>
       <A href="/">
-        <em>
-          <span>S</span>
-          <Show when={local.stacked}>
-            <br />
-          </Show>
-          <span>J</span>
-        </em>
+        <img src={logoSrc} />
       </A>
     </div>
   );
