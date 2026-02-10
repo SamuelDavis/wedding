@@ -16,7 +16,7 @@ import Arrow from "../Components/Arrow";
 
 export default function Home() {
   return (
-    <article>
+    <article class="mb-36">
       <section class="flex justify-between items-center text-center">
         <ImgAsset src={nariColorScr} class="w-42 h-56 hover-chromatic" />
         <div class="relative px-40 group">
