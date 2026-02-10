@@ -1,6 +1,6 @@
 import { type ExtendProps } from "@samueldavis/solidlib";
-import { A, useLocation, useMatch } from "@solidjs/router";
-import { splitProps, For, Show, createMemo } from "solid-js";
+import { A, useLocation } from "@solidjs/router";
+import { splitProps, For } from "solid-js";
 import nightlifeSrc from "../assets/SamandJess_charlotte.jpg";
 import smallTownCharmSrc from "../assets/SamandJess_matthews.jpg";
 import globalFlavorsSrc from "../assets/SamandJess_foodanddrink.jpg";
