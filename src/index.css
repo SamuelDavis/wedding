@@ -31,7 +31,7 @@
   }
 
   img {
-    @apply min-w-0 w-full h-full object-cover;
+    @apply min-w-0 h-full object-cover;
   }
 
   a {
