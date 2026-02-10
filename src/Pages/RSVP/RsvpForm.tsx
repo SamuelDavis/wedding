@@ -28,8 +28,8 @@ export default function RsvpForm() {
   return (
     <RsvpLayout>
       <form onSubmit={onSubmit}>
-        <fieldset>
-          <label>Name(s)</label>
+        <fieldset class="mb-12">
+          <label class="body-bold block">Name(s)</label>
           <input
             id="names"
             name="names"
@@ -37,10 +37,11 @@ export default function RsvpForm() {
             placeholder="First and last names..."
             autocomplete="name"
             required
+            class="border w-full p-2 rounded-sm"
           />
         </fieldset>
-        <fieldset>
-          <label>Email</label>
+        <fieldset class="mb-12 hidden">
+          <label class="body-bold">Email</label>
           <input type="email" name="email" />
         </fieldset>
         <RadioGroup
@@ -50,6 +51,7 @@ export default function RsvpForm() {
             { label: "Yes! I'll be there!", value: "yes" },
             { label: "Sorry, I can't make it.", value: "no" },
           ]}
+          class="mb-12"
         />
         <RadioGroup
           legend="Select your entree"
@@ -63,18 +65,26 @@ export default function RsvpForm() {
                 <div>
                   <span>{value}</span>
                   <br />
-                  <small>Vegetarian & vegan (no meat)</small>
+                  <small class="text-(--Secondary-Shadow-500)">
+                    Vegetarian & vegan (no meat)
+                  </small>
                 </div>
               ),
             },
           ]}
+          class="mb-12"
         />
-        <fieldset>
-          <legend>Anything else?</legend>
+        <fieldset class="mb-12">
+          <legend class="body-bold mb-4">Anything else?</legend>
           <p>Include any allergy or dietary restrictions below.</p>
-          <textarea id="other" name="other" rows="5" class="w-full" />
+          <textarea
+            id="other"
+            name="other"
+            rows="5"
+            class="border w-full p-2 rounded-sm"
+          />
         </fieldset>
-        <button type="submit" class="border uppercase float-right">
+        <button type="submit" class="border px-6 py-4 float-right">
           <span>Submit Form</span>
           <Arrow />
         </button>

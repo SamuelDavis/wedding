@@ -27,29 +27,31 @@ type PageContent = {
 export default function Discover() {
   const getPageContent = usePageContent();
   return (
-    <article>
-      <header>
-        <h1>{getPageContent().title}</h1>
-        <h2>{getPageContent().subtitle}</h2>
-      </header>
-      <div class="flex flex-col gap-(--gap-default) framed">
-        <For each={getPageContent().attractions}>
-          {(Content) => <Dynamic component={Content} />}
-        </For>
-      </div>
-      <footer>
-        <h2>Discover More</h2>
+    <>
+      <article>
+        <header class="text-center mb-40">
+          <h1 class="display-display mb-12">{getPageContent().title}</h1>
+          <h2 class="title-h2">{getPageContent().subtitle}</h2>
+        </header>
+        <div>
+          <For each={getPageContent().attractions}>
+            {(Content) => <Dynamic component={Content} />}
+          </For>
+        </div>
+      </article>
+      <footer class="text-center pt-30 pb-36 bg-(--Secondary-Light-100)">
+        <h2 class="title-h1-bold-caps mb-24">Discover More</h2>
         <DiscoveriesNav />
       </footer>
-      <footer>
-        <figure class="flex flex-col items-center">
-          <img src="/Your Trip footer.png" class="w-[30%]" />
-          <figcaption>
-            <em class="text-quote">A kiss to build a dream on</em>
+      <footer class="text-center">
+        <figure>
+          <img src="/Your Trip footer.png" class="h-200 object-contain mb-12" />
+          <figcaption class="display-display text-(--Secondary-Shadow-500)">
+            A kiss to build a dream on
           </figcaption>
         </figure>
       </footer>
-    </article>
+    </>
   );
 }
 
@@ -78,16 +80,16 @@ function Attraction(
     "class",
   ]);
   return (
-    <section class={`cols-2 ${local.class}`} {...parent}>
-      <ImgAsset src={local.imageSrc} />
+    <section class={`cols-2 mb-48 ${local.class}`} {...parent}>
+      <ImgAsset src={local.imageSrc} class="framed" />
       <div>
-        <h2>
+        <h2 class="title-h1-bold-caps mb-12">
           <a href={local.siteHref} target="_blank">
             {local.title}
           </a>
         </h2>
         {local.children}
-        <a href={local.mapHref} target="_blank" class="border">
+        <a href={local.mapHref} target="_blank" class="border mt-12 p-4">
           <span>View Route</span>
           <Arrow />
         </a>

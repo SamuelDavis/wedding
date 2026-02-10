@@ -12,9 +12,9 @@ export default function Layout(props: ParentProps) {
   const getIsRSVP = useMatch(() => "/rsvp/:success?");
 
   return (
-    <main data-path={location.pathname}>
+    <main data-path={location.pathname} class="mx-auto w-360">
       <header>
-        <nav class="header-nav">
+        <nav id="main-nav" class="navigation-button-link">
           <ul>
             <li>
               <A href="/#our-story">Our Story</A>
@@ -24,8 +24,8 @@ export default function Layout(props: ParentProps) {
             </li>
           </ul>
           <ul>
-            <li class="flex justify-center basis-full">
-              <Logo class="w-40" />
+            <li>
+              <Logo class="h-40" />
             </li>
           </ul>
           <ul>
@@ -35,47 +35,44 @@ export default function Layout(props: ParentProps) {
               </A>
             </li>
             <li>
-              <A href="/rsvp" class="bg-text text-bg">
+              <A
+                href="/rsvp"
+                class="bg-(--Primary-Mauve-800) text-(--Background-Soft-100)"
+              >
                 RSVP
               </A>
             </li>
           </ul>
         </nav>
       </header>
-      <hr />
+      <hr class="mb-20" />
       {props.children}
-      <footer>
-        <h2 class="font-bold">
+      <footer class="text-center">
+        <h2 class="title-h1-bold-caps mb-16">
           Please RSVP
-          <small> by </small>
+          <small class="title-h1-decorative"> by </small>
           <Time value={rsvpDate} />
         </h2>
-      </footer>
-      <Show when={!getIsRSVP()}>
-        <footer>
+        <Show when={!getIsRSVP()}>
           <nav>
-            <ul class="justify-center">
+            <ul>
               <li>
-                <A href="/rsvp" class="border my-(--gap-default)">
-                  <span>RSVP</span>
+                <A href="/rsvp" class="border uppercase p-4">
+                  <span>RSVP to Wedding</span>
                   <Arrow />
                 </A>
               </li>
             </ul>
           </nav>
-        </footer>
-      </Show>
-      <footer class="border-y py-4 my-8">
-        <nav>
-          <ul class="justify-around">
+        </Show>
+        <nav class="border-y py-6 my-28">
+          <ul>
             <li>
               <A href="/your-trip">Your Trip</A>
             </li>
           </ul>
         </nav>
-      </footer>
-      <footer class="flex justify-center">
-        <Logo class="w-68" />
+        <Logo class="h-68" />
       </footer>
     </main>
   );
@@ -102,12 +99,10 @@ function useScrollTo(): void {
   );
 }
 
-function Logo(props: ExtendProps<"div", { stacked?: boolean }>) {
+function Logo(props: ExtendProps<typeof A, {}, "href">) {
   return (
-    <div {...props}>
-      <A href="/">
-        <img src={logoSrc} />
-      </A>
-    </div>
+    <A href="/" {...props}>
+      <img src={logoSrc} />
+    </A>
   );
 }

@@ -33,15 +33,16 @@ export default function RadioGroup<Value extends string>(
 
   return (
     <fieldset {...parent}>
-      <legend>{local.legend}</legend>
+      <legend class="body-bold mb-4">{local.legend}</legend>
       <For each={getOptions()}>
         {(option) => (
-          <label>
+          <label class="flex items-start gap-2">
             <input
               type="radio"
               value={option.value}
               checked={local.value ? local.value === option.value : undefined}
               {...local.inputProps}
+              class="mt-2"
             />
             {option.label(option.value)}
           </label>

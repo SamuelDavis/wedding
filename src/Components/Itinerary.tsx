@@ -13,7 +13,7 @@ export function ItineraryItem(
   const [local, parent] = splitProps(merged, ["time", "format"]);
   const [from, to] = (isArray(local.time) ? local.time : [local.time]).map(
     (time) => (
-      <h2>
+      <h2 class="title-h2">
         <Time value={time} format="time" />
       </h2>
     ),
@@ -21,7 +21,7 @@ export function ItineraryItem(
 
   return (
     <>
-      <dt>
+      <dt class="mt-16 mb-4">
         <Show when={to} fallback={from}>
           {(get) => (
             <>

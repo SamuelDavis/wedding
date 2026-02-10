@@ -17,26 +17,24 @@ import Arrow from "../Components/Arrow";
 export default function Home() {
   return (
     <article>
-      <section class="flex flex-col gap-12 items-center lg:flex-row lg:gap-36 hover-chromatic">
-        <ImgAsset src={nariColorScr} class="w-[25%] hidden md:block" />
-        <div class="relative md:w-[50%] group">
-          <ImgAsset src={athensColorSrc} />
-          <div class="absolute top-[10%] w-full text-center">
-            <h2 class="mb-8">The Wedding Of</h2>
-            <h1>
-              <em class="flex justify-center items-center">
-                Samuel<small class="text-[0.5em] mx-8"> and </small>Jessica
-              </em>
+      <section class="flex justify-between items-center text-center">
+        <ImgAsset src={nariColorScr} class="w-42 h-56 hover-chromatic" />
+        <div class="relative px-40 group">
+          <ImgAsset
+            src={athensColorSrc}
+            class="grow hover-chromatic w-120 h-160"
+          />
+          <div class="absolute left-0 top-16 w-full group:hover-chromatic">
+            <h2 class="title-h2">The Wedding Of</h2>
+            <h1 class="display-display flex justify-center items-center">
+              Samuel<small class="display-decorative px-4"> and </small>Jessica
             </h1>
           </div>
         </div>
-        <ImgAsset
-          src={flowersColorSrc}
-          class="w-[25%] group:hover-chromatic hidden md:block"
-        />
+        <ImgAsset src={flowersColorSrc} class="w-42 h-56 hover-chromatic" />
       </section>
-      <section class="text-center pb-(--gap-default)">
-        <h2 class="my-(--gap-default)">
+      <section class="text-center mb-40">
+        <h2 class="title-h2 my-18 uppercase">
           <Time value={weddingDate} />
           <hr class="vertical" />
           <a target="_blank" href={venueMapHref}>
@@ -44,7 +42,7 @@ export default function Home() {
           </a>
         </h2>
         <nav>
-          <ul class="justify-center">
+          <ul>
             <li>
               <A href="/rsvp" class="border">
                 <span>RSVP</span>
@@ -54,9 +52,9 @@ export default function Home() {
           </ul>
         </nav>
       </section>
-      <section class="text-center py-(--gap-default)">
-        <h1 id="our-story" class="font-bold">
-          <A href="#our-story" class="mb-(--gap-default) font-bold">
+      <section class="text-center max-w-232 mx-auto">
+        <h1 id="our-story" class="title-h1-bold-caps">
+          <A href="#our-story" class="mb-12">
             Let's Make This Official
           </A>
         </h1>
@@ -73,17 +71,15 @@ export default function Home() {
           We are excited to invite you &mdash; our family and closest friends to
           celebrate with us on our wedding day. We can't wait!
         </p>
-        <h2 class="font-bold py-(--gap-default)">Sam & Jess</h2>
-        <div class="my-(--gap-default)">
-          <em>
-            <q class="whitespace-nowrap text-right -mr-[1ch]">
-              <span class="mr-[1ch]">Every moment spent with you, </span>
-              <br />
-              <span>is a moment I treasure.</span>
-            </q>
-          </em>
+        <h2 class="title-h2 uppercase mt-8 mb-32">Sam & Jess</h2>
+      </section>
+      <section class="text-center">
+        <div class="display-display text-(--Secondary-Shadow-500) mb-40">
+          <span>Every moment spent with you,</span>
+          <br />
+          <span class="-mr-[5ch]">is a moment I treasure.</span>
         </div>
-        <Marquee class="gap-(--gap-default)">
+        <Marquee class="h-108 mb-18 w-312">
           <For each={timeline}>
             {({ year, src }) => (
               <figure>
@@ -94,25 +90,23 @@ export default function Home() {
           </For>
         </Marquee>
       </section>
-      <section id="itinerary" class="framed">
-        <header class="my-(--gap-default)">
-          <h1 id="on-the-day">
+      <section id="itinerary" class="framed mb-37">
+        <header class="text-center mb-24">
+          <h1 id="on-the-day" class="title-h1-bold-caps mb-6">
             <Time value={weddingDate} format="short" />
           </h1>
-          <h1>
-            <A href="#on-the-day">
-              <em>On the Day</em>
-            </A>
+          <h1 class="display-display">
+            <A href="#on-the-day">On the Day</A>
           </h1>
         </header>
         <section class="cols-2">
           <div>
-            <h1>
-              Arrival<small> and </small>Ceremony
+            <h1 class="title-h1-bold-caps">
+              Arrival<small class="title-h1-decorative"> and </small>Ceremony
             </h1>
             <Itinerary>
               <ItineraryItem time={schedule.arrivalAndCeremony}>
-                <p>
+                <p class="mb-12">
                   Arrive a little early and enjoy the park, find your seats, and
                   settle in before the ceremony begins.
                 </p>
@@ -123,18 +117,18 @@ export default function Home() {
               </ItineraryItem>
               <ItineraryItem time={schedule.iDo}>
                 <p>
-                  The moment we say <q>I DO!</q>
+                  The moment we say <q class="uppercase">I do!</q>
                 </p>
               </ItineraryItem>
             </Itinerary>
           </div>
           <ImgAsset src={arrivalAndCeremonySrc} />
         </section>
-        <hr />
+        <hr class="mt-20 mb-16" />
         <section class="cols-2">
           <ImgAsset src={socialHourSrc} />
           <div>
-            <h1>Social Hour</h1>
+            <h1 class="title-h1-bold-caps">Social Hour</h1>
             <Itinerary>
               <ItineraryItem time={schedule.socialHour}>
                 <p>
@@ -145,11 +139,11 @@ export default function Home() {
             </Itinerary>
           </div>
         </section>
-        <hr />
+        <hr class="mt-20 mb-16" />
         <section class="cols-2">
           <div>
-            <h1>
-              Reception<small> and </small>Dinner
+            <h1 class="title-h1-bold-caps">
+              Reception<small class="title-h1-decorative"> and </small>Dinner
             </h1>
             <Itinerary>
               <ItineraryItem time={schedule.reception}>
@@ -168,25 +162,20 @@ export default function Home() {
           <ImgAsset src={receptionAndDinnerSrc} />
         </section>
       </section>
-      <section
-        id="details"
-        class="cols-2 border my-(--gap-default) p-(--gap-default)"
-      >
+      <section id="details" class="cols-2 border p-20">
         <figure class="relative">
-          <figcaption class="absolute mt-4 -ml-[2ch]">
-            <h1>
-              <em>
-                Additional
-                <br />
-                Details
-              </em>
+          <figcaption class="absolute top-6 -left-6">
+            <h1 class="display-display">
+              Additional
+              <br />
+              details
             </h1>
           </figcaption>
           <ImgAsset src={additionalDetailsSrc} />
         </figure>
         <ul>
-          <li>
-            <h2>Attire</h2>
+          <li class="mb-8">
+            <h2 class="title-h1-bold-caps mb-4">Attire</h2>
             <p>
               Bright, nature-inspired colors are encouraged. The cremony is
               taking place outdoors, so dress for the weather!
@@ -200,16 +189,16 @@ export default function Home() {
             </p>
             <hr />
           </li>
-          <li>
-            <h2>Little Ones</h2>
+          <li class="mb-8">
+            <h2 class="title-h1-bold-caps mb-4">Little Ones</h2>
             <p>
               We are only able to accomodate children listed on your invite.
               Enjoy your night off!
             </p>
             <hr />
           </li>
-          <li>
-            <h2>Gifts</h2>
+          <li class="mb-8">
+            <h2 class="title-h1-bold-caps mb-4">Gifts</h2>
             <p>
               Your presence is the real gift! If you'd still like to give, a
               card box will be available.

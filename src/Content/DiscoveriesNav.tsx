@@ -1,5 +1,5 @@
 import { type ExtendProps } from "@samueldavis/solidlib";
-import { A, useMatch } from "@solidjs/router";
+import { A, useLocation, useMatch } from "@solidjs/router";
 import { splitProps, For, Show, createMemo } from "solid-js";
 import nightlifeSrc from "../assets/SamandJess_charlotte.jpg";
 import smallTownCharmSrc from "../assets/SamandJess_matthews.jpg";
@@ -36,44 +36,44 @@ const links: {
 export default function DiscoveriesNav(
   props: ExtendProps<"nav", { images?: boolean }>,
 ) {
+  const location = useLocation();
   const [local, parent] = splitProps(props, ["images"]);
-  const getDiscovery = useMatch(() => "/your-trip/:discovery");
-  const getHasDiscovery = createMemo(() => Boolean(getDiscovery()));
-  return (
-    <nav {...parent}>
-      <ul
-        class="gap-(--gap-default) flex-col grid-flow-col max-md:flex md:grid"
-        classList={{
-          "md:grid-rows-1": getHasDiscovery(),
-          "md:grid-cols-2": getHasDiscovery(),
-          "md:grid-rows-[auto_auto]": !getHasDiscovery(),
-          "md:grid-cols-3": !getHasDiscovery(),
-        }}
-      >
-        <For each={links}>
-          {(link) => {
-            const getIsActive = useMatch(() => link.href);
-            return getIsActive() ? null : (
-              <>
-                <Show when={local.images}>
-                  <li>
-                    <A href={link.href} class="border">
-                      <ImgAsset src={link.src} />
-                    </A>
-                  </li>
-                </Show>
-                <li>
-                  <A
-                    href={link.href}
-                    class="border flex flex-wrap items-center"
-                  >
+  const getLinks = () =>
+    links.filter((link) => location.pathname !== link.href);
+
+  if (local.images)
+    return (
+      <nav id="discovery-nav" {...parent}>
+        <ul class="grid grid-cols-3 gap-16">
+          <For each={getLinks()}>
+            {(link) => (
+              <li>
+                <A href={link.href}>
+                  <ImgAsset src={link.src} class="framed mb-12" />
+                  <div class="py-2 px-6 w-full border ">
                     <span>{link.text}</span>
-                    <Arrow class="h-4" />
-                  </A>
-                </li>
-              </>
-            );
-          }}
+                    <Arrow />
+                  </div>
+                </A>
+              </li>
+            )}
+          </For>
+        </ul>
+      </nav>
+    );
+
+  return (
+    <nav id="discovery-nav" {...parent}>
+      <ul class="grid grid-cols-2 gap-16">
+        <For each={getLinks()}>
+          {(link) => (
+            <li>
+              <A href={link.href} class="py-2 px-6 w-full border">
+                <span>{link.text}</span>
+                <Arrow />
+              </A>
+            </li>
+          )}
         </For>
       </ul>
     </nav>
