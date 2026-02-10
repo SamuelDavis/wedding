@@ -14,7 +14,7 @@ export default function Layout(props: ParentProps) {
   return (
     <main data-path={location.pathname}>
       <header>
-        <nav class="header-nav">
+        <nav>
           <ul>
             <li>
               <A href="/#our-story">Our Story</A>
@@ -24,20 +24,16 @@ export default function Layout(props: ParentProps) {
             </li>
           </ul>
           <ul>
-            <li class="flex justify-center basis-full">
-              <Logo class="w-40" />
+            <li>
+              <Logo />
             </li>
           </ul>
           <ul>
             <li>
-              <A href="/your-trip" class="border">
-                Your Trip
-              </A>
+              <A href="/your-trip">Your Trip</A>
             </li>
             <li>
-              <A href="/rsvp" class="bg-text text-bg">
-                RSVP
-              </A>
+              <A href="/rsvp">RSVP</A>
             </li>
           </ul>
         </nav>
@@ -45,7 +41,7 @@ export default function Layout(props: ParentProps) {
       <hr />
       {props.children}
       <footer>
-        <h2 class="font-bold">
+        <h2>
           Please RSVP
           <small> by </small>
           <Time value={rsvpDate} />
@@ -54,9 +50,9 @@ export default function Layout(props: ParentProps) {
       <Show when={!getIsRSVP()}>
         <footer>
           <nav>
-            <ul class="justify-center">
+            <ul>
               <li>
-                <A href="/rsvp" class="border my-(--gap-default)">
+                <A href="/rsvp">
                   <span>RSVP</span>
                   <Arrow />
                 </A>
@@ -65,17 +61,17 @@ export default function Layout(props: ParentProps) {
           </nav>
         </footer>
       </Show>
-      <footer class="border-y py-4 my-8">
+      <footer>
         <nav>
-          <ul class="justify-around">
+          <ul>
             <li>
               <A href="/your-trip">Your Trip</A>
             </li>
           </ul>
         </nav>
       </footer>
-      <footer class="flex justify-center">
-        <Logo class="w-68" />
+      <footer>
+        <Logo />
       </footer>
     </main>
   );

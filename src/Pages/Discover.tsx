@@ -32,7 +32,7 @@ export default function Discover() {
         <h1>{getPageContent().title}</h1>
         <h2>{getPageContent().subtitle}</h2>
       </header>
-      <div class="flex flex-col gap-(--gap-default) framed">
+      <div>
         <For each={getPageContent().attractions}>
           {(Content) => <Dynamic component={Content} />}
         </For>
@@ -42,10 +42,10 @@ export default function Discover() {
         <DiscoveriesNav />
       </footer>
       <footer>
-        <figure class="flex flex-col items-center">
-          <img src="/Your Trip footer.png" class="w-[30%]" />
+        <figure>
+          <img src="/Your Trip footer.png" />
           <figcaption>
-            <em class="text-quote">A kiss to build a dream on</em>
+            <em>A kiss to build a dream on</em>
           </figcaption>
         </figure>
       </footer>
@@ -87,7 +87,7 @@ function Attraction(
           </a>
         </h2>
         {local.children}
-        <a href={local.mapHref} target="_blank" class="border">
+        <a href={local.mapHref} target="_blank">
           <span>View Route</span>
           <Arrow />
         </a>

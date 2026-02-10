@@ -42,7 +42,6 @@ export default function DiscoveriesNav(
   return (
     <nav {...parent}>
       <ul
-        class="gap-(--gap-default) flex-col grid-flow-col max-md:flex md:grid"
         classList={{
           "md:grid-rows-1": getHasDiscovery(),
           "md:grid-cols-2": getHasDiscovery(),
@@ -57,18 +56,15 @@ export default function DiscoveriesNav(
               <>
                 <Show when={local.images}>
                   <li>
-                    <A href={link.href} class="border">
+                    <A href={link.href}>
                       <ImgAsset src={link.src} />
                     </A>
                   </li>
                 </Show>
                 <li>
-                  <A
-                    href={link.href}
-                    class="border flex flex-wrap items-center"
-                  >
+                  <A href={link.href}>
                     <span>{link.text}</span>
-                    <Arrow class="h-4" />
+                    <Arrow />
                   </A>
                 </li>
               </>

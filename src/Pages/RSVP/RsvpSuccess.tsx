@@ -8,7 +8,7 @@ export default function RsvpSuccess() {
       <section>
         <h2>Success!</h2>
         <h3>Check out your personal trip guide below</h3>
-        <A href="/your-trip" class="border">
+        <A href="/your-trip">
           <span>Plan Your Trip</span>
           <Arrow />
         </A>
