@@ -17,20 +17,18 @@ import Arrow from "../Components/Arrow";
 export default function Home() {
   return (
     <article>
-      <section>
+      <section class="relative flex items-center gap-4">
         <ImgAsset src={nariColorScr} class="chromatic" />
-        <div class="relative group">
-          <ImgAsset src={athensColorSrc} class="chromatic" />
-          <div class="absolute top-0 left-0">
-            <h2>The Wedding Of</h2>
-            <h1>
-              <em>
-                Samuel<small> and </small>Jessica
-              </em>
-            </h1>
-          </div>
-        </div>
+        <ImgAsset src={athensColorSrc} class="chromatic" />
         <ImgAsset src={flowersColorSrc} class="chromatic" />
+        <div class="absolute top-0 w-full text-center">
+          <h2>The Wedding Of</h2>
+          <h1>
+            <em>
+              Samuel<small> and </small>Jessica
+            </em>
+          </h1>
+        </div>
       </section>
       <section>
         <h2>
@@ -100,7 +98,7 @@ export default function Home() {
             </A>
           </h1>
         </header>
-        <section>
+        <section class="grid sm:grid-cols-2">
           <div>
             <h1>
               Arrival<small> and </small>Ceremony
@@ -123,11 +121,11 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <ImgAsset src={arrivalAndCeremonySrc} />
+          <ImgAsset src={arrivalAndCeremonySrc} class="framed" />
         </section>
         <hr />
-        <section>
-          <ImgAsset src={socialHourSrc} />
+        <section class="grid sm:grid-cols-2">
+          <ImgAsset src={socialHourSrc} class="framed" />
           <div>
             <h1>Social Hour</h1>
             <Itinerary>
@@ -141,7 +139,7 @@ export default function Home() {
           </div>
         </section>
         <hr />
-        <section>
+        <section class="grid sm:grid-cols-2">
           <div>
             <h1>
               Reception<small> and </small>Dinner
@@ -160,12 +158,12 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <ImgAsset src={receptionAndDinnerSrc} />
+          <ImgAsset src={receptionAndDinnerSrc} class="framed" />
         </section>
       </section>
-      <section id="details">
-        <figure>
-          <figcaption>
+      <section id="details" class="border grid sm:grid-cols-2">
+        <figure class="relative">
+          <figcaption class="absolute top-0 left-0">
             <h1>
               <em>
                 Additional
