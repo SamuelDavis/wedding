@@ -56,7 +56,7 @@ export default function Layout(props: ParentProps) {
       </header>
       <hr />
       {props.children}
-      <footer class="flex flex-col text-center my-(--gap-lg) flex flex-col gap-(--gap-lg)">
+      <footer class="text-center my-(--gap-lg) flex flex-col gap-(--gap-lg)">
         <h2>
           Please RSVP
           <small> by </small>
@@ -144,9 +144,9 @@ function MobileNav(props: ExtendProps<"header">) {
             <A href="/your-trip">Your Trip</A>
           </li>
         </ul>
-        <ul>
-          <li>
-            <a href="/rsvp" class="border flex justify-center">
+        <ul class="w-full">
+          <li class="w-full">
+            <a href="/rsvp" class="border flex justify-center w-full">
               <span>
                 <span>RSVP</span>
                 <Arrow />

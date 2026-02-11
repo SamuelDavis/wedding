@@ -32,7 +32,7 @@ export default function Home() {
         </div>
         <ImgAsset src={flowersColorSrc} class="chromatic hidden sm:inline" />
       </section>
-      <section>
+      <section class="text-center">
         <h2>
           <Time value={weddingDate} />
           <hr data-vertical />
@@ -43,7 +43,7 @@ export default function Home() {
         <nav>
           <menu>
             <li>
-              <A href="/rsvp">
+              <A href="/rsvp" class="border">
                 <span>RSVP</span>
                 <Arrow />
               </A>
@@ -111,7 +111,7 @@ export default function Home() {
                   Arrive a little early and enjoy the park, find your seats, and
                   settle in before the ceremony begins.
                 </p>
-                <A href={venueMapHref}>
+                <A href={venueMapHref} class="border">
                   <span>View Location</span>
                   <Arrow />
                 </A>
