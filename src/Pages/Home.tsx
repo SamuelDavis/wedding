@@ -1,4 +1,10 @@
-import { weddingDate, venueMapHref, schedule, timeline } from "../data";
+import {
+  weddingDate,
+  venueMapHref,
+  schedule,
+  timeline,
+  attireHref,
+} from "../data";
 import Time from "../Components/Time";
 import Itinerary, { ItineraryItem } from "../Components/Itinerary";
 import Marquee from "../Components/Marquee";
@@ -197,11 +203,11 @@ export default function Home() {
               taking place outdoors, so dress for the weather!
             </p>
             <p>
-              View attire examples{" "}
-              <a target="_blank" href="#">
+              <span>View attire examples </span>
+              <a target="_blank" href={attireHref}>
                 here
               </a>
-              .
+              <span>.</span>
             </p>
           </li>
           <li>

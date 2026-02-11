@@ -11,6 +11,8 @@ export const venueMapHref = "https://maps.app.goo.gl/RyRjoQsDTzFjBgZN6";
 export const hotelMapHref = "https://maps.app.goo.gl/Q6MRJ6W2utcNVrDC8";
 export const hotelSiteHref =
   "https://www.wyndhamhotels.com/en-ca/wingate/matthews-north-carolina/wingate-matthews-charlotte/overview";
+export const attireHref =
+  "https://www.pinterest.com/dooodlelee/wedding-garden-theme/";
 
 export const schedule = {
   arrivalAndCeremony: set(weddingDate, {
