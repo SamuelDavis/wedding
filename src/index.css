@@ -114,6 +114,7 @@
   }
 
   h1 {
+    @apply tracking-wide;
     font-size: var(--size-lg);
 
     & small {

@@ -175,7 +175,7 @@ export default function Home() {
       >
         <figure class="relative">
           <figcaption class="absolute top-0 left-0">
-            <h1 class="-ml-[2ch]">
+            <h1 class="-ml-[1ch]">
               <em>
                 Additional
                 <br />
