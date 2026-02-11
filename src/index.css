@@ -74,7 +74,7 @@
   nav[data-horizontal] {
     &,
     & ul {
-      @apply w-full flex justify-between items-center gap-(--gap-sm);
+      @apply flex justify-between items-center gap-(--gap-sm);
     }
   }
 
