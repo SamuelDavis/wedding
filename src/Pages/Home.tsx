@@ -18,10 +18,10 @@ export default function Home() {
   return (
     <article>
       <section>
-        <ImgAsset src={nariColorScr} />
-        <div>
-          <ImgAsset src={athensColorSrc} />
-          <div>
+        <ImgAsset src={nariColorScr} class="chromatic" />
+        <div class="relative group">
+          <ImgAsset src={athensColorSrc} class="chromatic" />
+          <div class="absolute top-0 left-0">
             <h2>The Wedding Of</h2>
             <h1>
               <em>
@@ -30,7 +30,7 @@ export default function Home() {
             </h1>
           </div>
         </div>
-        <ImgAsset src={flowersColorSrc} />
+        <ImgAsset src={flowersColorSrc} class="chromatic" />
       </section>
       <section>
         <h2>

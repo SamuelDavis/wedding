@@ -129,7 +129,7 @@ function MobileNav(props: ExtendProps<"header">) {
   }
 
   return (
-    <header class={`relative ${local.class}`} {...parent}>
+    <header class={`z-top relative ${local.class}`} {...parent}>
       <nav class="nav-x">
         <ul>
           <li>
