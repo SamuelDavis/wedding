@@ -8,7 +8,11 @@
   }
 
   main {
-    @apply mx-auto max-w-90;
+    @apply mx-auto max-w-7xl;
+  }
+
+  img {
+    @apply min-w-0;
   }
 
   hr:not([data-vertical]) {

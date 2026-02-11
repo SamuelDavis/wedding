@@ -19,16 +19,18 @@ export default function Home() {
     <article>
       <section class="relative flex items-center gap-4">
         <ImgAsset src={nariColorScr} class="chromatic" />
-        <ImgAsset src={athensColorSrc} class="chromatic" />
-        <ImgAsset src={flowersColorSrc} class="chromatic" />
-        <div class="absolute top-0 w-full text-center">
-          <h2>The Wedding Of</h2>
-          <h1>
-            <em>
-              Samuel<small> and </small>Jessica
-            </em>
-          </h1>
+        <div class="group">
+          <ImgAsset src={athensColorSrc} class="chromatic" />
+          <div class="absolute top-0 left-[50%] -translate-x-[50%] text-center group:hover">
+            <h2>The Wedding Of</h2>
+            <h1>
+              <em>
+                Samuel<small> and </small>Jessica
+              </em>
+            </h1>
+          </div>
         </div>
+        <ImgAsset src={flowersColorSrc} class="chromatic" />
       </section>
       <section>
         <h2>
