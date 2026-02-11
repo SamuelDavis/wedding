@@ -42,32 +42,32 @@ export default function DiscoveriesNav(
   return (
     <nav {...parent}>
       <ul
+        class="grid gap-(--gap-sm) sm:grid-rows-1"
         classList={{
-          "md:grid-rows-1": getHasDiscovery(),
-          "md:grid-cols-2": getHasDiscovery(),
-          "md:grid-rows-[auto_auto]": !getHasDiscovery(),
-          "md:grid-cols-3": !getHasDiscovery(),
+          "grid-rows-2": getHasDiscovery(),
+          "grid-rows-3": !getHasDiscovery(),
+          "sm:grid-cols-2": getHasDiscovery(),
+          "sm:grid-cols-3": !getHasDiscovery(),
         }}
       >
         <For each={links}>
           {(link) => {
             const getIsActive = useMatch(() => link.href);
             return getIsActive() ? null : (
-              <>
-                <Show when={local.images}>
-                  <li>
-                    <A href={link.href}>
-                      <ImgAsset src={link.src} />
-                    </A>
-                  </li>
-                </Show>
-                <li>
-                  <A href={link.href}>
+              <li class="h-full">
+                <A href={link.href}>
+                  <Show when={local.images}>
+                    <ImgAsset
+                      src={link.src}
+                      class="framed mb-(--gap-sm) w-full"
+                    />
+                  </Show>
+                  <div class="border w-full p-0.5">
                     <span>{link.text}</span>
                     <Arrow />
-                  </A>
-                </li>
-              </>
+                  </div>
+                </A>
+              </li>
             );
           }}
         </For>

@@ -8,35 +8,33 @@ import { A } from "@solidjs/router";
 export default function YourTrip() {
   return (
     <article>
-      <header>
-        <h1>
+      <header class="text-center my-(--gap-lg)">
+        <h1 class="mb-(--gap-md)">
           <em>Plan your trip</em>
         </h1>
-      </header>
-      <header>
         <h2>Stay a while</h2>
       </header>
-      <section>
+      <section class="grid sm:grid-cols-2">
         <div>
-          <h2>
+          <h1 class="font-bold mb-(--gap-md)">
             Where<small> to </small>Stay
-          </h2>
-          <h5>Wingate by Wyndham</h5>
-          <p>
+          </h1>
+          <h2 class="normal-case mb-(--gap-sm)">Wingate by Wyndham</h2>
+          <p class="mb-(--gap-md)">
             When you call, mention that you want a room for Sam & Jess' wedding.
             Check the hotel website for additional details for address, parking,
             etc.
           </p>
-          <A target="_blank" href={hotelSiteHref}>
+          <A target="_blank" href={hotelSiteHref} class="border">
             <span>book room</span>
             <Arrow />
           </A>
         </div>
-        <ImgAsset src={wingateSrc} />
+        <ImgAsset src={wingateSrc} class="framed" />
       </section>
-      <hr />
+      <hr class="my-(--gap-lg)" />
       <section>
-        <header>
+        <header class="text-center mb-(--gap-lg)">
           <h1>What category interests you most?</h1>
         </header>
         <DiscoveriesNav images />

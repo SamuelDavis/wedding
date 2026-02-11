@@ -32,7 +32,7 @@
   @media (min-width: 40rem) {
     :root {
       --gap-border: var(--gap-lg);
-      --size-md: 1.33rem;
+      --size-md: 1.25rem;
       --size-lg: 1.75rem;
     }
   }
@@ -115,7 +115,7 @@
   }
 
   h1 {
-    @apply tracking-wide;
+    @apply tracking-wide uppercase;
     font-size: var(--size-lg);
 
     & small {
@@ -129,7 +129,8 @@
   }
 
   small {
-    font-size: 0.5em;
+    @apply lowercase italic;
+    font-size: 0.875em;
   }
 }
 
