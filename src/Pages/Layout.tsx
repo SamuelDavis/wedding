@@ -23,7 +23,7 @@ export default function Layout(props: ParentProps) {
     <main data-path={location.pathname}>
       <header>
         <MobileNav class="sm:hidden" />
-        <nav class="hidden sm:flex">
+        <nav class="nav-x hidden sm:flex">
           <ul>
             <li>
               <A href="/#our-story">Our Story</A>
@@ -130,7 +130,7 @@ function MobileNav(props: ExtendProps<"header">) {
 
   return (
     <header class={`relative ${local.class}`} {...parent}>
-      <nav>
+      <nav class="nav-x">
         <ul>
           <li>
             <Logo />

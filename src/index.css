@@ -1,15 +1,39 @@
 @import "tailwindcss";
 
+@layer base {
+  :root {
+    --spacing: 1rem;
+    --gap-sm: 1rem;
+  }
+}
+
 @layer components {
   .logo {
-    @apply h-20;
+    @apply h-10;
 
     & img {
       @apply h-full;
     }
   }
 
+  .nav-x {
+    &,
+    & ul {
+      @apply flex justify-between items-center gap-(--gap-sm);
+    }
+  }
+
   .dropdown-menu {
     @apply w-full absolute overflow-hidden max-h-0 transition-[max-height] duration-200 ease-in-out;
+  }
+
+  .arrow {
+    @apply relative min-w-12 h-0 inline-flex align-middle mx-2 border-inherit;
+    &::before {
+      @apply absolute w-full top-1/2 -translate-y-1/2 border-t-2 border-inherit;
+    }
+    &::after {
+      @apply absolute right-0 size-2 top-1/2 -translate-y-1/2 rotate-45 border-t-2 border-r-2 border-inherit;
+    }
   }
 }
