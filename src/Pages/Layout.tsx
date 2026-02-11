@@ -55,9 +55,7 @@ export default function Layout(props: ParentProps) {
           <small> by </small>
           <Time value={rsvpDate} />
         </h2>
-      </footer>
-      <Show when={!getIsRSVP()}>
-        <footer>
+        <Show when={!getIsRSVP()}>
           <nav>
             <ul>
               <li>
@@ -68,10 +66,8 @@ export default function Layout(props: ParentProps) {
               </li>
             </ul>
           </nav>
-        </footer>
-      </Show>
-      <footer>
-        <nav>
+        </Show>
+        <nav class="text-center border-y">
           <ul>
             <li>
               <A href="/your-trip">Your Trip</A>
@@ -79,7 +75,7 @@ export default function Layout(props: ParentProps) {
           </ul>
         </nav>
       </footer>
-      <footer>
+      <footer class="flex justify-center">
         <Logo />
       </footer>
     </main>
