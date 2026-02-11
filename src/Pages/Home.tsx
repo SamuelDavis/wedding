@@ -35,20 +35,20 @@ export default function Home() {
       <section>
         <h2>
           <Time value={weddingDate} />
-          <hr />
+          <hr data-vertical />
           <a target="_blank" href={venueMapHref}>
             Francis J. Beatty Park
           </a>
         </h2>
         <nav>
-          <ul>
+          <menu>
             <li>
               <A href="/rsvp">
                 <span>RSVP</span>
                 <Arrow />
               </A>
             </li>
-          </ul>
+          </menu>
         </nav>
       </section>
       <section>

@@ -108,10 +108,8 @@ function useScrollTo(): void {
 }
 
 function Logo(props: ExtendProps<"div", { stacked?: boolean }>) {
-  const merged = mergeProps({ class: "" }, props);
-  const [local, parent] = splitProps(merged, ["class"]);
   return (
-    <div class={`logo ${local.class}`} {...parent}>
+    <div data-logo {...props}>
       <A href="/">
         <img src={logoSrc} />
       </A>
@@ -130,7 +128,7 @@ function MobileNav(props: ExtendProps<"header">) {
 
   return (
     <header class={`z-top relative ${local.class}`} {...parent}>
-      <nav class="nav-x">
+      <nav data-horizontal>
         <ul>
           <li>
             <Logo />
@@ -144,7 +142,7 @@ function MobileNav(props: ExtendProps<"header">) {
           </li>
         </ul>
       </nav>
-      <nav class="dropdown-menu" classList={{ "max-h-24": getOpen() }}>
+      <nav data-dropdown classList={{ "max-h-24": getOpen() }}>
         <ul>
           <li>
             <A href="/details">Details</A>
@@ -155,7 +153,7 @@ function MobileNav(props: ExtendProps<"header">) {
         </ul>
         <ul>
           <li>
-            <a href="/rsvp" class="rsvp-button">
+            <a href="/rsvp">
               <span>RSVP</span>
               <Arrow />
             </a>
