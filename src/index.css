@@ -14,9 +14,11 @@
     --color-mauve: #7f2549;
     --color-cream: #fffefd;
     --color-shadow: #caa5af;
+    --color-dull: #fbeeef;
 
     --color-bg-primary: var(--color-pale);
     --color-bg-secondary: var(--color-mauve);
+    --color-bg-shadow: var(--color-dull);
 
     --color-text-primary: var(--color-mauve);
     --color-text-secondary: var(--color-cream);
@@ -107,7 +109,7 @@
   }
 
   p {
-    @apply mb-(--gap-sm);
+    @apply mb-(--gap-md);
 
     & a {
       @apply underline font-bold normal-case;
