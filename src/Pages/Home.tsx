@@ -31,7 +31,7 @@ export default function Home() {
             <h2>The Wedding Of</h2>
             <h1 class="mb-(--gap-sm) whitespace-nowrap">
               <em class="flex items-center gap-x-1">
-                Samuel<small> and </small>Jessica
+                Samuel<small class="text-[0.5em]"> and </small>Jessica
               </em>
             </h1>
           </div>

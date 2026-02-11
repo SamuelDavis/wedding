@@ -83,7 +83,7 @@
   }
 
   hr:not([data-vertical]) {
-    @apply my-(--gap-md);
+    @apply my-(--gap-md) sm:my-(--gap-lg);
   }
 
   hr[data-vertical] {
@@ -114,8 +114,12 @@
     }
   }
 
+  h1,
+  h2 {
+    @apply tracking-wider uppercase;
+  }
+
   h1 {
-    @apply tracking-wide uppercase;
     font-size: var(--size-lg);
 
     & small {
@@ -124,7 +128,7 @@
   }
 
   h2 {
-    @apply uppercase;
+    @apply tracking-[0.175rem] sm:tracking-[0.375rem];
     font-size: var(--size-md);
   }
 
@@ -144,7 +148,7 @@
   }
 
   .framed {
-    @apply border p-(--gap-xs);
+    @apply border p-(--gap-sm);
   }
 }
 
@@ -243,6 +247,10 @@
 
     & em {
       @apply font-normal;
+    }
+
+    & hr {
+      @apply my-(--gap-sm);
     }
   }
 }
