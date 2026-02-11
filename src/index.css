@@ -7,6 +7,10 @@
     --gap-sm: 1rem;
   }
 
+  main {
+    @apply mx-auto max-w-90;
+  }
+
   hr:not([data-vertical]) {
     @apply my-(--gap-sm);
   }
@@ -22,7 +26,7 @@
   }
 
   .chromatic {
-    @apply grayscale-100 hover:grayscale-0 group-hover:grayscale-0 duration-200 sm:grayscale-0;
+    @apply grayscale-0 hover:grayscale-0 group-hover:grayscale-0 duration-200 sm:grayscale-100;
   }
 
   .framed {
@@ -46,7 +50,7 @@
   nav[data-horizontal] {
     &,
     & ul {
-      @apply flex justify-between items-center gap-(--gap-sm);
+      @apply w-full flex justify-between items-center gap-(--gap-sm);
     }
   }
 

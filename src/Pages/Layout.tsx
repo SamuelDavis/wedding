@@ -23,7 +23,7 @@ export default function Layout(props: ParentProps) {
     <main data-path={location.pathname}>
       <header>
         <MobileNav class="sm:hidden" />
-        <nav class="nav-x hidden sm:flex">
+        <nav data-horizontal class="nav-x hidden sm:flex">
           <ul>
             <li>
               <A href="/#our-story">Our Story</A>
@@ -32,7 +32,7 @@ export default function Layout(props: ParentProps) {
               <A href="/#details">Details</A>
             </li>
           </ul>
-          <ul>
+          <ul class="justify-center">
             <li>
               <Logo />
             </li>
