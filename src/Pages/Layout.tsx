@@ -57,7 +57,7 @@ export default function Layout(props: ParentProps) {
       <hr class="mb-(--gap-lg)" />
       {props.children}
       <footer class="text-center my-(--gap-lg) flex flex-col gap-(--gap-lg)">
-        <h1>
+        <h1 class="font-bold">
           Please RSVP
           <small> by </small>
           <Time value={rsvpDate} />
@@ -104,7 +104,7 @@ function Logo(props: ExtendProps<"div", { stacked?: boolean }>) {
   return (
     <div data-logo {...props}>
       <A href="/">
-        <img src={logoSrc} />
+        <img src={logoSrc} class="object-contain" />
       </A>
     </div>
   );

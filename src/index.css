@@ -25,13 +25,15 @@
     --font-normal: "Libre Baskerville";
     --font-fancy: "Pinyon Script";
 
-    --size-large: 3rem;
+    --size-md: 1.1rem;
+    --size-lg: 1.25rem;
   }
 
   @media (min-width: 40rem) {
     :root {
       --gap-border: var(--gap-lg);
-      --size-large: 5rem;
+      --size-md: 1.33rem;
+      --size-lg: 1.75rem;
     }
   }
 }
@@ -43,7 +45,7 @@
   }
 
   main {
-    @apply mx-auto max-w-7xl;
+    @apply mx-auto max-w-5xl;
 
     & > header,
     & > footer,
@@ -65,7 +67,7 @@
   }
 
   a {
-    @apply uppercase;
+    @apply uppercase whitespace-nowrap;
   }
 
   a.border {
@@ -88,13 +90,19 @@
     @apply mx-(--gap-xs);
   }
 
-  q {
-    color: var(--color-shadow);
+  em {
+    & q {
+      color: var(--color-shadow);
+      &::before,
+      &::after {
+        @apply hidden;
+      }
+    }
   }
 
   em {
     @apply font-(--font-fancy) not-italic;
-    font-size: var(--size-large);
+    font-size: 2.5em;
   }
 
   p {
@@ -103,6 +111,23 @@
     & a {
       @apply underline font-bold normal-case;
     }
+  }
+
+  h1 {
+    font-size: var(--size-lg);
+
+    & small {
+      @apply italic px-0.25;
+    }
+  }
+
+  h2 {
+    @apply uppercase;
+    font-size: var(--size-md);
+  }
+
+  small {
+    font-size: 0.5em;
   }
 }
 
@@ -199,15 +224,22 @@
       & dt {
         @apply mt-(--gap-md);
       }
+      & h1 {
+        @apply font-bold;
+      }
       & h2 {
-        @apply mb-(--gap-xs);
+        @apply mb-(--gap-xs) font-bold;
       }
     }
   }
 
   #details {
     & h1 {
-      @apply mb-(--gap-sm);
+      @apply mb-(--gap-sm) font-bold;
+    }
+
+    & em {
+      @apply font-normal;
     }
   }
 }

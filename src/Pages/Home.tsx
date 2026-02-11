@@ -23,8 +23,8 @@ export default function Home() {
           <ImgAsset src={athensColorSrc} class="chromatic" />
           <div class="absolute z-top top-[10%] left-[50%] -translate-x-[50%] text-center group:hover">
             <h2>The Wedding Of</h2>
-            <h1 class="my-(--gap-sm) whitespace-nowrap">
-              <em>
+            <h1 class="mb-(--gap-sm) whitespace-nowrap">
+              <em class="flex items-center gap-x-1">
                 Samuel<small> and </small>Jessica
               </em>
             </h1>
@@ -35,12 +35,12 @@ export default function Home() {
       <section class="text-center">
         <h2 class="my-(--gap-md)">
           <Time value={weddingDate} />
-          <hr data-vertical />
-          <a target="_blank" href={venueMapHref}>
+          <hr data-vertical class="hidden sm:inline-block" />
+          <a target="_blank" href={venueMapHref} class="inline-block">
             Francis J. Beatty Park
           </a>
         </h2>
-        <nav>
+        <nav class="mb-(--gap-lg)">
           <menu>
             <li>
               <A href="/rsvp" class="border">
@@ -51,8 +51,8 @@ export default function Home() {
           </menu>
         </nav>
       </section>
-      <section class="text-center my-(--gap-lg)">
-        <h1 id="our-story">
+      <section class="text-center sm:mx-(--gap-lg)">
+        <h1 id="our-story" class="font-bold mb-(--gap-md)">
           <A href="#our-story">Let's Make This Official</A>
         </h1>
         <p>
@@ -68,23 +68,23 @@ export default function Home() {
           We are excited to invite you &mdash; our family and closest friends to
           celebrate with us on our wedding day. We can't wait!
         </p>
-        <h2 class="py-(--gap-md)">Sam & Jess</h2>
+        <h2 class="py-(--gap-md) font-bold">Sam & Jess</h2>
       </section>
       <section>
-        <div class="flex justify-center my-(--gap-lg)">
-          <em>
+        <div class="flex justify-center my-(--gap-md) sm:my-(--gap-lg)">
+          <em class="w-min sm:w-auto sm:text-right">
             <q>
-              <span>Every moment</span>
-              <span> spent with you,</span>
+              <span class="whitespace-nowrap">Every moment</span>
+              <wbr />
+              <span class="whitespace-nowrap"> spent with you,</span>
               <br />
-              <span class="sm:pl-12">
-                <span> is a moment</span>
-                <span> I treasure</span>.
-              </span>
+              <span class="whitespace-nowrap"> is a moment</span>
+              <wbr />
+              <span class="whitespace-nowrap"> I treasure.</span>
             </q>
           </em>
         </div>
-        <Marquee class="gap-(--gap-sm) my-(--gap-lg)">
+        <Marquee class="gap-(--gap-sm) mb-(--gap-lg)">
           <For each={timeline}>
             {({ year, src }) => (
               <figure class="pb-(--gap-sm)">
@@ -97,7 +97,7 @@ export default function Home() {
       </section>
       <section id="itinerary">
         <header class="text-center mb-(--gap-md)">
-          <h1 id="on-the-day">
+          <h1 id="on-the-day" class="font-bold">
             <Time value={weddingDate} format="short" />
           </h1>
           <h1>
@@ -171,7 +171,7 @@ export default function Home() {
       </section>
       <section
         id="details"
-        class="border grid sm:grid-cols-2 p-(--gap-md) my-(--gap-lg)"
+        class="border grid sm:grid-cols-2 p-(--gap-md) mb-(--gap-lg)"
       >
         <figure class="relative">
           <figcaption class="absolute top-0 left-0">
