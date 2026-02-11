@@ -138,7 +138,7 @@ function MobileNav(props: ExtendProps<"header">) {
       <nav data-vertical data-dropdown classList={{ "max-h-24": getOpen() }}>
         <ul>
           <li>
-            <A href="/details">Details</A>
+            <A href="/#details">Details</A>
           </li>
           <li>
             <A href="/your-trip">Your Trip</A>

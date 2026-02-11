@@ -103,6 +103,7 @@
   em {
     @apply font-(--font-fancy) not-italic;
     font-size: 2.5em;
+    line-height: normal;
   }
 
   p {

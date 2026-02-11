@@ -51,9 +51,11 @@ export default function Home() {
           </menu>
         </nav>
       </section>
-      <section class="text-center sm:mx-(--gap-lg)">
-        <h1 id="our-story" class="font-bold mb-(--gap-md)">
-          <A href="#our-story">Let's Make This Official</A>
+      <section id="our-story" class="text-center sm:mx-(--gap-lg)">
+        <h1 class="font-bold mb-(--gap-md)">
+          <A id="our-story" href="#our-story">
+            Let's Make This Official
+          </A>
         </h1>
         <p>
           Our story began in 2019, chatting during work breaks about animation,
@@ -171,16 +173,18 @@ export default function Home() {
       </section>
       <section
         id="details"
-        class="border grid sm:grid-cols-2 p-(--gap-md) mb-(--gap-lg)"
+        class="border grid sm:grid-cols-2 p-(--gap-md) my-(--gap-lg)"
       >
         <figure class="relative">
           <figcaption class="absolute top-0 left-0">
             <h1 class="-ml-[1ch]">
-              <em>
-                Additional
-                <br />
-                Details
-              </em>
+              <A href="#details">
+                <em>
+                  Additional
+                  <br />
+                  Details
+                </em>
+              </A>
             </h1>
           </figcaption>
           <ImgAsset src={additionalDetailsSrc} />
