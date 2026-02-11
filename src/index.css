@@ -45,7 +45,7 @@
   }
 
   main {
-    @apply mx-auto max-w-5xl;
+    @apply my-(--gap-md) mx-auto max-w-5xl;
 
     & > header,
     & > footer,

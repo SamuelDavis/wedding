@@ -34,7 +34,7 @@ export default function Layout(props: ParentProps) {
           </ul>
           <ul class="justify-center">
             <li>
-              <Logo />
+              <Logo class="h-5" />
             </li>
           </ul>
           <ul>
@@ -121,10 +121,10 @@ function MobileNav(props: ExtendProps<"header">) {
 
   return (
     <header class={`z-top relative ${local.class}`} {...parent}>
-      <nav data-horizontal>
+      <nav data-horizontal class="mb-(--gap-sm)">
         <ul>
           <li>
-            <Logo />
+            <Logo class="h-3" />
           </li>
         </ul>
         <ul>
@@ -136,7 +136,7 @@ function MobileNav(props: ExtendProps<"header">) {
         </ul>
       </nav>
       <nav data-vertical data-dropdown classList={{ "max-h-24": getOpen() }}>
-        <ul>
+        <ul class="pt-(--gap-sm)">
           <li>
             <A href="/#details">Details</A>
           </li>
