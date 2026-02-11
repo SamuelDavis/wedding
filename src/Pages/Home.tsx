@@ -17,8 +17,8 @@ import Arrow from "../Components/Arrow";
 export default function Home() {
   return (
     <article>
-      <section class="relative flex items-center gap-4">
-        <ImgAsset src={nariColorScr} class="chromatic" />
+      <section class="relative sm:flex items-center gap-4">
+        <ImgAsset src={nariColorScr} class="chromatic hidden sm:inline" />
         <div class="group">
           <ImgAsset src={athensColorSrc} class="chromatic" />
           <div class="absolute top-0 left-[50%] -translate-x-[50%] text-center group:hover">
@@ -30,7 +30,7 @@ export default function Home() {
             </h1>
           </div>
         </div>
-        <ImgAsset src={flowersColorSrc} class="chromatic" />
+        <ImgAsset src={flowersColorSrc} class="chromatic hidden sm:inline" />
       </section>
       <section>
         <h2>
@@ -78,10 +78,10 @@ export default function Home() {
             </q>
           </em>
         </div>
-        <Marquee>
+        <Marquee class="gap-(--gap-sm)">
           <For each={timeline}>
             {({ year, src }) => (
-              <figure>
+              <figure class="pb-(--gap-sm)">
                 <figcaption>{year}</figcaption>
                 <ImgAsset src={src} alt={`${year}`} />
               </figure>
@@ -163,7 +163,10 @@ export default function Home() {
           <ImgAsset src={receptionAndDinnerSrc} class="framed" />
         </section>
       </section>
-      <section id="details" class="border grid sm:grid-cols-2">
+      <section
+        id="details"
+        class="border grid sm:grid-cols-2 p-(--gap-md) my-(--gap-lg)"
+      >
         <figure class="relative">
           <figcaption class="absolute top-0 left-0">
             <h1>

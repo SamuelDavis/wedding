@@ -5,10 +5,25 @@
     --spacing: 1rem;
     --gap-xs: 0.5rem;
     --gap-sm: 1rem;
+    --gap-md: 2rem;
+    --gap-lg: 4rem;
   }
 
   main {
     @apply mx-auto max-w-7xl;
+
+    & > header,
+    & > footer,
+    & > article {
+      @apply px-(--gap-lg);
+    }
+    & > hr:not([data-vertical]) {
+      @apply mx-(--gap-lg);
+    }
+  }
+
+  section.grid {
+    @apply gap-(--gap-lg);
   }
 
   img {
@@ -16,11 +31,11 @@
   }
 
   hr:not([data-vertical]) {
-    @apply my-(--gap-sm);
+    @apply my-(--gap-md);
   }
 
   hr[data-vertical] {
-    @apply mx-(--gap-sm);
+    @apply mx-(--gap-xs);
   }
 }
 
