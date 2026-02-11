@@ -255,4 +255,39 @@
       @apply my-(--gap-sm);
     }
   }
+
+  @media (min-width: 40rem) {
+    [data-path="/"] {
+      background-image:
+        url("/Homepage 2.png"), url("/Homepage 4.png"), url("/Homepage 3.png"),
+        url("/Homepage 1.png"), url("/Homepage 5.png");
+      background-repeat: no-repeat;
+      background-position:
+        left 48rem,
+        left 70rem,
+        right 43rem,
+        right 65rem,
+        right 214rem;
+      background-size:
+        14rem auto,
+        7rem auto,
+        9rem auto,
+        10rem auto,
+        18rem auto;
+    }
+
+    [data-path^="/rsvp"] {
+      background-image: url("/RSVP Main.png");
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 30% auto;
+    }
+
+    [data-path="/your-trip"] {
+      background-image: url("/Your Trip Main.png");
+      background-repeat: no-repeat;
+      background-position: left 75%;
+      background-size: 30% auto;
+    }
+  }
 }
