@@ -3,6 +3,7 @@
 @layer base {
   :root {
     --spacing: 1rem;
+    --gap-xs: 0.5rem;
     --gap-sm: 1rem;
   }
 
@@ -59,6 +60,26 @@
     &::after {
       content: "";
       @apply absolute -bottom-0.5 right-0 h-1 w-1 border-r-2 -rotate-45;
+    }
+  }
+
+  [role="marquee"] {
+    @apply flex min-h-[33vh] overflow-x-auto;
+
+    & li {
+      @apply flex-none;
+    }
+
+    & figure {
+      @apply relative h-full aspect-square;
+
+      & figcaption {
+        @apply absolute top-0 left-0 m-(--gap-xs) p-(--gap-xs);
+      }
+
+      & img {
+        @apply h-full;
+      }
     }
   }
 }
