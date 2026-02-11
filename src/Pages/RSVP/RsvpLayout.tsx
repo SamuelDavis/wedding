@@ -7,32 +7,40 @@ import ImgAsset from "../../Components/ImgAsset";
 
 export default function RsvpLayout(props: ParentProps) {
   return (
-    <article>
-      <header>
-        <div style={{ "background-image": `url('${beOurGuestSrc}')` }}>
+    <article class="mb-(--gap-xl)">
+      <header class="text-(--color-text-secondary) text-center mb-(--gap-lg)">
+        <div
+          style={{ "background-image": `url('${beOurGuestSrc}')` }}
+          class="bg-cover bg-center p-(--gap-lg)"
+        >
           <h2>
             <Time value={weddingDate} format="short" />
           </h2>
-          <h1>Be Our Guest</h1>
-          <p>We can't wait to celebrate with you!</p>
-          <p>
-            Please RSVP by <Time value={rsvpDate} />
-          </p>
+          <h1 class="my-(--gap-lg)">
+            <em>Be Our Guest</em>
+          </h1>
+          <h2>
+            <span>We can't wait to celebrate with you!</span>
+            <div class="my-(--gap-sm)" />
+            <span>
+              Please RSVP by <Time value={rsvpDate} />
+            </span>
+          </h2>
         </div>
       </header>
-      <section>
+      <section class="grid sm:grid-cols-2">
         <figure>
-          <ImgAsset src={coupleSrc} />
-          <figcaption>
-            <q>
-              <em>
+          <ImgAsset src={coupleSrc} class="framed" />
+          <figcaption class="mt-(--gap-sm)">
+            <em>
+              <q>
                 Bear with
                 <br />
                 one another
                 <br />
                 in love
-              </em>
-            </q>
+              </q>
+            </em>
           </figcaption>
         </figure>
         {props.children}

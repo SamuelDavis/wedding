@@ -74,7 +74,7 @@ export default function RsvpForm() {
           <p>Include any allergy or dietary restrictions below.</p>
           <textarea id="other" name="other" rows="5" />
         </fieldset>
-        <button type="submit">
+        <button type="submit" class="border p-0.5 float-right">
           <span>Submit Form</span>
           <Arrow />
         </button>

@@ -7,6 +7,7 @@
     --gap-sm: 1rem;
     --gap-md: 2rem;
     --gap-lg: 4rem;
+    --gap-xl: 8rem;
 
     --gap-border: var(--gap-md);
 
@@ -137,6 +138,39 @@
   small {
     @apply lowercase italic;
     font-size: 0.875em;
+  }
+
+  fieldset:has([name="email"]) {
+    @apply absolute -left-10000;
+  }
+
+  form {
+    & fieldset {
+      @apply mb-(--gap-sm);
+    }
+
+    & legend {
+      @apply mb-(--gap-sm) font-bold;
+    }
+
+    & input,
+    & textarea {
+      @apply border rounded-md w-full p-0.5;
+    }
+
+    & input[type="radio"] {
+      @apply w-fit;
+    }
+
+    & label {
+      @apply flex gap-0.5 items-baseline;
+      & [type="radio"] {
+      }
+    }
+  }
+
+  textarea {
+    @apply border rounded-md;
   }
 }
 
