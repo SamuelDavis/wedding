@@ -21,9 +21,9 @@ export default function Home() {
         <ImgAsset src={nariColorScr} class="chromatic hidden sm:inline" />
         <div class="group">
           <ImgAsset src={athensColorSrc} class="chromatic" />
-          <div class="absolute top-0 left-[50%] -translate-x-[50%] text-center group:hover">
+          <div class="absolute z-top top-[10%] left-[50%] -translate-x-[50%] text-center group:hover">
             <h2>The Wedding Of</h2>
-            <h1>
+            <h1 class="my-(--gap-sm) whitespace-nowrap">
               <em>
                 Samuel<small> and </small>Jessica
               </em>
@@ -33,7 +33,7 @@ export default function Home() {
         <ImgAsset src={flowersColorSrc} class="chromatic hidden sm:inline" />
       </section>
       <section class="text-center">
-        <h2>
+        <h2 class="my-(--gap-md)">
           <Time value={weddingDate} />
           <hr data-vertical />
           <a target="_blank" href={venueMapHref}>
@@ -51,7 +51,7 @@ export default function Home() {
           </menu>
         </nav>
       </section>
-      <section>
+      <section class="text-center my-(--gap-lg)">
         <h1 id="our-story">
           <A href="#our-story">Let's Make This Official</A>
         </h1>
@@ -68,17 +68,23 @@ export default function Home() {
           We are excited to invite you &mdash; our family and closest friends to
           celebrate with us on our wedding day. We can't wait!
         </p>
-        <h2>Sam & Jess</h2>
-        <div>
+        <h2 class="py-(--gap-md)">Sam & Jess</h2>
+      </section>
+      <section>
+        <div class="flex justify-center my-(--gap-lg)">
           <em>
             <q>
-              <span>Every moment spent with you, </span>
+              <span>Every moment</span>
+              <span> spent with you,</span>
               <br />
-              <span>is a moment I treasure.</span>
+              <span class="sm:pl-12">
+                <span> is a moment</span>
+                <span> I treasure</span>.
+              </span>
             </q>
           </em>
         </div>
-        <Marquee class="gap-(--gap-sm)">
+        <Marquee class="gap-(--gap-sm) my-(--gap-lg)">
           <For each={timeline}>
             {({ year, src }) => (
               <figure class="pb-(--gap-sm)">
@@ -90,7 +96,7 @@ export default function Home() {
         </Marquee>
       </section>
       <section id="itinerary">
-        <header>
+        <header class="text-center mb-(--gap-md)">
           <h1 id="on-the-day">
             <Time value={weddingDate} format="short" />
           </h1>
@@ -169,7 +175,7 @@ export default function Home() {
       >
         <figure class="relative">
           <figcaption class="absolute top-0 left-0">
-            <h1>
+            <h1 class="-ml-[2ch]">
               <em>
                 Additional
                 <br />
@@ -181,7 +187,7 @@ export default function Home() {
         </figure>
         <ul>
           <li>
-            <h2>Attire</h2>
+            <h1>Attire</h1>
             <p>
               Bright, nature-inspired colors are encouraged. The cremony is
               taking place outdoors, so dress for the weather!
@@ -193,18 +199,22 @@ export default function Home() {
               </a>
               .
             </p>
+          </li>
+          <li>
             <hr />
           </li>
           <li>
-            <h2>Little Ones</h2>
+            <h1>Little Ones</h1>
             <p>
               We are only able to accomodate children listed on your invite.
               Enjoy your night off!
             </p>
+          </li>
+          <li>
             <hr />
           </li>
           <li>
-            <h2>Gifts</h2>
+            <h1>Gifts</h1>
             <p>
               Your presence is the real gift! If you'd still like to give, a
               card box will be available.

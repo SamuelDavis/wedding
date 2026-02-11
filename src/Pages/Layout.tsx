@@ -54,14 +54,14 @@ export default function Layout(props: ParentProps) {
           </ul>
         </nav>
       </header>
-      <hr />
+      <hr class="mb-(--gap-lg)" />
       {props.children}
       <footer class="text-center my-(--gap-lg) flex flex-col gap-(--gap-lg)">
-        <h2>
+        <h1>
           Please RSVP
           <small> by </small>
           <Time value={rsvpDate} />
-        </h2>
+        </h1>
         <Show when={!getIsRSVP()}>
           <A href="/rsvp" class="border self-center">
             <span>RSVP</span>
@@ -113,7 +113,7 @@ function Logo(props: ExtendProps<"div", { stacked?: boolean }>) {
 function MobileNav(props: ExtendProps<"header">) {
   const merged = mergeProps({ class: "" }, props);
   const [local, parent] = splitProps(merged, ["class"]);
-  const [getOpen, setOpen] = createSignal(true);
+  const [getOpen, setOpen] = createSignal(false);
   const getType = (): string => (getOpen() ? "close" : "menu");
   function onClick() {
     setOpen((open) => !open);
