@@ -63,22 +63,22 @@
     }
   }
 
-  [role="marquee"] {
-    @apply flex min-h-[33vh] overflow-x-auto;
+  ul[role="marquee"] {
+    @apply flex h-[33vh] overflow-x-auto;
 
     & li {
-      @apply flex-none;
+      @apply flex-none h-full aspect-square;
     }
 
     & figure {
-      @apply relative h-full aspect-square;
+      @apply relative h-full;
 
       & figcaption {
         @apply absolute top-0 left-0 m-(--gap-xs) p-(--gap-xs);
       }
 
       & img {
-        @apply h-full;
+        @apply h-full w-full object-cover;
       }
     }
   }
