@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@layer components {
+  .logo {
+    @apply h-20;
+
+    & img {
+      @apply h-full;
+    }
+  }
+
+  .dropdown-menu {
+    @apply w-full absolute overflow-hidden max-h-0 transition-[max-height] duration-200 ease-in-out;
+  }
+}

@@ -1,8 +1,16 @@
-import { createEffect, on, Show, type ParentProps } from "solid-js";
+import {
+  createEffect,
+  createSignal,
+  on,
+  Show,
+  splitProps,
+  type ParentProps,
+  mergeProps,
+} from "solid-js";
 import { A, useLocation, useMatch } from "@solidjs/router";
 import Time from "../Components/Time";
 import { rsvpDate } from "../data";
-import type { ExtendProps } from "@samueldavis/solidlib";
+import { type ExtendProps, HTMLIcon } from "@samueldavis/solidlib";
 import Arrow from "../Components/Arrow";
 import logoSrc from "../assets/Logo.png";
 
@@ -14,7 +22,8 @@ export default function Layout(props: ParentProps) {
   return (
     <main data-path={location.pathname}>
       <header>
-        <nav>
+        <MobileNav class="sm:hidden" />
+        <nav class="hidden sm:flex">
           <ul>
             <li>
               <A href="/#our-story">Our Story</A>
@@ -99,11 +108,60 @@ function useScrollTo(): void {
 }
 
 function Logo(props: ExtendProps<"div", { stacked?: boolean }>) {
+  const merged = mergeProps({ class: "" }, props);
+  const [local, parent] = splitProps(merged, ["class"]);
   return (
-    <div {...props}>
+    <div class={`logo ${local.class}`} {...parent}>
       <A href="/">
         <img src={logoSrc} />
       </A>
     </div>
+  );
+}
+
+function MobileNav(props: ExtendProps<"header">) {
+  const merged = mergeProps({ class: "" }, props);
+  const [local, parent] = splitProps(merged, ["class"]);
+  const [getOpen, setOpen] = createSignal(false);
+  const getType = (): string => (getOpen() ? "close" : "menu");
+  function onClick() {
+    setOpen((open) => !open);
+  }
+
+  return (
+    <header class={`relative ${local.class}`} {...parent}>
+      <nav>
+        <ul>
+          <li>
+            <Logo />
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <button onClick={onClick}>
+              <HTMLIcon type={getType()} />
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <nav class="dropdown-menu" classList={{ "max-h-24": getOpen() }}>
+        <ul>
+          <li>
+            <A href="/details">Details</A>
+          </li>
+          <li>
+            <A href="/your-trip">Your Trip</A>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/rsvp" class="rsvp-button">
+              <span>RSVP</span>
+              <Arrow />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
