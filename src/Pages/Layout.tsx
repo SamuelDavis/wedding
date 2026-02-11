@@ -22,7 +22,7 @@ export default function Layout(props: ParentProps) {
   return (
     <main data-path={location.pathname}>
       <header>
-        <MobileNav class="sm:hidden" />
+        <MobileNav class="sm:hidden p-(--gap-sm)" />
         <nav data-horizontal class="nav-x hidden sm:flex">
           <ul>
             <li>
@@ -49,7 +49,7 @@ export default function Layout(props: ParentProps) {
       </header>
       <hr />
       {props.children}
-      <footer>
+      <footer class="text-center">
         <h2>
           Please RSVP
           <small> by </small>
@@ -59,7 +59,7 @@ export default function Layout(props: ParentProps) {
           <nav>
             <ul>
               <li>
-                <A href="/rsvp">
+                <A href="/rsvp" class="border">
                   <span>RSVP</span>
                   <Arrow />
                 </A>
@@ -116,7 +116,7 @@ function Logo(props: ExtendProps<"div", { stacked?: boolean }>) {
 function MobileNav(props: ExtendProps<"header">) {
   const merged = mergeProps({ class: "" }, props);
   const [local, parent] = splitProps(merged, ["class"]);
-  const [getOpen, setOpen] = createSignal(false);
+  const [getOpen, setOpen] = createSignal(true);
   const getType = (): string => (getOpen() ? "close" : "menu");
   function onClick() {
     setOpen((open) => !open);
@@ -138,7 +138,7 @@ function MobileNav(props: ExtendProps<"header">) {
           </li>
         </ul>
       </nav>
-      <nav data-dropdown classList={{ "max-h-24": getOpen() }}>
+      <nav data-vertical data-dropdown classList={{ "max-h-24": getOpen() }}>
         <ul>
           <li>
             <A href="/details">Details</A>
@@ -149,9 +149,11 @@ function MobileNav(props: ExtendProps<"header">) {
         </ul>
         <ul>
           <li>
-            <a href="/rsvp">
-              <span>RSVP</span>
-              <Arrow />
+            <a href="/rsvp" class="border flex justify-center">
+              <span>
+                <span>RSVP</span>
+                <Arrow />
+              </span>
             </a>
           </li>
         </ul>
