@@ -39,41 +39,38 @@ export default function Layout(props: ParentProps) {
           </ul>
           <ul>
             <li>
-              <A href="/your-trip">Your Trip</A>
+              <A href="/your-trip" class="border">
+                Your Trip
+              </A>
             </li>
             <li>
-              <A href="/rsvp">RSVP</A>
+              <A
+                href="/rsvp"
+                class="border bg-(--color-bg-secondary) border-(--color-bg-secondary) text-(--color-text-secondary)"
+              >
+                RSVP
+              </A>
             </li>
           </ul>
         </nav>
       </header>
       <hr />
       {props.children}
-      <footer class="text-center">
+      <footer class="flex flex-col text-center my-(--gap-lg) flex flex-col gap-(--gap-lg)">
         <h2>
           Please RSVP
           <small> by </small>
           <Time value={rsvpDate} />
         </h2>
         <Show when={!getIsRSVP()}>
-          <nav>
-            <ul>
-              <li>
-                <A href="/rsvp" class="border">
-                  <span>RSVP</span>
-                  <Arrow />
-                </A>
-              </li>
-            </ul>
-          </nav>
+          <A href="/rsvp" class="border self-center">
+            <span>RSVP</span>
+            <Arrow />
+          </A>
         </Show>
-        <nav class="text-center border-y">
-          <ul>
-            <li>
-              <A href="/your-trip">Your Trip</A>
-            </li>
-          </ul>
-        </nav>
+        <A href="/your-trip" class="text-center border-y py-(--gap-sm)">
+          Your Trip
+        </A>
       </footer>
       <footer class="flex justify-center">
         <Logo />

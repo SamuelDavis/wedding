@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@layer base {
+@layer theme {
   :root {
     --spacing: 1rem;
     --gap-xs: 0.5rem;
@@ -12,6 +12,26 @@
     @media (min-width: 40rem) {
       --gap-border: var(--gap-lg);
     }
+
+    --color-pale: #fff8f7;
+    --color-mauve: #7f2549;
+    --color-cream: #fffefd;
+
+    --color-bg-primary: var(--color-pale);
+    --color-bg-secondary: var(--color-mauve);
+
+    --color-text-primary: var(--color-mauve);
+    --color-text-secondary: var(--color-cream);
+
+    --font-normal: "Libre Baskerville";
+    --font-fancy: "Pinyon Script";
+  }
+}
+
+@layer base {
+  :root {
+    @apply text-(--color-text-primary) bg-(--color-bg-primary);
+    font-family: var(--font-normal);
   }
 
   main {
@@ -27,12 +47,20 @@
     }
   }
 
+  em {
+    font-family: var(--font-fancy);
+  }
+
   section.grid {
     @apply gap-(--gap-lg);
   }
 
   a.border {
-    @apply rounded-sm inline-block p-0.5;
+    @apply p-0.5;
+  }
+
+  nav a {
+    @apply rounded-sm;
   }
 
   img {
@@ -127,7 +155,7 @@
       @apply relative h-full;
 
       & figcaption {
-        @apply absolute top-0 left-0 m-(--gap-xs) p-(--gap-xs);
+        @apply absolute top-0 left-0 m-(--gap-sm) px-(--gap-sm) bg-(--color-bg-primary) rounded-md;
       }
 
       & img {
