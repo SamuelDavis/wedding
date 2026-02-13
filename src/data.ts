@@ -23,7 +23,7 @@ export const schedule = {
   socialHour: set(weddingDate, { hours: 14, minutes: 30 }),
   reception: set(weddingDate, { hours: 15, minutes: 30 }),
   dinner: set(weddingDate, { hours: 16 }),
-  dancing: set(weddingDate, { hours: 18, minutes: 30 }),
+  dancing: set(weddingDate, { hours: 17 }),
   _reception: [
     set(weddingDate, { hours: 15, minutes: 30 }),
     set(weddingDate, { hours: 19 }),

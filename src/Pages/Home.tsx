@@ -38,7 +38,7 @@ export default function Home() {
         </div>
         <ImgAsset src={flowersColorSrc} class="chromatic hidden sm:inline" />
       </section>
-      <section class="text-center">
+      <section class="text-center mb-(--gap-xl)">
         <h2 class="my-(--gap-md)">
           <Time value={weddingDate} />
           <hr data-vertical class="hidden sm:inline-block" />
@@ -57,30 +57,33 @@ export default function Home() {
           </menu>
         </nav>
       </section>
-      <section id="our-story" class="text-center sm:mx-(--gap-lg)">
+      <section id="our-story" class="text-center">
         <h1 class="font-bold mb-(--gap-md)">
           <A id="our-story" href="#our-story">
             Let's Make This Official
           </A>
         </h1>
-        <p>
-          Our story began in 2019, chatting during work breaks about animation,
-          music, and movies.
-        </p>
-        <p>
-          Fast forward to the fall of 2020 &mdash; we wnt on a casual morning
-          walk that we jokingly called a "date". But eight miles and a hundred
-          tangents later, we realized how much we enjoyed eachother's company.
-        </p>
-        <p>
-          We are excited to invite you &mdash; our family and closest friends to
-          celebrate with us on our wedding day. We can't wait!
-        </p>
+        <div class="mx-10">
+          <p>
+            Our story began in 2019, chatting during work breaks about
+            animation, music, and movies.
+          </p>
+          <p>
+            Fast forward to the fall of 2020 &mdash; we went on a casual morning
+            walk that we jokingly called a "date". But eight miles and a hundred
+            tangents later, we realized how much we enjoyed each other's
+            company.
+          </p>
+          <p>
+            We are excited to invite you &mdash; our family and closest friends
+            to celebrate with us on our wedding day. We can't wait!
+          </p>
+        </div>
         <h2 class="py-(--gap-md) font-bold">Sam & Jess</h2>
       </section>
       <section>
         <div class="flex justify-center my-(--gap-md) sm:my-(--gap-lg)">
-          <em class="w-min sm:w-auto sm:text-right">
+          <em class="sm:w-auto sm:text-right">
             <q>
               <span class="whitespace-nowrap">Every moment</span>
               <wbr />
@@ -147,8 +150,8 @@ export default function Home() {
             <Itinerary>
               <ItineraryItem time={schedule.socialHour}>
                 <p>
-                  A nice pause in the evening to catch up over light appetizers.
-                  Be sure to enjoy the garden and lake views!
+                  A nice pause in the afternoon to catch up over light
+                  appetizers. Be sure to enjoy the garden and lake views!
                 </p>
               </ItineraryItem>
             </Itinerary>
@@ -162,7 +165,7 @@ export default function Home() {
             </h1>
             <Itinerary>
               <ItineraryItem time={schedule.reception}>
-                <p>Dinner will be served following the reception.</p>
+                <p>Speeches, toasts, and an opportunity for us to thank you.</p>
               </ItineraryItem>
               <ItineraryItem time={schedule.dinner}>
                 <p>
@@ -179,7 +182,7 @@ export default function Home() {
       </section>
       <section
         id="details"
-        class="border grid sm:grid-cols-2 p-(--gap-md) my-(--gap-lg)"
+        class="border grid sm:grid-cols-2 p-(--gap-lg) my-(--gap-lg)"
       >
         <figure class="relative">
           <figcaption class="absolute top-0 left-0">
@@ -199,7 +202,7 @@ export default function Home() {
           <li>
             <h1>Attire</h1>
             <p>
-              Bright, nature-inspired colors are encouraged. The cremony is
+              Bright, nature-inspired colors are encouraged. The ceremony is
               taking place outdoors, so dress for the weather!
             </p>
             <p>
@@ -216,7 +219,7 @@ export default function Home() {
           <li>
             <h1>Little Ones</h1>
             <p>
-              We are only able to accomodate children listed on your invite.
+              We are only able to accommodate children listed on your invite.
               Enjoy your night off!
             </p>
           </li>

@@ -42,7 +42,7 @@ export default function DiscoveriesNav(
   return (
     <nav {...parent}>
       <ul
-        class="grid gap-(--gap-sm) sm:grid-rows-1"
+        class="grid gap-(--gap-lg) sm:grid-rows-1"
         classList={{
           "grid-rows-2": getHasDiscovery(),
           "grid-rows-3": !getHasDiscovery(),
@@ -59,7 +59,7 @@ export default function DiscoveriesNav(
                   <Show when={local.images}>
                     <ImgAsset
                       src={link.src}
-                      class="framed mb-(--gap-sm) w-full"
+                      class="framed mb-(--gap-md) w-full"
                     />
                   </Show>
                   <div class="border w-full p-0.5">

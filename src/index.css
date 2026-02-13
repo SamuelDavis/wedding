@@ -48,7 +48,7 @@
   }
 
   main {
-    @apply my-(--gap-md) mx-auto max-w-5xl;
+    @apply my-(--gap-md) mx-auto max-w-[1440px];
 
     & > header,
     & > footer,
@@ -119,14 +119,14 @@
 
   h1,
   h2 {
-    @apply tracking-wider uppercase;
+    @apply uppercase;
   }
 
   h1 {
     font-size: var(--size-lg);
 
     & small {
-      @apply italic px-0.25;
+      @apply italic px-0.25 font-normal;
     }
   }
 
@@ -155,7 +155,7 @@
 
     & input,
     & textarea {
-      @apply border rounded-md w-full p-0.5;
+      @apply border-2 rounded-md w-full p-0.5;
     }
 
     & input[type="radio"] {
@@ -170,11 +170,18 @@
   }
 
   textarea {
-    @apply border rounded-md;
+    @apply border-2 rounded-md;
+  }
+
+  h2 {
+    @apply tracking-normal;
   }
 }
 
 @layer utilities {
+  .border {
+    border-width: 2px;
+  }
   .z-top {
     @apply z-1000;
   }
@@ -184,7 +191,7 @@
   }
 
   .framed {
-    @apply border p-(--gap-sm);
+    @apply border-2 p-(--gap-sm);
   }
 }
 
@@ -202,6 +209,7 @@
   }
 
   nav {
+    @apply items-center;
     &[data-horizontal],
     &[data-vertical] {
       &,
@@ -213,7 +221,10 @@
     &[data-horizontal] {
       &,
       & ul {
-        @apply flex-row items-center;
+        @apply flex-row items-center sm:gap-3;
+        & a {
+          @apply sm:px-1.5 sm:my-0.5;
+        }
       }
     }
 
@@ -243,7 +254,7 @@
   }
 
   ul[role="marquee"] {
-    @apply flex h-[33vh] overflow-x-auto;
+    @apply flex h-[28vh] overflow-x-auto;
 
     & li {
       @apply flex-none h-full aspect-square;
