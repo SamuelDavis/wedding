@@ -1,5 +1,5 @@
 import { type ExtendProps } from "@samueldavis/solidlib";
-import { A, useMatch } from "@solidjs/router";
+import { A, useLocation, useMatch } from "@solidjs/router";
 import { splitProps, For, Show, createMemo } from "solid-js";
 import nightlifeSrc from "../assets/SamandJess_charlotte.jpg";
 import smallTownCharmSrc from "../assets/SamandJess_matthews.jpg";
@@ -7,12 +7,13 @@ import globalFlavorsSrc from "../assets/SamandJess_foodanddrink.jpg";
 import ImgAsset from "../Components/ImgAsset";
 import Arrow from "../Components/Arrow";
 
-const links: {
+type DiscoveryLink = {
   href: string;
   icon: string;
   text: string;
   src: string;
-}[] = [
+};
+const links: DiscoveryLink[] = [
   {
     href: "/your-trip/nightlife",
     icon: "moon_stars",
@@ -37,41 +38,44 @@ export default function DiscoveriesNav(
   props: ExtendProps<"nav", { images?: boolean }>,
 ) {
   const [local, parent] = splitProps(props, ["images"]);
+  const location = useLocation();
   const getDiscovery = useMatch(() => "/your-trip/:discovery");
   const getHasDiscovery = createMemo(() => Boolean(getDiscovery()));
+  const getLinks = () =>
+    links.filter((link) => location.pathname.startsWith(link.href));
+
   return (
     <nav {...parent}>
-      <ul
-        class="grid gap-(--gap-lg) sm:grid-rows-1"
-        classList={{
-          "grid-rows-2": getHasDiscovery(),
-          "grid-rows-3": !getHasDiscovery(),
-          "sm:grid-cols-2": getHasDiscovery(),
-          "sm:grid-cols-3": !getHasDiscovery(),
-        }}
-      >
-        <For each={links}>
-          {(link) => {
-            const getIsActive = useMatch(() => link.href);
-            return getIsActive() ? null : (
-              <li class="h-full">
-                <A href={link.href}>
-                  <Show when={local.images}>
-                    <ImgAsset
-                      src={link.src}
-                      class="framed mb-(--gap-md) w-full"
-                    />
-                  </Show>
-                  <div class="border w-full p-0.5">
-                    <span>{link.text}</span>
-                    <Arrow />
-                  </div>
-                </A>
-              </li>
-            );
-          }}
+      <ul>
+        <For each={getLinks()}>
+          {(link) => (
+            <li>
+              <DiscoveryLink image={local.images} link={link} />
+            </li>
+          )}
         </For>
       </ul>
     </nav>
+  );
+}
+
+function DiscoveryLink(
+  props: ExtendProps<
+    typeof A,
+    { image?: boolean; link: DiscoveryLink },
+    "href"
+  >,
+) {
+  const [local, parent] = splitProps(props, ["image", "link"]);
+  return (
+    <A href={local.link.href} {...parent}>
+      <Show when={local.image}>
+        <ImgAsset src={local.link.src} />
+      </Show>
+      <div>
+        <span>{local.link.text}</span>
+        <Arrow />
+      </div>
+    </A>
   );
 }

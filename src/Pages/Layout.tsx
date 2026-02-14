@@ -3,9 +3,7 @@ import {
   createSignal,
   on,
   Show,
-  splitProps,
   type ParentProps,
-  mergeProps,
 } from "solid-js";
 import { A, useLocation, useMatch } from "@solidjs/router";
 import Time from "../Components/Time";
@@ -22,8 +20,8 @@ export default function Layout(props: ParentProps) {
   return (
     <main data-path={location.pathname}>
       <header>
-        <MobileNav class="sm:hidden p-(--gap-sm)" />
-        <nav data-horizontal class="nav-x hidden sm:flex">
+        <MobileNav />
+        <nav>
           <ul>
             <li>
               <A href="/#our-story">Our Story</A>
@@ -32,47 +30,38 @@ export default function Layout(props: ParentProps) {
               <A href="/#details">Details</A>
             </li>
           </ul>
-          <ul class="justify-center">
+          <ul>
             <li>
-              <Logo class="h-5" />
+              <Logo />
             </li>
           </ul>
           <ul>
             <li>
-              <A href="/your-trip" class="border">
-                Your Trip
-              </A>
+              <A href="/your-trip">Your Trip</A>
             </li>
             <li>
-              <A
-                href="/rsvp"
-                class="border bg-(--color-bg-secondary) border-(--color-bg-secondary) text-(--color-text-secondary)"
-              >
-                RSVP
-              </A>
+              <A href="/rsvp">RSVP</A>
             </li>
           </ul>
         </nav>
       </header>
-      <hr class="mb-(--gap-lg)" />
+      <hr />
       {props.children}
-      <footer class="text-center my-(--gap-lg) flex flex-col gap-(--gap-lg)">
-        <h1 class="font-bold">
+      <footer>
+        <h1>
           Please RSVP
           <small> by </small>
           <Time value={rsvpDate} />
         </h1>
         <Show when={!getIsRSVP()}>
-          <A href="/rsvp" class="border self-center">
+          <A href="/rsvp">
             <span>RSVP</span>
             <Arrow />
           </A>
         </Show>
-        <A href="/your-trip" class="text-center border-y py-(--gap-sm)">
-          Your Trip
-        </A>
+        <A href="/your-trip">Your Trip</A>
       </footer>
-      <footer class="flex justify-center">
+      <footer>
         <Logo />
       </footer>
     </main>
@@ -102,17 +91,15 @@ function useScrollTo(): void {
 
 function Logo(props: ExtendProps<"div", { stacked?: boolean }>) {
   return (
-    <div data-logo {...props}>
+    <div {...props}>
       <A href="/">
-        <img src={logoSrc} class="object-contain" />
+        <img src={logoSrc} />
       </A>
     </div>
   );
 }
 
 function MobileNav(props: ExtendProps<"header">) {
-  const merged = mergeProps({ class: "" }, props);
-  const [local, parent] = splitProps(merged, ["class"]);
   const [getOpen, setOpen] = createSignal(false);
   const getType = (): string => (getOpen() ? "close" : "menu");
   function onClick() {
@@ -120,11 +107,11 @@ function MobileNav(props: ExtendProps<"header">) {
   }
 
   return (
-    <header class={`z-top relative ${local.class}`} {...parent}>
-      <nav data-horizontal class="mb-(--gap-sm)">
+    <header {...props}>
+      <nav>
         <ul>
           <li>
-            <Logo class="h-3" />
+            <Logo />
           </li>
         </ul>
         <ul>
@@ -135,8 +122,8 @@ function MobileNav(props: ExtendProps<"header">) {
           </li>
         </ul>
       </nav>
-      <nav data-vertical data-dropdown classList={{ "max-h-24": getOpen() }}>
-        <ul class="pt-(--gap-sm)">
+      <nav>
+        <ul>
           <li>
             <A href="/#details">Details</A>
           </li>
@@ -144,9 +131,9 @@ function MobileNav(props: ExtendProps<"header">) {
             <A href="/your-trip">Your Trip</A>
           </li>
         </ul>
-        <ul class="w-full">
-          <li class="w-full">
-            <a href="/rsvp" class="border flex justify-center w-full">
+        <ul>
+          <li>
+            <a href="/rsvp">
               <span>
                 <span>RSVP</span>
                 <Arrow />

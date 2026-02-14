@@ -29,8 +29,8 @@ export default function Discover() {
   return (
     <>
       <article>
-        <header class="text-center mb-(--gap-lg)">
-          <h1 class="mb-(--gap-lg)">
+        <header>
+          <h1>
             <em>{getPageContent().title}</em>
           </h1>
           <h2>{getPageContent().subtitle}</h2>
@@ -41,17 +41,17 @@ export default function Discover() {
           </For>
         </div>
       </article>
-      <footer class="bg-(--color-bg-shadow) p-(--gap-lg) mb-(--gap-lg)">
-        <h2 class="text-center mb-(--gap-md)">Discover More</h2>
+      <footer>
+        <h2>Discover More</h2>
         <DiscoveriesNav />
       </footer>
-      <footer class="flex justify-center text-center">
-        <figure class="max-w-25">
-          <img src="/Your Trip footer.png" class="w-full" />
-          <figcaption class="mt-(--gap-sm)">
+      <footer>
+        <figure>
+          <img src="/Your Trip footer.png" />
+          <figcaption>
             <em>
               <span>A kiss</span>
-              <br class="sm:hidden" />
+              <br />
               <span> to build a dream on</span>
             </em>
           </figcaption>
@@ -83,22 +83,18 @@ function Attraction(
     "siteHref",
     "mapHref",
     "children",
-    "class",
   ]);
   return (
-    <section
-      class={`grid sm:grid-cols-2 mb-(--gap-lg) ${local.class}`}
-      {...parent}
-    >
-      <ImgAsset src={local.imageSrc} class="framed" />
+    <section {...parent}>
+      <ImgAsset src={local.imageSrc} />
       <div>
-        <h2 class="mb-(--gap-md)">
+        <h2>
           <a href={local.siteHref} target="_blank">
             {local.title}
           </a>
         </h2>
         {local.children}
-        <a href={local.mapHref} target="_blank" class="border mt-(--gap-md)">
+        <a href={local.mapHref} target="_blank">
           <span>View Route</span>
           <Arrow />
         </a>
