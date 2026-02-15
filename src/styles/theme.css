@@ -1,0 +1,24 @@
+@theme {
+  --color-primary: #7f2549;
+  --color-background: #fff8f7;
+  --color-shadow: #caa5af;
+  --color-light: #fbeeef;
+
+  --font-family-normal: "Libre Baskerville";
+  --font-family-fancy: "Pinyon Script";
+
+  --gap-xs: 1.5rem;
+  --gap-sm: 2.5rem;
+  --gap-md: 3.5rem;
+  --gap-lg: 5rem;
+
+  --default-border-width: 2px;
+
+  --font-size-a: 1;
+  --font-size-b: 1.075;
+  --font-size-c: 1.175;
+  --font-size-d: 1.475;
+  --font-size-e: 1.75;
+  --font-size-f: 2.125rem;
+  --font-size-g: 3rem;
+}

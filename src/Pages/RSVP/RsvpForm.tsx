@@ -79,7 +79,7 @@ export default function RsvpForm() {
             placeholder="Type here.."
           />
         </fieldset>
-        <button type="submit">
+        <button type="submit" class="a-link">
           <span>Submit Form</span>
           <Arrow />
         </button>

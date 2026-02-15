@@ -1,0 +1,157 @@
+@utility titles-display {
+  /* Display/Display */
+  font-family: "Pinyon Script";
+  font-size: var(--font-size-g);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(
+    --font-desktop-line-height-display-desktop-90,
+    5.625rem
+  ); /* 93.75% */
+  letter-spacing: var(--font-desktop-letter-spacing-display-desktop-0, 0);
+}
+
+@utility titles-decorative {
+  /* Display/Decorative */
+  font-family: "Pinyon Script";
+  font-size: var(--font-size-f);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--Titles-Display-Decorative-Line-height, 1.75rem); /* 56% */
+  letter-spacing: var(--Titles-Display-Decorative-Letter-spacing, 0.0025rem);
+}
+
+@utility titles-h1-bold-caps {
+  /* Title/H1 Bold Caps */
+  font-family: var(--Titles-H1-Bold-Caps-Family, "Libre Baskerville");
+  font-size: var(--font-size-e);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--Titles-H1-Bold-Caps-Line-height, 2.75rem); /* 122.222% */
+  letter-spacing: var(--Titles-H1-Bold-Caps-Letter-spacing, 0.125rem);
+  text-transform: uppercase;
+}
+
+@utility titles-h1-regular-caps {
+  /* Title/H1 Regular Caps */
+  font-family: var(--Titles-H1-Bold-Caps-Family, "Libre Baskerville");
+  font-size: var(--font-size-e);
+  font-style: normal;
+  font-weight: var(
+    --font-desktop-letter-spacing-h-1-regular-caps-desktop-2,
+    400
+  );
+  line-height: var(
+    --Titles-H1-Regular-Caps-Line-height,
+    2.75rem
+  ); /* 122.222% */
+  letter-spacing: var(--Titles-H1-Regular-Caps-Letter-spacing, 0.125rem);
+  text-transform: uppercase;
+}
+
+@utility titles-h1-regular {
+  /* Title/H1 Regular Sentence */
+  font-family: var(--Titles-H1-Regular-Sentence-Family, "Libre Baskerville");
+  font-size: var(--font-size-e);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(
+    --Titles-H1-Regular-Sentence-Line-height,
+    2.75rem
+  ); /* 122.222% */
+  letter-spacing: var(--Titles-H1-Regular-Sentence-Letter-spacing, 0.125rem);
+  text-transform: capitalize;
+}
+
+@utility titles-h1-decorative {
+  /* Title/H1 Decorative */
+  font-family: var(--Family, "Libre Baskerville");
+  font-size: var(--font-size-d);
+  font-style: italic;
+  font-weight: 400;
+  line-height: var(
+    --font-desktop-line-height-h-1-decorative-desktop-36,
+    2.25rem
+  ); /* 120% */
+  letter-spacing: var(
+    --font-desktop-letter-spacing-h-1-decorative-desktop-2,
+    0.125rem
+  );
+  text-transform: lowercase;
+}
+
+@utility titles-h2 {
+  /* Title/H2 */
+  font-family: var(--Titles-H2-Family, "Libre Baskerville");
+  font-size: var(--font-size-c);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--Titles-H2-Line-height, 2.1875rem); /* 159.091% */
+  letter-spacing: var(--Titles-H2-Letter-spacing, 0.125rem);
+  text-transform: capitalize;
+}
+
+@utility titles-span-decorative {
+  /* Span/Span Decorative */
+  font-family: var(--Titles-Span-Decorative-Family, "Libre Baskerville");
+  font-size: var(--font-size-a);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--Titles-Span-Decorative-Line-height, 1.875rem); /* 187.5% */
+  letter-spacing: var(--Titles-Span-Decorative-Letter-spacing, 0.125rem);
+  text-transform: capitalize;
+}
+
+@utility titles-body-regular {
+  /* Body/Regular */
+  font-family: var(--Titles-Body-Regular-Family, "Libre Baskerville");
+  font-size: var(--font-size-b);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--Titles-Body-Regular-Line-height, 1.875rem); /* 166.667% */
+  letter-spacing: var(--Titles-Body-Regular-Letter-spacing, 0);
+}
+
+@utility titles-body-bold {
+  /* Body/Bold */
+  font-family: var(--Family, "Libre Baskerville");
+  font-size: var(--font-size-b);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--Titles-Body-Bold-Line-height, 1.875rem); /* 166.667% */
+  letter-spacing: var(--Titles-Body-Bold-Letter-spacing, 0);
+}
+
+@utility titles-body-link {
+  /* Body/Link */
+  font-family: var(--Titles-Body-Link-Family, "Libre Baskerville");
+  font-size: var(--font-size-b);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--Titles-Body-Link-Line-height, 1.875rem); /* 166.667% */
+  letter-spacing: var(--Titles-Body-Link-Letter-spacing, 0);
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+@utility titles-navigation-button {
+  /* Navigation/Button & Link */
+  font-family: var(--Titles-Navigation-Button-Link-Family, "Libre Baskerville");
+  font-size: var(--font-size-a);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(
+    --Titles-Navigation-Button-Link-Line-height,
+    1.875rem
+  ); /* 187.5% */
+  letter-spacing: var(--Titles-Navigation-Button-Link-Letter-spacing, 0.125rem);
+  text-transform: uppercase;
+}
+
+@utility chromatic {
+  @apply grayscale-0 hover:grayscale-0 group-hover:grayscale-0 duration-200 sm:grayscale-100;
+}

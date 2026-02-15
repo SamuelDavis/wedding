@@ -1,0 +1,95 @@
+@layer components {
+  nav.vertical {
+    & > ul {
+      @apply flex flex-col items-start;
+    }
+  }
+
+  nav.dropdown {
+    @apply flex flex-col overflow-hidden max-h-0 transition-[max-height] duration-200 ease-in-out;
+  }
+
+  hr.vertical {
+    @apply inline-block align-baseline h-4 mx-8 my-0 border-x-1;
+  }
+
+  section.cols-2,
+  .cols-2 section {
+    @apply grid gap-(--gap-sm) sm:grid-cols-2;
+  }
+
+  section.chromatic {
+    & img {
+      @apply chromatic;
+    }
+  }
+
+  ul[role="marquee"] {
+    @apply flex overflow-x-auto gap-(--gap-xs);
+
+    & > li {
+      & figure {
+        @apply relative aspect-square mb-(--gap-xs) w-56 sm:w-112;
+
+        & figcaption {
+          @apply absolute top-0 left-0 m-6 px-4 bg-(--color-background) rounded-md;
+        }
+
+        & img {
+          @apply h-full w-full;
+        }
+      }
+    }
+  }
+
+  span.arrow {
+    @apply inline-block relative h-0 border-b border-t min-w-16 scale-50 -translate-y-[0.25em];
+
+    &::before {
+      content: "";
+      @apply absolute -top-1 right-0 h-4 border-x rotate-45;
+    }
+    &::after {
+      content: "";
+      @apply absolute -bottom-1 right-0 h-4 border-x -rotate-45;
+    }
+  }
+
+  img.border {
+    @apply p-4;
+  }
+
+  #on-the-day {
+    & > section {
+      @apply mb-0;
+
+      & h1 {
+        @apply titles-h1-bold-caps mb-(--gap-xs);
+      }
+
+      & h2 {
+        @apply titles-h2;
+      }
+
+      & dt {
+        @apply mb-4;
+      }
+
+      & dd:not(:last-child) {
+        @apply mb-(--gap-sm);
+      }
+    }
+  }
+
+  .a-link {
+    @apply border inline-block w-auto px-4 py-2;
+  }
+
+  #details {
+    & ul {
+      & h1 {
+        @apply titles-h1-bold-caps;
+      }
+    }
+  }
+}

@@ -1,16 +1,10 @@
-import {
-  createEffect,
-  createSignal,
-  on,
-  Show,
-  type ParentProps,
-} from "solid-js";
+import { createEffect, on, Show, type ParentProps } from "solid-js";
 import { A, useLocation, useMatch } from "@solidjs/router";
 import Time from "../Components/Time";
 import { rsvpDate } from "../data";
-import { type ExtendProps, HTMLIcon } from "@samueldavis/solidlib";
 import Arrow from "../Components/Arrow";
-import logoSrc from "../assets/Logo.png";
+import Logo from "../Components/Logo";
+import MobileNav from "../Components/MobileNav";
 
 export default function Layout(props: ParentProps) {
   useScrollTo();
@@ -20,9 +14,9 @@ export default function Layout(props: ParentProps) {
   return (
     <main data-path={location.pathname}>
       <header>
-        <MobileNav />
-        <nav>
-          <ul>
+        <MobileNav class="sm:hidden" />
+        <nav class="grid grid-cols-[1fr_auto_1fr] gap-(--gap-sm) max-sm:hidden">
+          <ul class="justify-self-start">
             <li>
               <A href="/#our-story">Our Story</A>
             </li>
@@ -35,33 +29,42 @@ export default function Layout(props: ParentProps) {
               <Logo />
             </li>
           </ul>
-          <ul>
+          <ul class="justify-self-end">
             <li>
-              <A href="/your-trip">Your Trip</A>
+              <A href="/your-trip" class="a-link">
+                Your Trip
+              </A>
             </li>
             <li>
-              <A href="/rsvp">RSVP</A>
+              <A
+                href="/rsvp"
+                class="a-link border-(--color-primary) bg-(--color-primary) text-(--color-background)"
+              >
+                RSVP
+              </A>
             </li>
           </ul>
         </nav>
       </header>
       <hr />
       {props.children}
-      <footer>
-        <h1>
+      <footer class="my-(--gap-md) text-center">
+        <h1 class="titles-h1-bold-caps">
           Please RSVP
           <small> by </small>
           <Time value={rsvpDate} />
         </h1>
         <Show when={!getIsRSVP()}>
-          <A href="/rsvp">
+          <A href="/rsvp" class="a-link my-(--gap-sm)">
             <span>RSVP</span>
             <Arrow />
           </A>
         </Show>
-        <A href="/your-trip">Your Trip</A>
+        <div class="my-(--gap-md) border-y py-4 my-4">
+          <A href="/your-trip">Your Trip</A>
+        </div>
       </footer>
-      <footer>
+      <footer class="flex justify-center">
         <Logo />
       </footer>
     </main>
@@ -86,62 +89,5 @@ function useScrollTo(): void {
         } else window.scrollTo({ top: 0, behavior: "auto" });
       },
     ),
-  );
-}
-
-function Logo(props: ExtendProps<"div", { stacked?: boolean }>) {
-  return (
-    <div {...props}>
-      <A href="/">
-        <img src={logoSrc} />
-      </A>
-    </div>
-  );
-}
-
-function MobileNav(props: ExtendProps<"header">) {
-  const [getOpen, setOpen] = createSignal(false);
-  const getType = (): string => (getOpen() ? "close" : "menu");
-  function onClick() {
-    setOpen((open) => !open);
-  }
-
-  return (
-    <header {...props}>
-      <nav>
-        <ul>
-          <li>
-            <Logo />
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <button onClick={onClick}>
-              <HTMLIcon type={getType()} />
-            </button>
-          </li>
-        </ul>
-      </nav>
-      <nav>
-        <ul>
-          <li>
-            <A href="/#details">Details</A>
-          </li>
-          <li>
-            <A href="/your-trip">Your Trip</A>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="/rsvp">
-              <span>
-                <span>RSVP</span>
-                <Arrow />
-              </span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
   );
 }

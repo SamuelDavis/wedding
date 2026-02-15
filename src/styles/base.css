@@ -1,0 +1,66 @@
+@layer base {
+  :root {
+    @media (min-width: 40rem) {
+      --gap-xs: 2.5rem;
+      --gap-sm: 4.5rem;
+      --gap-md: 6.5rem;
+      --gap-lg: 10rem;
+
+      --font-size-a: 1;
+      --font-size-b: 1.125;
+      --font-size-c: 1.375;
+      --font-size-d: 1.875;
+      --font-size-e: 2.25;
+      --font-size-f: 3.125rem;
+      --font-size-g: 6rem;
+    }
+  }
+
+  body {
+    @apply bg-background text-primary border-primary;
+    @apply titles-body-regular;
+  }
+
+  main {
+    @apply max-w-360 mx-auto my-(--gap-xs) p-(--gap-xs) sm:p-(--gap-md);
+  }
+
+  nav {
+    & > ul {
+      @apply flex justify-between items-center gap-(--gap-xs);
+    }
+
+    & ul > li {
+      @apply text-center;
+
+      & > a {
+        @apply rounded-sm;
+      }
+    }
+  }
+
+  a.border,
+  nav a {
+    @apply titles-navigation-button;
+  }
+
+  a.border {
+    @apply inline-block w-auto px-4 py-2;
+  }
+
+  p {
+    @apply mb-4;
+
+    & a {
+      @apply titles-body-link;
+    }
+  }
+
+  hr {
+    @apply my-(--gap-xs);
+  }
+
+  img {
+    @apply min-w-0 object-cover;
+  }
+}

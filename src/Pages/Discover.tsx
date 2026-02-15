@@ -1,6 +1,5 @@
-import { type ExtendProps } from "@samueldavis/solidlib";
 import { useParams } from "@solidjs/router";
-import { createMemo, For, splitProps, type ValidComponent } from "solid-js";
+import { createMemo, For, type ValidComponent } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import DiscoveriesNav from "../Content/DiscoveriesNav";
 import mintMuseumUptownSrc from "../assets/SamandJess_mintmuseum.jpg";
@@ -13,8 +12,7 @@ import matchaCafeMaikoSrc from "../assets/SamandJess_matchamaiko.jpg";
 import riRaIrishPubSrc from "../assets/SamandJess_fishandchips.jpg";
 import theOneTapasAndBarSrc from "../assets/SamandJess_foodanddrink.jpg";
 import { InterestSlugs } from "../data";
-import ImgAsset from "../Components/ImgAsset";
-import Arrow from "../Components/Arrow";
+import Attraction from "../Components/Attraction";
 
 type InterestSlug = (typeof InterestSlugs)[number];
 type PageContent = {
@@ -29,32 +27,28 @@ export default function Discover() {
   return (
     <>
       <article>
-        <header>
-          <h1>
+        <header class="text-center mb-(--gap-lg)">
+          <h1 class="titles-display mb-(--gap-sm)">
             <em>{getPageContent().title}</em>
           </h1>
-          <h2>{getPageContent().subtitle}</h2>
+          <h2 class="titles-h2">{getPageContent().subtitle}</h2>
         </header>
-        <div>
+        <div class="flex flex-col gap-(--gap-lg)">
           <For each={getPageContent().attractions}>
             {(Content) => <Dynamic component={Content} />}
           </For>
         </div>
       </article>
-      <footer>
-        <h2>Discover More</h2>
+      <footer class="flex flex-col items-center bg-(--color-light) p-(--gap-md) my-(--gap-lg)">
+        <h2 class="titles-h1-bold-caps mb-(--gap-sm)">Discover More</h2>
         <DiscoveriesNav />
       </footer>
       <footer>
         <figure>
-          <img src="/Your Trip footer.png" />
-          <figcaption>
-            <em>
-              <span>A kiss</span>
-              <br />
-              <span> to build a dream on</span>
-            </em>
+          <figcaption class="text-center titles-display text-(--color-shadow)">
+            <em>A kiss to build a dream on</em>
           </figcaption>
+          <img src="/Your Trip footer.png" />
         </figure>
       </footer>
     </>
@@ -64,43 +58,6 @@ export default function Discover() {
 function usePageContent() {
   const params = useParams<{ interest: InterestSlug }>();
   return createMemo(() => data[params.interest]);
-}
-
-function Attraction(
-  props: ExtendProps<
-    "section",
-    {
-      imageSrc: string;
-      title: string;
-      siteHref: string;
-      mapHref: string;
-    }
-  >,
-) {
-  const [local, parent] = splitProps(props, [
-    "imageSrc",
-    "title",
-    "siteHref",
-    "mapHref",
-    "children",
-  ]);
-  return (
-    <section {...parent}>
-      <ImgAsset src={local.imageSrc} />
-      <div>
-        <h2>
-          <a href={local.siteHref} target="_blank">
-            {local.title}
-          </a>
-        </h2>
-        {local.children}
-        <a href={local.mapHref} target="_blank">
-          <span>View Route</span>
-          <Arrow />
-        </a>
-      </div>
-    </section>
-  );
 }
 
 const data: Record<InterestSlug, PageContent> = {

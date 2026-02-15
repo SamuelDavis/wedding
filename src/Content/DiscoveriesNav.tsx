@@ -39,14 +39,12 @@ export default function DiscoveriesNav(
 ) {
   const [local, parent] = splitProps(props, ["images"]);
   const location = useLocation();
-  const getDiscovery = useMatch(() => "/your-trip/:discovery");
-  const getHasDiscovery = createMemo(() => Boolean(getDiscovery()));
   const getLinks = () =>
-    links.filter((link) => location.pathname.startsWith(link.href));
+    links.filter((link) => !location.pathname.startsWith(link.href));
 
   return (
     <nav {...parent}>
-      <ul>
+      <ul class="flex-col">
         <For each={getLinks()}>
           {(link) => (
             <li>
@@ -70,9 +68,9 @@ function DiscoveryLink(
   return (
     <A href={local.link.href} {...parent}>
       <Show when={local.image}>
-        <ImgAsset src={local.link.src} />
+        <ImgAsset src={local.link.src} class="border mb-(--gap-xs)" />
       </Show>
-      <div>
+      <div class="a-link">
         <span>{local.link.text}</span>
         <Arrow />
       </div>

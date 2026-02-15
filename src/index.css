@@ -1,13 +1,5 @@
 @import "tailwindcss";
-
-@layer theme {
-}
-
-@layer utilities {
-}
-
-@layer components {
-}
-
-@layer base {
-}
+@import "./styles/theme.css";
+@import "./styles/utilities.css";
+@import "./styles/components.css";
+@import "./styles/base.css";

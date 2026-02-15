@@ -23,55 +23,58 @@ import Arrow from "../Components/Arrow";
 export default function Home() {
   return (
     <article>
-      <section>
-        <ImgAsset src={nariColorScr} />
-        <div>
-          <ImgAsset src={athensColorSrc} />
-          <div>
-            <h2>The Wedding Of</h2>
-            <h1>
-              <em>
-                Samuel<small> and </small>Jessica
+      <section class="relative flex items-center gap-(--gap-lg)">
+        <ImgAsset src={nariColorScr} class="chromatic max-sm:hidden" />
+        <div class="group">
+          <ImgAsset src={athensColorSrc} class="chromatic" />
+          <div class="absolute top-[10%] left-[50%] -translate-x-[50%] text-center group:hover">
+            <h2 class="titles-h2 mb-(--gap-xs)">The Wedding Of</h2>
+            <h1 class="titles-display text-nowrap">
+              <em class="flex justify-center items-center">
+                Samuel
+                <small class="titles-decorative ml-8 mr-4"> and </small>
+                Jessica
               </em>
             </h1>
           </div>
         </div>
-        <ImgAsset src={flowersColorSrc} />
+        <ImgAsset src={flowersColorSrc} class="chromatic max-sm:hidden" />
       </section>
       <section>
-        <h2>
+        <h2 class="titles-h2 text-center my-(--gap-sm)">
           <Time value={weddingDate} />
-          <hr />
-          <a target="_blank" href={venueMapHref}>
+          <hr class="vertical max-sm:hidden" />
+          <br class="sm:hidden" />
+          <a target="_blank" href={venueMapHref} class="p-0">
             Francis J. Beatty Park
           </a>
         </h2>
-        <nav>
-          <menu>
+        <nav class="justify-center">
+          <ul class="justify-center">
             <li>
-              <A href="/rsvp">
+              <A href="/rsvp" class="a-link">
                 <span>RSVP</span>
                 <Arrow />
               </A>
             </li>
-          </menu>
+          </ul>
         </nav>
       </section>
-      <section id="our-story">
-        <h1>
+      <section id="our-story" class="text-center my-(--gap-lg)">
+        <h1 class="titles-h1-bold-caps mb-(--gap-xs)">
           <A id="our-story" href="#our-story">
             Let's Make This Official
           </A>
         </h1>
-        <div>
+        <div class="mb-(--gap-xs)">
           <p>
             Our story began in 2019, chatting during work breaks about
             animation, music, and movies.
           </p>
           <p>
             Fast forward to the fall of 2020 &mdash; we went on a casual morning
-            walk that we jokingly called a "date". But eight miles and a hundred
-            tangents later, we realized how much we enjoyed each other's
+            walk that we jokingly called a <q>date</q>. But eight miles and a
+            hundred tangents later, we realized how much we enjoyed each other's
             company.
           </p>
           <p>
@@ -79,10 +82,10 @@ export default function Home() {
             to celebrate with us on our wedding day. We can't wait!
           </p>
         </div>
-        <h2>Sam & Jess</h2>
+        <h2 class="titles-h2">Sam & Jess</h2>
       </section>
-      <section>
-        <div>
+      <section class="mb-(--gap-md)">
+        <h1 class="titles-display my-(--gap-md) text-(--color-shadow)">
           <em>
             <q>
               <span>Every moment</span>
@@ -94,7 +97,7 @@ export default function Home() {
               <span> I treasure.</span>
             </q>
           </em>
-        </div>
+        </h1>
         <Marquee>
           <For each={timeline}>
             {({ year, src }) => (
@@ -106,12 +109,12 @@ export default function Home() {
           </For>
         </Marquee>
       </section>
-      <section id="itinerary">
-        <header>
-          <h1 id="on-the-day">
+      <article id="on-the-day" class="cols-2">
+        <header class="text-center mb-(--gap-md)">
+          <h1 class="titles-h1-bold-caps mb-(--gap-xs)">
             <Time value={weddingDate} format="short" />
           </h1>
-          <h1>
+          <h1 class="titles-display">
             <A href="#on-the-day">
               <em>On the Day</em>
             </A>
@@ -120,7 +123,7 @@ export default function Home() {
         <section>
           <div>
             <h1>
-              Arrival<small> and </small>Ceremony
+              Arrival<small class="titles-h1-decorative"> and </small>Ceremony
             </h1>
             <Itinerary>
               <ItineraryItem time={schedule.arrivalAndCeremony}>
@@ -128,7 +131,7 @@ export default function Home() {
                   Arrive a little early and enjoy the park, find your seats, and
                   settle in before the ceremony begins.
                 </p>
-                <A href={venueMapHref}>
+                <A href={venueMapHref} class="a-link">
                   <span>View Location</span>
                   <Arrow />
                 </A>
@@ -140,11 +143,11 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <ImgAsset src={arrivalAndCeremonySrc} />
+          <ImgAsset src={arrivalAndCeremonySrc} class="border" />
         </section>
         <hr />
         <section>
-          <ImgAsset src={socialHourSrc} />
+          <ImgAsset src={socialHourSrc} class="border" />
           <div>
             <h1>Social Hour</h1>
             <Itinerary>
@@ -161,7 +164,7 @@ export default function Home() {
         <section>
           <div>
             <h1>
-              Reception<small> and </small>Dinner
+              Reception<small class="titles-h1-decorative"> and </small>Dinner
             </h1>
             <Itinerary>
               <ItineraryItem time={schedule.reception}>
@@ -177,13 +180,13 @@ export default function Home() {
               </ItineraryItem>
             </Itinerary>
           </div>
-          <ImgAsset src={receptionAndDinnerSrc} />
+          <ImgAsset src={receptionAndDinnerSrc} class="border" />
         </section>
-      </section>
-      <section id="details">
-        <figure>
-          <figcaption>
-            <h1>
+      </article>
+      <section id="details" class="cols-2 border p-(--gap-sm)">
+        <figure class="relative">
+          <figcaption class="absolute top-[1ch] -left-[2ch] sm:-left-[2ch]">
+            <h1 class="titles-display">
               <A href="#details">
                 <em>
                   Additional
