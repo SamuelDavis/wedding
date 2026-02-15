@@ -39,8 +39,6 @@ export default function DiscoveriesNav(
 ) {
   const [local, parent] = splitProps(props, ["images"]);
   const location = useLocation();
-  const getDiscovery = useMatch(() => "/your-trip/:discovery");
-  const getHasDiscovery = createMemo(() => Boolean(getDiscovery()));
   const getLinks = () =>
     links.filter((link) => location.pathname.startsWith(link.href));
 
