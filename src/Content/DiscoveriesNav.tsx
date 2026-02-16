@@ -40,7 +40,7 @@ export default function DiscoveriesNav(
   const [local, parent] = splitProps(props, ["images"]);
   const location = useLocation();
   const getLinks = () =>
-    links.filter((link) => location.pathname.startsWith(link.href));
+    links.filter((link) => !location.pathname.startsWith(link.href));
 
   return (
     <nav {...parent}>
@@ -70,7 +70,7 @@ function DiscoveryLink(
       <Show when={local.image}>
         <ImgAsset src={local.link.src} />
       </Show>
-      <div>
+      <div class="a-link">
         <span>{local.link.text}</span>
         <Arrow />
       </div>
