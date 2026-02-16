@@ -1,6 +1,12 @@
 import { type ExtendProps } from "@samueldavis/solidlib";
 import { useParams } from "@solidjs/router";
-import { createMemo, For, splitProps, type ValidComponent } from "solid-js";
+import {
+  createMemo,
+  For,
+  mergeProps,
+  splitProps,
+  type ValidComponent,
+} from "solid-js";
 import { Dynamic } from "solid-js/web";
 import DiscoveriesNav from "../Content/DiscoveriesNav";
 import mintMuseumUptownSrc from "../assets/SamandJess_mintmuseum.jpg";
@@ -29,32 +35,30 @@ export default function Discover() {
   return (
     <>
       <article>
-        <header>
+        <header class="text-center my-(--gap-lg)">
           <h1>
             <em>{getPageContent().title}</em>
           </h1>
           <h2>{getPageContent().subtitle}</h2>
         </header>
-        <div>
-          <For each={getPageContent().attractions}>
-            {(Content) => <Dynamic component={Content} />}
-          </For>
-        </div>
+        <For each={getPageContent().attractions}>
+          {(Content) => <Dynamic component={Content} />}
+        </For>
       </article>
-      <footer>
-        <h2>Discover More</h2>
+      <footer class="-ml-(--gap-sm) -mr-(--gap-sm) text-center bg-light p-(--gap-lg) my-(--gap-xl)">
+        <h2 class="mb-(--gap-md)">Discover More</h2>
         <DiscoveriesNav />
       </footer>
       <footer>
         <figure>
-          <img src="/Your Trip footer.png" />
-          <figcaption>
-            <em>
-              <span>A kiss</span>
-              <br />
-              <span> to build a dream on</span>
-            </em>
+          <figcaption class="my-(--gap-lg) text-center text-shadow">
+            <h1>
+              <em>
+                <q>A kiss to build a dream on</q>
+              </em>
+            </h1>
           </figcaption>
+          <img src="/Your Trip footer.png" class="mx-auto max-w-[33%]" />
         </figure>
       </footer>
     </>
@@ -77,16 +81,18 @@ function Attraction(
     }
   >,
 ) {
-  const [local, parent] = splitProps(props, [
+  const merged = mergeProps({ class: "" }, props);
+  const [local, parent] = splitProps(merged, [
     "imageSrc",
     "title",
     "siteHref",
     "mapHref",
     "children",
+    "class",
   ]);
   return (
-    <section {...parent}>
-      <ImgAsset src={local.imageSrc} />
+    <section class={`cols-2 ${local.class}`} {...parent}>
+      <ImgAsset src={local.imageSrc} class="border" />
       <div>
         <h2>
           <a href={local.siteHref} target="_blank">
@@ -94,7 +100,7 @@ function Attraction(
           </a>
         </h2>
         {local.children}
-        <a href={local.mapHref} target="_blank">
+        <a href={local.mapHref} target="_blank" class="a-link">
           <span>View Route</span>
           <Arrow />
         </a>

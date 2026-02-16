@@ -8,13 +8,13 @@ import { A } from "@solidjs/router";
 export default function YourTrip() {
   return (
     <article>
-      <header>
+      <header class="text-center my-(--gap-lg)">
         <h1>
           <em>Plan your trip</em>
         </h1>
         <h2>Stay a while</h2>
       </header>
-      <section>
+      <section class="cols-2">
         <div>
           <h1>
             Where<small> to </small>Stay
@@ -25,17 +25,17 @@ export default function YourTrip() {
             Check the hotel website for additional details for address, parking,
             etc.
           </p>
-          <A target="_blank" href={hotelSiteHref}>
+          <A target="_blank" href={hotelSiteHref} class="a-link">
             <span>book room</span>
             <Arrow />
           </A>
         </div>
-        <ImgAsset src={wingateSrc} />
+        <ImgAsset src={wingateSrc} class="border" />
       </section>
       <hr />
       <section>
         <header>
-          <h1>What category interests you most?</h1>
+          <h1 class="text-center">What category interests you most?</h1>
         </header>
         <DiscoveriesNav images />
       </section>

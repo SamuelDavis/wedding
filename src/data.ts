@@ -1,7 +1,7 @@
 import { parseISO, set } from "date-fns";
 import timeline2025Src from "./assets/SamandJess_beach.jpg";
 import timeline2024Src from "./assets/SamandJess_capitalgrille.jpg";
-import timeline2023Src from "./assets/SamandJess_athens-color.jpg";
+import timeline2023Src from "./assets/SamandJess_athenscolor.jpg";
 import timeline2022Src from "./assets/SamandJess_outside.jpg";
 import timeline2021Src from "./assets/SamandJess_car.jpg";
 

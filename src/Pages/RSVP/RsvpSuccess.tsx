@@ -6,9 +6,9 @@ export default function RsvpSuccess() {
   return (
     <RsvpLayout>
       <section>
-        <h1>Success!</h1>
-        <h2>Check out your personal trip guide below</h2>
-        <A href="/your-trip">
+        <h1 class="uppercase">Success!</h1>
+        <h2 class="mb-(--gap-lg)">Check out your personal trip guide below</h2>
+        <A href="/your-trip" class="a-link">
           <span>Plan Your Trip</span>
           <Arrow />
         </A>

@@ -39,7 +39,7 @@ export default function RsvpForm() {
             required
           />
         </fieldset>
-        <fieldset>
+        <fieldset id="email">
           <label>Email</label>
           <input type="email" name="email" />
         </fieldset>
@@ -52,7 +52,7 @@ export default function RsvpForm() {
           ]}
         />
         <RadioGroup
-          legend="Select your entree"
+          legend="Select your entrée"
           inputProps={{ name: "entree", required: true }}
           options={[
             "Lemon butter chicken",
@@ -60,11 +60,10 @@ export default function RsvpForm() {
             {
               value: "Lentil bolognese pappardelle",
               label: (value: string) => (
-                <div>
-                  <span>{value}</span>
-                  <br />
-                  <small>Vegetarian & vegan (no meat)</small>
-                </div>
+                <span>
+                  {value}
+                  <small> (no meat)</small>
+                </span>
               ),
             },
           ]}
@@ -76,10 +75,10 @@ export default function RsvpForm() {
             id="other"
             name="other"
             rows="5"
-            placeholder="Type here.."
+            placeholder="Type text here.."
           />
         </fieldset>
-        <button type="submit">
+        <button type="submit" class="a-link float-right">
           <span>Submit Form</span>
           <Arrow />
         </button>

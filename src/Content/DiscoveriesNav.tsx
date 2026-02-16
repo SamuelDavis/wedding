@@ -1,6 +1,6 @@
 import { type ExtendProps } from "@samueldavis/solidlib";
-import { A, useLocation, useMatch } from "@solidjs/router";
-import { splitProps, For, Show, createMemo } from "solid-js";
+import { A, useLocation } from "@solidjs/router";
+import { splitProps, For, Show } from "solid-js";
 import nightlifeSrc from "../assets/SamandJess_charlotte.jpg";
 import smallTownCharmSrc from "../assets/SamandJess_matthews.jpg";
 import globalFlavorsSrc from "../assets/SamandJess_foodanddrink.jpg";
@@ -44,7 +44,13 @@ export default function DiscoveriesNav(
 
   return (
     <nav {...parent}>
-      <ul>
+      <ul
+        class="grid gap-(--gap-xs) md:gap-(--gap-sm)"
+        classList={{
+          "br:grid-cols-2": getLinks().length === 2,
+          "br:grid-cols-3": getLinks().length === 3,
+        }}
+      >
         <For each={getLinks()}>
           {(link) => (
             <li>
@@ -68,9 +74,9 @@ function DiscoveryLink(
   return (
     <A href={local.link.href} {...parent}>
       <Show when={local.image}>
-        <ImgAsset src={local.link.src} />
+        <ImgAsset src={local.link.src} class="border mb-(--gap-sm)" />
       </Show>
-      <div class="a-link">
+      <div class="a-link w-full">
         <span>{local.link.text}</span>
         <Arrow />
       </div>

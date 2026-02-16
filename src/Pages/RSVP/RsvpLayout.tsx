@@ -7,37 +7,43 @@ import ImgAsset from "../../Components/ImgAsset";
 
 export default function RsvpLayout(props: ParentProps) {
   return (
-    <article>
-      <header>
-        <div style={{ "background-image": `url('${beOurGuestSrc}')` }}>
+    <article class="mb-(--gap-xl)">
+      <header class="mb-(--gap-xl)">
+        <div
+          style={{ "background-image": `url('${beOurGuestSrc}')` }}
+          class="bg-cover bg-center text-background grid content-center text-center p-(--gap-sm) br:aspect-video br:p-(--gap-xl)"
+        >
           <h2>
             <Time value={weddingDate} format="short" />
           </h2>
-          <h1>
+          <h1 class="my-(--gap-lg)">
             <em>Be Our Guest</em>
           </h1>
           <h2>
             <span>We can't wait to celebrate with you!</span>
             <div />
             <span>
-              Please RSVP by <Time value={rsvpDate} />
+              Please RSVP <span class="max-br:block">by</span>{" "}
+              <Time value={rsvpDate} />
             </span>
           </h2>
         </div>
       </header>
-      <section>
-        <figure>
-          <ImgAsset src={coupleSrc} />
+      <section class="cols-2">
+        <figure class="flex flex-col gap-(--gap-sm)">
+          <ImgAsset src={coupleSrc} class="border" />
           <figcaption>
-            <em>
-              <q>
-                Bear with
-                <br />
-                one another
-                <br />
-                in love
-              </q>
-            </em>
+            <h1 class="text-shadow">
+              <em>
+                <q>
+                  Bear with
+                  <br />
+                  one another
+                  <br />
+                  in love
+                </q>
+              </em>
+            </h1>
           </figcaption>
         </figure>
         {props.children}
