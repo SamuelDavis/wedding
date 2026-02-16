@@ -126,7 +126,16 @@
   }
 
   main {
-    @apply font-normal max-w-360 mx-auto p-(--gap-main) pt-(--gap-sm);
+    @apply font-normal max-w-360 mx-auto mt-(--gap-sm);
+
+    & > header,
+    & > footer,
+    & > article > section {
+      @apply px-(--gap-main);
+    }
+    & > hr {
+      @apply mx-(--gap-main);
+    }
   }
 
   em {
@@ -179,7 +188,7 @@
   }
 
   a {
-    @apply inline-block;
+    @apply inline-block uppercase;
   }
 
   nav {

@@ -45,7 +45,7 @@ export default function Discover() {
           {(Content) => <Dynamic component={Content} />}
         </For>
       </article>
-      <footer class="-ml-(--gap-main) -mr-(--gap-main) text-center bg-light p-(--gap-lg) my-(--gap-xl)">
+      <footer class="text-center bg-light p-(--gap-lg) my-(--gap-xl)">
         <h2 class="mb-(--gap-md)">Discover More</h2>
         <DiscoveriesNav />
       </footer>

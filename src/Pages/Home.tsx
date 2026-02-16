@@ -193,7 +193,7 @@ export default function Home() {
           <ImgAsset src={receptionAndDinnerSrc} class="border" />
         </section>
       </section>
-      <section id="details" class="cols-2 border p-(--gap-md)">
+      <section id="details" class="cols-2 border mx-(--gap-main) py-(--gap-md)">
         <figure class="relative">
           <figcaption class="absolute top-1 left-1 sm:-left-8">
             <h1>

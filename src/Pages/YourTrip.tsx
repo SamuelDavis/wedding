@@ -32,7 +32,7 @@ export default function YourTrip() {
         </div>
         <ImgAsset src={wingateSrc} class="border" />
       </section>
-      <section class="-ml-(--gap-main) -mr-(--gap-main) text-center bg-light p-(--gap-lg) my-(--gap-xl)">
+      <section class="text-center bg-light p-(--gap-lg) my-(--gap-xl)">
         <header>
           <h1 class="text-center mb-(--gap-md)">
             What category interests you most?
