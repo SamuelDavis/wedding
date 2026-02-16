@@ -31,7 +31,9 @@ export default function Home() {
             <h2>The Wedding Of</h2>
             <h1>
               <em>
-                Samuel<small> and </small>Jessica
+                <span>Samuel </span>
+                <small class="inline-block align-middle -mt-4">and</small>
+                <span> Jessica</span>
               </em>
             </h1>
           </div>
@@ -57,13 +59,13 @@ export default function Home() {
           </menu>
         </nav>
       </section>
-      <section id="our-story" class="flex flex-col items-center">
+      <section id="our-story" class="flex flex-col items-center text-center">
         <h1 class="mb-(--gap-sm)">
           <A id="our-story" href="#our-story">
             <b>Let's Make This Official</b>
           </A>
         </h1>
-        <div class="text-center max-w-2xl">
+        <div class="max-w-2xl">
           <p>
             Our story began in 2019, chatting during work breaks about
             animation, music, and movies.

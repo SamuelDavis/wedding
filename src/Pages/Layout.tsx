@@ -23,7 +23,7 @@ export default function Layout(props: ParentProps) {
       <footer class="text-center my-(--gap-lg)">
         <h1 class="mb-(--gap-md) font-bold">
           Please RSVP
-          <small class="italic"> by </small>
+          <small class="italic max-sm:block"> by </small>
           <Time value={rsvpDate} />
         </h1>
         <Show when={!getIsRSVP()}>
