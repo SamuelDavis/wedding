@@ -1,5 +1,5 @@
 import { type ExtendProps, HTMLIcon } from "@samueldavis/solidlib";
-import { A, useLocation, useNavigate } from "@solidjs/router";
+import { A, useLocation } from "@solidjs/router";
 import {
   createEffect,
   createSignal,
