@@ -2,10 +2,10 @@
 @plugin "tailwind-scrollbar";
 
 @theme {
-  --color-primary: #7f2549;
+  --color-primary: rgb(127, 37, 73);
   --color-background: #fff8f7;
   --color-shadow: #caa5af;
-  --color-light: #fbeeef;
+  --color-light: rgba(127, 37, 73, 0.05);
 
   --font-normal: "Libre Baskerville";
   --font-fancy: "Pinyon Script";
@@ -74,12 +74,49 @@
     --gap-lg: 3.5rem;
     --gap-xl: 5rem;
 
+    --gap-main: var(--gap-lg);
+
     @media (min-width: 48rem) {
       --gap-xs: 1.5rem;
       --gap-sm: 2.5rem;
       --gap-md: 4.5rem;
       --gap-lg: 6.5rem;
       --gap-xl: 10rem;
+    }
+
+    @media (min-width: 48rem) {
+      [data-path="/"] {
+        background-image:
+          url("/Homepage 2.png"), url("/Homepage 4.png"),
+          url("/Homepage 3.png"), url("/Homepage 1.png"), url("/Homepage 5.png");
+        background-repeat: no-repeat;
+        background-position:
+          left 62rem,
+          left 108rem,
+          right 50rem,
+          right 102rem,
+          right 297rem;
+        background-size:
+          33% auto,
+          15% auto,
+          25% auto,
+          25% auto,
+          25% auto;
+      }
+
+      [data-path^="/rsvp"] {
+        background-image: url("/RSVP Main.png");
+        background-repeat: no-repeat;
+        background-position: left 42%;
+        background-size: 18% auto;
+      }
+
+      [data-path="/your-trip"] {
+        background-image: url("/Your Trip Main.png");
+        background-repeat: no-repeat;
+        background-position: left 37%;
+        background-size: 25% auto;
+      }
     }
   }
 
@@ -89,7 +126,7 @@
   }
 
   main {
-    @apply font-normal max-w-360 mx-auto mt-(--gap-sm) p-(--gap-sm);
+    @apply font-normal max-w-360 mx-auto p-(--gap-main) pt-(--gap-sm);
   }
 
   em {
@@ -97,7 +134,7 @@
   }
 
   small {
-    @apply mx-2 font-[400]!;
+    @apply lowercase mx-2 font-[400]!;
   }
 
   p:not(:last-child) {
@@ -105,7 +142,7 @@
   }
 
   h1 {
-    @apply leading-none my-(--gap-xs) text-2xl lg:text-3xl;
+    @apply uppercase leading-none my-(--gap-xs) text-2xl lg:text-3xl;
 
     & q {
       &::before,
@@ -126,7 +163,7 @@
   }
 
   h2 {
-    @apply my-(--gap-xs) text-xl lg:text-2xl tracking-widest leading-relaxed;
+    @apply uppercase my-(--gap-xs) text-xl lg:text-2xl tracking-widest leading-relaxed;
   }
 
   img {

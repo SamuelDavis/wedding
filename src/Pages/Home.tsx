@@ -58,7 +58,7 @@ export default function Home() {
         </nav>
       </section>
       <section id="our-story" class="flex flex-col items-center">
-        <h1 class="mb-(--gap-sm) uppercase">
+        <h1 class="mb-(--gap-sm)">
           <A id="our-story" href="#our-story">
             <b>Let's Make This Official</b>
           </A>
