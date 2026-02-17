@@ -191,6 +191,10 @@
     @apply inline-block uppercase;
   }
 
+  p a {
+    @apply normal-case bold underline;
+  }
+
   nav {
     & a {
       @apply tracking-widest leading-4.5 rounded-sm;
