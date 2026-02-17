@@ -192,7 +192,7 @@
   }
 
   p a {
-    @apply normal-case bold underline;
+    @apply normal-case font-bold underline;
   }
 
   nav {
