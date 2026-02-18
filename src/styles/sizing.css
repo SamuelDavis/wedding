@@ -1,0 +1,20 @@
+@layer base {
+    :root {
+        --gap-xs: 1.2rem;
+        --gap-sm: 1.5rem;
+        --gap-md: 2.5rem;
+        --gap-lg: 3.5rem;
+        --gap-xl: 5rem;
+
+        --gap-main: var(--gap-lg);
+
+        @media (min-width: 48rem) {
+            --gap-xs: 1.5rem;
+            --gap-sm: 2.5rem;
+            --gap-md: 4.5rem;
+            --gap-lg: 6.5rem;
+            --gap-xl: 10rem;
+        }
+
+    }
+}

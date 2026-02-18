@@ -1,0 +1,136 @@
+@import "tailwindcss";
+@import "./fonts.css";
+@import "./sizing.css";
+@import "./components.css";
+@import "./background-images.css";
+@plugin "tailwind-scrollbar";
+
+@theme {
+  --color-primary: rgb(127, 37, 73);
+  --color-background: #fff8f7;
+  --color-shadow: #caa5af;
+  --color-light: rgba(127, 37, 73, 0.05);
+
+  --font-primary: "Libre Baskerville";
+  --font-fancy: "Pinyon Script";
+
+  --default-border-width: 2px;
+  --breakpoint-br: 48rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-primary border-primary;
+    @apply text-[1.125rem] leading-7.5;
+  }
+
+  main {
+    @apply font-primary max-w-360 mx-auto mt-(--gap-sm);
+
+    & > header,
+    & > footer,
+    & > article > section {
+      @apply px-(--gap-main);
+    }
+    & > hr {
+      @apply mx-(--gap-main);
+    }
+  }
+
+  em {
+    @apply font-fancy not-italic inline-block leading-none text-[2.5em] normal-case;
+  }
+
+  small {
+    @apply lowercase mx-2 font-[400]!;
+  }
+
+  p:not(:last-child) {
+    @apply mb-(--gap-sm);
+  }
+
+  h1 {
+    @apply uppercase leading-none my-(--gap-xs) text-xl lg:text-4xl;
+
+    & q {
+      &::before,
+      &::after {
+        @apply hidden;
+      }
+    }
+
+    & > small {
+      @apply text-[0.8em] font-normal;
+    }
+
+    & > em {
+      & > small {
+        @apply text-[0.5em];
+      }
+    }
+  }
+
+  h2 {
+    @apply uppercase my-(--gap-xs) text-sm lg:text-2xl tracking-widest leading-relaxed;
+  }
+
+  img {
+    @apply min-w-0 min-h-0 object-cover;
+  }
+
+  hr {
+    @apply my-(--gap-sm) border-b-1;
+
+    &.vertical {
+      @apply my-0 inline-block h-8 mx-4 border-0 border-l align-top;
+    }
+  }
+
+  a {
+    @apply inline-block uppercase;
+  }
+
+  p a {
+    @apply normal-case font-bold underline;
+  }
+
+  nav {
+    & a {
+      @apply tracking-widest leading-4.5 rounded-sm;
+    }
+  }
+
+  form {
+    & fieldset {
+      &#email {
+        @apply w-0 h-0 overflow-hidden p-0 m-0;
+      }
+
+      @apply mb-(--gap-sm);
+
+      & legend {
+        @apply font-bold mb-(--gap-xs);
+      }
+      & label {
+        @apply flex gap-2 mb-(--gap-xs);
+      }
+    }
+
+    & input[type="text"],
+    & textarea {
+      @apply border p-2 rounded-sm w-full;
+    }
+  }
+}
+
+#on-the-day {
+  & > section {
+    & h1 {
+      @apply font-bold;
+    }
+
+    & small {
+      @apply italic;
+    }
+  }
+}
