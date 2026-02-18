@@ -50,7 +50,7 @@
   }
 
   h1 {
-    @apply uppercase leading-none my-(--gap-xs) text-xl lg:text-4xl;
+    @apply uppercase my-(--gap-xs) text-xl leading-relaxed br:leading-loose lg:text-4xl;
 
     & q {
       &::before,
@@ -71,7 +71,7 @@
   }
 
   h2 {
-    @apply uppercase my-(--gap-xs) text-2xl tracking-widest leading-relaxed;
+    @apply uppercase my-(--gap-xs) text-[1.25rem] br:text-2xl tracking-widest leading-relaxed;
   }
 
   img {
