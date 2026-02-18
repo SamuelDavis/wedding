@@ -282,6 +282,7 @@ const data: Record<InterestSlug, PageContent> = {
             <a href="https://www.maplewalkgarden.com/" target="_blank">
               Maplewalk Garden
             </a>
+            .
           </p>
         </Attraction>
       ),
