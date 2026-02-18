@@ -192,9 +192,9 @@ const data: Record<InterestSlug, PageContent> = {
       ),
     ],
   },
-  "small-town-charm": {
+  "small-town": {
     icon: "family_home",
-    title: "Small-Town Charm",
+    title: "Small-Town",
     subtitle: "Wanting to take it easy? Sounds like a plan!",
     attractions: [
       () => (

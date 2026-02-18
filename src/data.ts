@@ -40,7 +40,7 @@ export const timeline: { year: number; src: string }[] = [
 
 export const InterestSlugs = [
   "nightlife",
-  "small-town-charm",
+  "small-town",
   "global-flavors",
 ] as const;
 

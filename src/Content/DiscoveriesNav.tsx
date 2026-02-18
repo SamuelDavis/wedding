@@ -2,7 +2,7 @@ import { type ExtendProps } from "@samueldavis/solidlib";
 import { A, useLocation } from "@solidjs/router";
 import { splitProps, For, Show } from "solid-js";
 import nightlifeSrc from "../assets/SamandJess_charlotte.jpg";
-import smallTownCharmSrc from "../assets/SamandJess_matthews.jpg";
+import smallTownSrc from "../assets/SamandJess_matthews.jpg";
 import globalFlavorsSrc from "../assets/SamandJess_foodanddrink.jpg";
 import ImgAsset from "../Components/ImgAsset";
 import Arrow from "../Components/Arrow";
@@ -21,10 +21,10 @@ const links: DiscoveryLink[] = [
     src: nightlifeSrc,
   },
   {
-    href: "/your-trip/small-town-charm",
+    href: "/your-trip/small-town",
     icon: "family_home",
-    text: "Small-Town Charm",
-    src: smallTownCharmSrc,
+    text: "Small-Town",
+    src: smallTownSrc,
   },
   {
     href: "/your-trip/global-flavors",
