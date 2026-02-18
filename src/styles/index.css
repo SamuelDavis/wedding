@@ -86,17 +86,13 @@
     }
   }
 
-  a {
-    @apply inline-block uppercase;
-  }
-
   p a {
-    @apply normal-case font-bold underline;
+    @apply underline;
   }
 
   nav {
     & a {
-      @apply tracking-widest leading-4.5 rounded-sm;
+      @apply tracking-widest leading-4.5 rounded-sm uppercase;
     }
   }
 
@@ -134,3 +130,4 @@
     }
   }
 }
+

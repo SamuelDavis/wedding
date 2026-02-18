@@ -33,7 +33,13 @@ export default function Layout(props: ParentProps) {
           </A>
         </Show>
         <div class="border-y py-2 my-(--gap-lg)">
-          <A href="/your-trip">Your Trip</A>
+          <nav>
+            <ul>
+              <li>
+                <A href="/your-trip">Your Trip</A>
+              </li>
+            </ul>
+          </nav>
         </div>
         <Logo class="justify-self-center" />
       </footer>
