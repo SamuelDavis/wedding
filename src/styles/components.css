@@ -1,51 +1,51 @@
 @layer components {
-    article {
-        & > section:not(:last-child) {
-            @apply mb-(--gap-md);
+  article {
+    & > section:not(:last-child) {
+      @apply mb-(--gap-md);
+    }
+  }
+
+  ul[role="marquee"] {
+    @apply flex overflow-x-auto gap-(--gap-sm);
+    @apply scrollbar-thin scrollbar-track-light scrollbar-thumb-primary;
+
+    & li {
+      & figure {
+        @apply relative  aspect-square h-[33vh] pb-(--gap-sm);
+
+        & figcaption {
+          @apply absolute top-0 left-0 m-4 bg-background px-4 rounded-lg;
         }
-    }
 
-    ul[role="marquee"] {
-        @apply flex overflow-x-auto gap-(--gap-sm);
-        @apply scrollbar-thin scrollbar-track-light scrollbar-thumb-primary;
-
-        & li {
-            & figure {
-                @apply relative  aspect-square h-[33vh] pb-(--gap-sm);
-
-                & figcaption {
-                    @apply absolute top-0 left-0 m-4 bg-background px-4 rounded-lg;
-                }
-
-                & img {
-                    @apply h-full w-full;
-                }
-            }
+        & img {
+          @apply h-full w-full;
         }
+      }
     }
+  }
 
-    span.arrow {
-        @apply inline-block relative h-0 border min-w-16 scale-50;
+  span.arrow {
+    @apply inline-block relative h-0 border min-w-16 scale-50;
 
-        &::before {
-            content: "";
-            @apply absolute right-0 h-4 border-x rotate-45 -top-1;
-        }
-        &::after {
-            content: "";
-            @apply absolute right-0 h-4 border-x -rotate-45 -bottom-1;
-        }
+    &::before {
+      content: "";
+      @apply absolute right-0 h-4 border-x rotate-45 -top-1;
     }
-
-    .a-link {
-        @apply border p-6 inline-flex items-center uppercase tracking-widest rounded-none max-sm:text-xs;
+    &::after {
+      content: "";
+      @apply absolute right-0 h-4 border-x -rotate-45 -bottom-1;
     }
+  }
 
-    section.cols-2 {
-        @apply grid gap-(--gap-lg) br:grid-cols-2;
-    }
+  .a-link {
+    @apply border p-6 inline-flex items-center uppercase tracking-widest rounded-none;
+  }
 
-    img.border {
-        @apply p-(--gap-xs);
-    }
+  section.cols-2 {
+    @apply grid gap-(--gap-lg) br:grid-cols-2;
+  }
+
+  img.border {
+    @apply p-(--gap-xs);
+  }
 }

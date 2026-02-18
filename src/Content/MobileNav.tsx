@@ -54,6 +54,9 @@ export default function MobileNav(props: ExtendProps<"header">) {
       >
         <ul class="flex flex-col gap-(--gap-sm) mb-(--gap-md)">
           <li>
+            <A href="/#our-story">Our Story</A>
+          </li>
+          <li>
             <A href="/#details">Details</A>
           </li>
           <li>
