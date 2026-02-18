@@ -49,6 +49,7 @@ export const postEndpoint =
 export const entry: Record<string, string> = {
   names: "entry.257872457",
   attending: "entry.877086558",
-  entree: "entry.1498135098",
+  entree1: "entry.1498135098",
+  entree2: "entry.1754371707",
   other: "entry.1424661284",
 };

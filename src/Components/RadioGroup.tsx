@@ -41,8 +41,10 @@ export default function RadioGroup<Value extends string>(
               type="radio"
               value={option.value}
               checked={local.value ? local.value === option.value : undefined}
+              class="peer sr-only"
               {...local.inputProps}
             />
+            <button class="peer-checked:bg-primary" />
             {option.label(option.value)}
           </label>
         )}

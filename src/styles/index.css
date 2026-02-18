@@ -102,13 +102,17 @@
         @apply w-0 h-0 overflow-hidden p-0 m-0;
       }
 
-      @apply mb-(--gap-sm);
+      @apply mb-(--gap-xs);
 
       & legend {
-        @apply font-bold mb-(--gap-xs);
+        @apply font-bold mb-4;
       }
       & label {
-        @apply flex gap-2 mb-(--gap-xs);
+        @apply flex items-start gap-2 mb-4;
+
+        & button {
+          @apply border rounded-full w-4 h-4 mt-1.5 shrink-0;
+        }
       }
     }
 
@@ -130,4 +134,3 @@
     }
   }
 }
-

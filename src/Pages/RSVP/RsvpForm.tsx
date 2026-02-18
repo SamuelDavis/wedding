@@ -53,7 +53,24 @@ export default function RsvpForm() {
         />
         <RadioGroup
           legend="Select your entrée"
-          inputProps={{ name: "entree", required: true }}
+          inputProps={{ name: "entree1", required: true }}
+          options={[
+            "Lemon butter chicken",
+            "Southwest pesto salmon",
+            {
+              value: "Lentil bolognese pappardelle",
+              label: (value: string) => (
+                <span>
+                  {value}
+                  <small> (no meat)</small>
+                </span>
+              ),
+            },
+          ]}
+        />
+        <RadioGroup
+          legend="Select guest entrée"
+          inputProps={{ name: "entree2", required: true }}
           options={[
             "Lemon butter chicken",
             "Southwest pesto salmon",
