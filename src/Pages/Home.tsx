@@ -41,7 +41,7 @@ export default function Home() {
         <ImgAsset src={flowersColorSrc} class="max-br:hidden h-full" />
       </section>
       <section>
-        <h2 class="flex flex-col br:flex-row items-center br:justify-center">
+        <h2 class="flex flex-col br:flex-row items-center text-center br:justify-center">
           <Time value={weddingDate} />
           <hr class="vertical max-br:hidden" />
           <a target="_blank" href={venueMapHref}>

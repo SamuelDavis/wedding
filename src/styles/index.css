@@ -71,7 +71,7 @@
   }
 
   h2 {
-    @apply uppercase my-(--gap-xs) text-sm lg:text-2xl tracking-widest leading-relaxed;
+    @apply uppercase my-(--gap-xs) text-2xl tracking-widest leading-relaxed;
   }
 
   img {
