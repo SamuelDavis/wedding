@@ -32,7 +32,7 @@ export default function Layout(props: ParentProps) {
             <Arrow />
           </A>
         </Show>
-        <div class="border-y py-2 my-(--gap-lg)">
+        <div class="border-y py-2 my-(--gap-lg) w-full text-center">
           <nav>
             <ul>
               <li>
