@@ -12,7 +12,7 @@ export default function YourTrip() {
         <h1>
           <em>Plan your trip</em>
         </h1>
-        <h2>Stay a while</h2>
+        <h2>Where to stay</h2>
       </header>
       <section class="cols-2">
         <div>

@@ -195,7 +195,7 @@ const data: Record<InterestSlug, PageContent> = {
   "small-town": {
     icon: "family_home",
     title: "Small-Town",
-    subtitle: "Wanting to take it easy? Sounds like a plan!",
+    subtitle: "Taking It Easy",
     attractions: [
       () => (
         <Attraction
@@ -262,7 +262,7 @@ const data: Record<InterestSlug, PageContent> = {
   "global-flavors": {
     icon: "ramen_dining",
     title: "Global Flavors",
-    subtitle: "Very Important Dining Decisions",
+    subtitle: "A Date with Dining Decisions",
     attractions: [
       () => (
         <Attraction

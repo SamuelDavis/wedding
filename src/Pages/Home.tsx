@@ -78,7 +78,7 @@ export default function Home() {
           </p>
           <p>
             We are excited to invite you &mdash; our family and closest friends
-            to celebrate with us on our wedding day. We can't wait!
+            to celebrate with us on our wedding day.
           </p>
         </div>
         <h2>
