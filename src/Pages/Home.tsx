@@ -196,7 +196,7 @@ export default function Home() {
         </section>
       </section>
       <section id="details" class="bg-light mx-(--gap-main) py-(--gap-md)">
-        <h1 class="flex justify-center">
+        <h1 class="flex justify-center text-center">
           <A href="#details">
             <em>Additional Details</em>
           </A>
