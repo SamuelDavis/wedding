@@ -123,9 +123,9 @@ const data: Record<InterestSlug, PageContent> = {
           mapHref="https://maps.app.goo.gl/Tbj7WZ5Uc3yY5KMdA"
         >
           <p>
-            While you visiting Charlotte, a beautiful place to see is the Mint
-            Museum. There are two locations, but you'll find the most activity
-            in Uptown.
+            While you're visiting Charlotte, a beautiful place to see is the
+            Mint Museum. There are two locations, but you'll find the most
+            activity in Uptown.
           </p>
           <p>
             <span>
