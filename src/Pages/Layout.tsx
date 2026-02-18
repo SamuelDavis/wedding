@@ -20,10 +20,10 @@ export default function Layout(props: ParentProps) {
       </header>
       <hr />
       {props.children}
-      <footer class="text-center my-(--gap-lg)">
-        <h1 class="mb-(--gap-md) font-bold">
+      <footer class="flex flex-col items-center my-(--gap-lg)">
+        <h1 class="whitespace-nowrap mb-(--gap-md) font-bold">
           Please RSVP
-          <small class="italic max-sm:block"> by </small>
+          <small class="italic"> by </small>
           <Time value={rsvpDate} />
         </h1>
         <Show when={!getIsRSVP()}>
