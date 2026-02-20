@@ -46,7 +46,7 @@ export default function MobileNav(props: ExtendProps<"header">) {
         </ul>
       </nav>
       <nav
-        class="absolute left-0 right-0 z-100 bg-background overflow-hidden flex flex-col justify-between pb-0 p-(--gap-xs) gap-(--gap-xs) max-h-0 transition-[max-height] duration-200 ease-in-out"
+        class="absolute left-0 right-0 z-top bg-background overflow-hidden flex flex-col justify-between pb-0 p-(--gap-xs) gap-(--gap-xs) max-h-0 transition-[max-height] duration-200 ease-in-out"
         classList={{
           "max-h-screen": getOpen(),
           "h-screen": getOpen(),
@@ -62,8 +62,8 @@ export default function MobileNav(props: ExtendProps<"header">) {
           <li>
             <A href="/your-trip">Your Trip</A>
           </li>
-          <li class="mt-(--gap-lg)">
-            <a href="/rsvp" class="a-link w-full">
+          <li class="mt-(--gap-md)">
+            <a href="/rsvp" class="a-link w-full flex justify-center">
               <span>RSVP</span>
               <Arrow />
             </a>

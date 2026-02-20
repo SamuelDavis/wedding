@@ -94,7 +94,7 @@ function Attraction(
     <section class={`cols-2 ${local.class}`} {...parent}>
       <ImgAsset src={local.imageSrc} class="border" />
       <div>
-        <h2>
+        <h2 class="bold">
           <a href={local.siteHref} target="_blank">
             {local.title}
           </a>

@@ -26,7 +26,7 @@ export default function Home() {
         <ImgAsset src={nariColorScr} class="max-br:hidden h-full chromatic" />
         <div class="group">
           <ImgAsset src={athensColorSrc} class="chromatic" />
-          <div class="absolute top-0 left-0 flex flex-col items-center whitespace-nowrap group:hover w-full text-4xl lg:text-6xl z-top">
+          <div class="absolute top-0 left-0 flex flex-col items-center whitespace-nowrap group:hover w-full text-4xl lg:text-6xl z-999">
             <h2>The Wedding Of</h2>
             <h1>
               <em>
@@ -89,8 +89,6 @@ export default function Home() {
         <h2>
           <b>Sam & Jess</b>
         </h2>
-      </section>
-      <section>
         <h1 class="my-(--gap-lg) text-shadow br:text-center">
           <em class="br:text-right">
             <q>

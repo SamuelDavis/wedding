@@ -12,14 +12,11 @@ export default function YourTrip() {
         <h1>
           <em>Plan your trip</em>
         </h1>
-        <h2>Where to stay</h2>
+        <h2 class="font-bold">Where to stay</h2>
       </header>
       <section class="cols-2">
         <div>
-          <h1>
-            Where<small> to </small>Stay
-          </h1>
-          <h2>Wingate by Wyndham</h2>
+          <h1 class="leading-tight font-bold">Wingate by Wyndham</h1>
           <p>
             When you call, mention that you want a room for the Wells-Davis
             Wedding. Check the hotel website for additional details for address,
