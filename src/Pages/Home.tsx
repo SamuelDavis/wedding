@@ -22,11 +22,11 @@ import Arrow from "../Components/Arrow";
 export default function Home() {
   return (
     <article>
-      <section class="relative flex items-center gap-(--gap-xl) chromatic sm:gap-[10%]">
-        <ImgAsset src={nariColorScr} class="max-br:hidden h-full" />
+      <section class="relative flex items-center gap-(--gap-xl) sm:gap-[10%]">
+        <ImgAsset src={nariColorScr} class="max-br:hidden h-full chromatic" />
         <div class="group">
-          <ImgAsset src={athensColorSrc} />
-          <div class="absolute top-0 left-0 flex flex-col items-center whitespace-nowrap group:hover w-full text-4xl lg:text-6xl">
+          <ImgAsset src={athensColorSrc} class="chromatic" />
+          <div class="absolute top-0 left-0 flex flex-col items-center whitespace-nowrap group:hover w-full text-4xl lg:text-6xl z-top">
             <h2>The Wedding Of</h2>
             <h1>
               <em>
@@ -37,7 +37,10 @@ export default function Home() {
             </h1>
           </div>
         </div>
-        <ImgAsset src={flowersColorSrc} class="max-br:hidden h-full" />
+        <ImgAsset
+          src={flowersColorSrc}
+          class="max-br:hidden h-full chromatic"
+        />
       </section>
       <section>
         <h2 class="flex flex-col br:flex-row items-center text-center br:justify-center">

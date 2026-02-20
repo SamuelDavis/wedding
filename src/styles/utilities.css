@@ -89,3 +89,7 @@
 @utility chromatic {
   @apply grayscale-0 hover:grayscale-0 group-hover:grayscale-0 duration-200 sm:grayscale-100;
 }
+
+@utility z-top {
+  @apply z-1000;
+}
