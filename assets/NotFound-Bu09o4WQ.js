@@ -1,0 +1,1 @@
+import{i as l,c as a,t as o}from"./index-DMO8T4d_.js";import{A as d}from"./components-UacQPJi6.js";var h=o("<article><header><h1>Page Not Found</h1></header><p>Try returning <!>.");function p(){return(()=>{var e=h(),i=e.firstChild,r=i.nextSibling,n=r.firstChild,t=n.nextSibling;return t.nextSibling,l(r,a(d,{href:"/",children:"Home"}),t),e})()}export{p as default};
