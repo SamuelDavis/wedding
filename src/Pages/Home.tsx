@@ -89,6 +89,8 @@ export default function Home() {
         <h2>
           <b>Sam & Jess</b>
         </h2>
+      </section>
+      <section>
         <h1 class="my-(--gap-lg) text-shadow br:text-center">
           <em class="br:text-right">
             <q>
