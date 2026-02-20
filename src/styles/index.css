@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "./fonts.css";
+@import "./utilities.css";
 @import "./sizing.css";
 @import "./components.css";
 @import "./background-images.css";

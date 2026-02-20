@@ -22,7 +22,7 @@ import Arrow from "../Components/Arrow";
 export default function Home() {
   return (
     <article>
-      <section class="relative flex items-center gap-(--gap-xl) sm:gap-[10%]">
+      <section class="relative flex items-center gap-(--gap-xl) chromatic sm:gap-[10%]">
         <ImgAsset src={nariColorScr} class="max-br:hidden h-full" />
         <div class="group">
           <ImgAsset src={athensColorSrc} />

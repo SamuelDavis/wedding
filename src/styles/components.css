@@ -48,4 +48,8 @@
   img.border {
     @apply p-(--gap-xs);
   }
+
+  section.chromatic img {
+    @apply chromatic;
+  }
 }
