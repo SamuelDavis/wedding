@@ -21,9 +21,9 @@ export default function YourTrip() {
           </h1>
           <h2>Wingate by Wyndham</h2>
           <p>
-            When you call, mention that you want a room for Sam & Jess' wedding.
-            Check the hotel website for additional details for address, parking,
-            etc.
+            When you call, mention that you want a room for the Wells-Davis
+            Wedding. Check the hotel website for additional details for address,
+            parking, etc.
           </p>
           <A target="_blank" href={hotelSiteHref} class="a-link">
             <span>book room</span>

@@ -10,7 +10,7 @@ export const rsvpDate = parseISO("2026-04-01T00:00:00-04:00");
 export const venueMapHref = "https://maps.app.goo.gl/RyRjoQsDTzFjBgZN6";
 export const hotelMapHref = "https://maps.app.goo.gl/Q6MRJ6W2utcNVrDC8";
 export const hotelSiteHref =
-  "https://www.wyndhamhotels.com/en-ca/wingate/matthews-north-carolina/wingate-matthews-charlotte/overview";
+  "http://www.wyndhamhotels.com/hotels/57589?checkInDate=05/28/2026&checkOutDate=06/03/2026&groupCode=Davis%20Wedding";
 export const attireHref =
   "https://www.pinterest.com/dooodlelee/wedding-garden-theme/";
 
