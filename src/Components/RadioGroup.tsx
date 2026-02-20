@@ -44,7 +44,7 @@ export default function RadioGroup<Value extends string>(
               class="peer sr-only"
               {...local.inputProps}
             />
-            <button type="button" class="peer-checked:bg-primary" />
+            <button type="button" class="peer-checked:bg-primary p-2" />
             {option.label(option.value)}
           </label>
         )}
