@@ -23,10 +23,8 @@ export default function RsvpLayout(props: ParentProps) {
           <h2>
             <span>We can't wait to celebrate with you!</span>
             <div />
-            <span>
-              Please RSVP <span class="max-br:block">by</span>{" "}
-              <Time value={rsvpDate} />
-            </span>
+            <span>Please RSVP by </span>
+            <Time value={rsvpDate} class="max-br:block" />
           </h2>
         </div>
       </header>
