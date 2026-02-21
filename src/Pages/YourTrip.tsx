@@ -4,6 +4,7 @@ import wingateSrc from "../assets/SamandJess_hotel.jpg";
 import ImgAsset from "../Components/ImgAsset";
 import Arrow from "../Components/Arrow";
 import { A } from "@solidjs/router";
+import yourTripMainSrc from "../assets/Your Trip Main.png";
 
 export default function YourTrip() {
   return (
@@ -29,13 +30,17 @@ export default function YourTrip() {
         </div>
         <ImgAsset src={wingateSrc} class="border" />
       </section>
-      <section class="text-center bg-light p-(--gap-lg) my-(--gap-xl)">
+      <section class="relative text-center bg-light p-(--gap-lg) my-(--gap-xl)">
         <header>
           <h1 class="text-center mb-(--gap-md)">
             What category interests you most?
           </h1>
         </header>
         <DiscoveriesNav images />
+        <ImgAsset
+          src={yourTripMainSrc}
+          class="absolute left-0 top-0 w-[40%] br:w-[25%] -translate-y-1/4"
+        />
       </section>
     </article>
   );

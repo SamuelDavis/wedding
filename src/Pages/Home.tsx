@@ -18,6 +18,10 @@ import receptionAndDinnerSrc from "../assets/SamandJess_dancing_BW.jpg";
 import ImgAsset from "../Components/ImgAsset";
 import { A } from "@solidjs/router";
 import Arrow from "../Components/Arrow";
+import homepage1 from "../assets/Homepage 1.png";
+import homepage2 from "../assets/Homepage 2.png";
+import homepage3 from "../assets/Homepage 3.png";
+import homepage4 from "../assets/Homepage 4.png";
 
 export default function Home() {
   return (
@@ -63,7 +67,7 @@ export default function Home() {
       </section>
       <section
         id="our-story"
-        class="bg-light flex flex-col items-center text-center"
+        class="relative bg-light flex flex-col items-center text-center"
       >
         <h1 class="mb-(--gap-sm)">
           <A id="our-story" href="#our-story">
@@ -89,6 +93,22 @@ export default function Home() {
         <h2>
           <b>Sam & Jess</b>
         </h2>
+        <ImgAsset
+          src={homepage2}
+          class="absolute top-0 -translate-y-1/2 left-0 w-[25%]"
+        />
+        <ImgAsset
+          src={homepage4}
+          class="absolute bottom-0 translate-y-1/2 left-0 w-[20%]"
+        />
+        <ImgAsset
+          src={homepage3}
+          class="absolute top-0 -translate-y-1/2 right-0 w-[20%]"
+        />
+        <ImgAsset
+          src={homepage1}
+          class="absolute bottom-0 translate-y-1/2 right-0 w-[25%]"
+        />
       </section>
       <section>
         <h1 class="my-(--gap-lg) text-shadow br:text-center">
@@ -172,7 +192,7 @@ export default function Home() {
           </div>
         </section>
         <hr />
-        <section class="cols-2">
+        <section class="relative cols-2">
           <div>
             <h1>
               Reception

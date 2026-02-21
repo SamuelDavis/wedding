@@ -4,6 +4,7 @@ import { rsvpDate, weddingDate } from "../../data";
 import beOurGuestSrc from "../../assets/SamandJess_birdsflying.jpg";
 import coupleSrc from "../../assets/SamandJess_capitalgrille_BW.jpg";
 import ImgAsset from "../../Components/ImgAsset";
+import rsvpMainSrc from "../../assets/RSVP Main.png";
 
 export default function RsvpLayout(props: ParentProps) {
   return (
@@ -29,7 +30,11 @@ export default function RsvpLayout(props: ParentProps) {
           </h2>
         </div>
       </header>
-      <section class="cols-2">
+      <section class="relative cols-2">
+        <ImgAsset
+          src={rsvpMainSrc}
+          class="absolute left-0 top-0 w-[40%] br:w-[25%] -translate-y-1/4"
+        />
         <figure class="flex flex-col gap-(--gap-sm)">
           <ImgAsset src={coupleSrc} class="border" />
           <figcaption>
