@@ -109,7 +109,7 @@
       & label {
         @apply flex items-start gap-2 mb-4;
 
-        & button {
+        & [role="button"] {
           @apply border rounded-full w-4 h-4 mt-1.5 shrink-0;
         }
       }
