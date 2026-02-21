@@ -93,3 +93,16 @@
 @utility z-top {
   @apply z-1000;
 }
+
+@utility no-scrollbar {
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE/old Edge */
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    /* Chromium/Safari */
+    width: 0;
+    height: 0;
+    display: none;
+  }
+}

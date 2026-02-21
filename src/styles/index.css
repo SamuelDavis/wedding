@@ -3,7 +3,6 @@
 @import "./sizing.css";
 @import "./components.css";
 @import "./background-images.css";
-@plugin "tailwind-scrollbar";
 
 @theme {
   --color-primary: rgb(127, 37, 73);

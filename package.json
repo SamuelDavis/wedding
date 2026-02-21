@@ -15,8 +15,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "date-fns": "^4.1.0",
     "solid-js": "^1.9.10",
-    "tailwind": "^2.3.1",
-    "tailwind-scrollbar": "^4.0.2"
+    "tailwind": "^2.3.1"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
