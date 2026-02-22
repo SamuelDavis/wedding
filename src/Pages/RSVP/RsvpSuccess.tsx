@@ -10,7 +10,7 @@ export default function RsvpSuccess() {
   onMount(() => {
     if (!el) return;
     queueMicrotask(() => {
-      const y = el.getBoundingClientRect().top - 12;
+      const y = el.getBoundingClientRect().top - 24;
       window.scrollTo({ top: y, behavior: "smooth" });
     });
   });

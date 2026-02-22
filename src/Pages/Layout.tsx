@@ -24,7 +24,9 @@ export default function Layout(props: ParentProps) {
         <h1 class="mb-(--gap-md) font-bold">
           Please RSVP
           <small class="italic"> by </small>
-          <Time value={rsvpDate} format="date" />
+          <span class="text-nowrap">
+            <Time value={rsvpDate} format="date" />
+          </span>
         </h1>
         <Show when={!getIsRSVP()}>
           <A href="/rsvp" class="a-link">
