@@ -199,11 +199,13 @@ export default function Home() {
         <section class="relative cols-2">
           <div>
             <h1>
-              Reception
-              <small>
-                <i> and </i>
-              </small>
-              Dinner
+              <span>Reception </span>
+              <span class="whitespace-nowrap">
+                <small>
+                  <i> and </i>
+                </small>
+                Dinner
+              </span>
             </h1>
             <Itinerary>
               <ItineraryItem time={schedule.reception}>
