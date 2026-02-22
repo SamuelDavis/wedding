@@ -48,11 +48,15 @@ export default function Home() {
       </section>
       <section>
         <h2 class="flex flex-col br:flex-row items-center text-center br:justify-center">
-          <Time value={weddingDate} />
+          <span class="whitespace-nowrap">
+            <Time value={weddingDate} />
+          </span>
           <hr class="vertical max-br:hidden" />
-          <a target="_blank" href={venueMapHref}>
-            Francis J. Beatty Park
-          </a>
+          <span class="whitespace-nowrap">
+            <a target="_blank" href={venueMapHref}>
+              Francis J. Beatty Park
+            </a>
+          </span>
         </h2>
         <nav class="text-center">
           <menu>

@@ -4,7 +4,7 @@ import { splitProps } from "solid-js";
 
 const TimeFormats = {
   short: "MM.dd.yy",
-  long: "MMMM d, yyyy",
+  long: "EEEE, MMMM d, yyyy",
   time: "h:mm a",
 } as const;
 
