@@ -31,7 +31,6 @@ export default function RsvpForm() {
       <form onSubmit={onSubmit}>
         <i class="block text-right">
           On <Time value={weddingDate} format="long" />
-          &hellip;
         </i>
         <fieldset>
           <label>Name(s)</label>

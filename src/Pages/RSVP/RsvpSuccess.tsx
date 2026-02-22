@@ -8,24 +8,21 @@ export default function RsvpSuccess() {
   return (
     <RsvpLayout>
       <section>
-        <h1>Success!</h1>
-
-        <aside class="mb-(--gap-xl)">
-          <p>Thank you for RSVPing for our wedding!</p>
+        <aside class="mb-(--gap-lg)">
+          <h1 class="mb-0">Success!</h1>
           <p>
-            <span>That's on </span>
+            <span>See you on </span>
             <b>
               <Time value={weddingDate} format="long" />
             </b>
             <span> at </span>
-            <a href={venueMapHref} class="whitespace-nowrap">
+            <a target="_blank" href={venueMapHref} class="whitespace-nowrap">
               Francis J. Beatty Park
             </a>
             <span>.</span>
           </p>
         </aside>
 
-        <h2 class="mb-(--gap-lg)">Check out your personal trip guide below</h2>
         <A href="/your-trip" class="a-link">
           <span>Plan Your Trip</span>
           <Arrow />
