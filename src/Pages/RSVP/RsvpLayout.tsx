@@ -9,10 +9,10 @@ import rsvpMainSrc from "../../assets/RSVP Main.png";
 export default function RsvpLayout(props: ParentProps) {
   return (
     <article class="mb-(--gap-xl)">
-      <header class="mb-(--gap-xl)">
+      <section class="mb-(--gap-xl)">
         <div
           style={{ "background-image": `url('${beOurGuestSrc}')` }}
-          class="bg-cover bg-center text-background grid content-center text-center p-(--gap-sm) br:aspect-video br:p-(--gap-xl)"
+          class="bg-cover bg-center text-background grid content-center text-center p-(--gap-sm) br:p-(--gap-xl)"
         >
           <h2>
             <Time value={weddingDate} format="short" />
@@ -29,7 +29,7 @@ export default function RsvpLayout(props: ParentProps) {
             </span>
           </h2>
         </div>
-      </header>
+      </section>
       <section class="relative cols-2">
         <ImgAsset
           src={rsvpMainSrc}

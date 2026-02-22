@@ -21,7 +21,7 @@ export default function Layout(props: ParentProps) {
       <hr />
       {props.children}
       <footer class="flex flex-col items-center my-(--gap-lg)">
-        <h1 class="mb-(--gap-md) font-bold">
+        <h1 class="mb-(--gap-md) font-bold flex flex-wrap items-center justify-center text-center">
           Please RSVP
           <small class="italic"> by </small>
           <span class="text-nowrap">
