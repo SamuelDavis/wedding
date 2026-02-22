@@ -24,7 +24,9 @@ export default function RsvpLayout(props: ParentProps) {
             <span>We can't wait to celebrate with you!</span>
             <div />
             <span>Please RSVP by </span>
-            <Time value={rsvpDate} class="max-br:block" />
+            <span class="whitespace-nowrap">
+              <Time value={rsvpDate} class="max-br:block" />
+            </span>
           </h2>
         </div>
       </header>
