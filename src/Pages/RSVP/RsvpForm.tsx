@@ -70,8 +70,9 @@ export default function RsvpForm() {
         />
         <RadioGroup
           legend="Select guest entrée"
-          inputProps={{ name: "entree2", required: true }}
+          inputProps={{ name: "entree2" }}
           options={[
+            "No guest",
             "Lemon butter chicken",
             "Southwest pesto salmon",
             {
