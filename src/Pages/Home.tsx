@@ -49,7 +49,7 @@ export default function Home() {
       <section>
         <h2 class="flex flex-col br:flex-row items-center text-center br:justify-center">
           <span class="whitespace-nowrap">
-            <Time value={weddingDate} />
+            <Time value={weddingDate} format="long" />
           </span>
           <hr class="vertical max-br:hidden" />
           <span class="whitespace-nowrap">

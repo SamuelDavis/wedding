@@ -21,14 +21,10 @@ export default function Layout(props: ParentProps) {
       <hr />
       {props.children}
       <footer class="flex flex-col items-center my-(--gap-lg)">
-        <h1 class="mb-(--gap-md) font-bold flex flex-wrap justify-center text-center">
-          <span class="whitespace-nowrap">
-            Please RSVP
-            <small class="italic"> by </small>
-          </span>
-          <span class="whitespace-nowrap">
-            <Time value={rsvpDate} />
-          </span>
+        <h1 class="mb-(--gap-md) font-bold">
+          Please RSVP
+          <small class="italic"> by </small>
+          <Time value={rsvpDate} format="date" />
         </h1>
         <Show when={!getIsRSVP()}>
           <A href="/rsvp" class="a-link">

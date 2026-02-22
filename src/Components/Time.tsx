@@ -5,17 +5,17 @@ import { splitProps } from "solid-js";
 const TimeFormats = {
   short: "MM.dd.yy",
   long: "EEEE, MMMM d, yyyy",
+  date: "MMMM d, yyyy",
   time: "h:mm a",
 } as const;
 
 export default function Time(
-  props: ExtendProps<typeof HTMLDate, { format?: keyof typeof TimeFormats }>,
+  props: ExtendProps<typeof HTMLDate, { format: keyof typeof TimeFormats }>,
 ) {
   const [local, parent] = splitProps(props, ["value", "format"]);
-  const getFormat = (): string => TimeFormats[local.format ?? "long"];
   return (
     <HTMLDate value={local.value} {...parent}>
-      {format(local.value, getFormat())}
+      {format(local.value, TimeFormats[local.format])}
     </HTMLDate>
   );
 }

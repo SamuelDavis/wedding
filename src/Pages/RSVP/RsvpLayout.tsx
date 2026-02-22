@@ -25,7 +25,7 @@ export default function RsvpLayout(props: ParentProps) {
             <div />
             <span>Please RSVP by </span>
             <span class="whitespace-nowrap">
-              <Time value={rsvpDate} class="max-br:block" />
+              <Time value={rsvpDate} format="date" class="max-br:block" />
             </span>
           </h2>
         </div>

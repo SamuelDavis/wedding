@@ -3,7 +3,8 @@ import RadioGroup from "../../Components/RadioGroup";
 import { useNavigate } from "@solidjs/router";
 import RsvpLayout from "./RsvpLayout";
 import Arrow from "../../Components/Arrow";
-import { entry, postEndpoint } from "../../data";
+import { entry, postEndpoint, weddingDate } from "../../data";
+import Time from "../../Components/Time";
 
 export default function RsvpForm() {
   const navigator = useNavigate();
@@ -28,6 +29,10 @@ export default function RsvpForm() {
   return (
     <RsvpLayout>
       <form onSubmit={onSubmit}>
+        <i class="block text-right">
+          On <Time value={weddingDate} format="long" />
+          &hellip;
+        </i>
         <fieldset>
           <label>Name(s)</label>
           <input
