@@ -1,5 +1,5 @@
 import { HTMLDate, type ExtendProps } from "@samueldavis/solidlib";
-import { format } from "date-fns";
+import { formatInTimeZone } from "date-fns-tz";
 import { splitProps } from "solid-js";
 
 const TimeFormats = {
@@ -13,9 +13,15 @@ export default function Time(
   props: ExtendProps<typeof HTMLDate, { format: keyof typeof TimeFormats }>,
 ) {
   const [local, parent] = splitProps(props, ["value", "format"]);
+  const getFormatted = () =>
+    formatInTimeZone(
+      local.value,
+      "America/New_York",
+      TimeFormats[local.format],
+    );
   return (
     <HTMLDate value={local.value} {...parent}>
-      {format(local.value, TimeFormats[local.format])}
+      {getFormatted()}
     </HTMLDate>
   );
 }
