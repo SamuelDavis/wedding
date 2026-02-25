@@ -27,10 +27,13 @@ export default function RsvpSuccess() {
               <Time value={weddingDate} format="long" />
             </b>
             <span> at </span>
-            <a target="_blank" href={venueMapHref} class="whitespace-nowrap">
-              Francis J. Beatty Park
+            <a
+              target="_blank"
+              href={venueMapHref}
+              class="inline-flex flex-wrap"
+            >
+              Lake Pointe Hall, Francis J. Beatty Park.
             </a>
-            <span>.</span>
           </p>
         </aside>
 

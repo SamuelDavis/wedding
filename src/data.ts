@@ -7,7 +7,8 @@ import timeline2021Src from "./assets/SamandJess_car.jpg";
 
 export const weddingDate = parseISO("2026-05-31T00:00:00-04:00");
 export const rsvpDate = parseISO("2026-04-01T00:00:00-04:00");
-export const venueMapHref = "https://maps.app.goo.gl/RyRjoQsDTzFjBgZN6";
+export const venueMapHref =
+  "https://www.google.com/maps/place/Lake+Pointe+Hall,+Colonel+Francis+Beatty+Park/@35.0630933,-80.743397,17z/data=!3m1!4b1!4m6!3m5!1s0x8854266a090b3d15:0x8d4032259012ef93!8m2!3d35.0630933!4d-80.743397!16s%2Fg%2F11d_bhfpvy?entry=ttu&g_ep=EgoyMDI2MDIyMi4wIKXMDSoASAFQAw%3D%3D";
 export const hotelMapHref = "https://maps.app.goo.gl/Q6MRJ6W2utcNVrDC8";
 export const hotelSiteHref =
   "http://www.wyndhamhotels.com/hotels/57589?checkInDate=05/28/2026&checkOutDate=06/03/2026&groupCode=Davis%20Wedding";
